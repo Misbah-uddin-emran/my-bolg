@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Master - BCS, Bank & HSC IT Preparation</title>
+  <meta
+    name="description"
+    content="BCS, Bank, HSC চাকরির পরীক্ষার কম্পিউটার, গণিত ও বিজ্ঞান প্রস্তুতি। প্রশ্ন সমাধান, ব্লগ এবং সম্পূর্ণ গাইডলাইন।"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy-blue: #133458;
+      --navy-deep: #0d2743;
+      --teal: #3ecfbe;
+      --teal-dark: #22b8a8;
+      --teal-soft: #dffaf6;
+      --light-blue: #edf7ff;
+      --white: #ffffff;
+      --text-dark: #243444;
+      --text-gray: #66788a;
+      --border-gray: #d9e3ee;
+      --bg-light: #f7fbff;
+      --shadow-sm: 0 6px 20px rgba(12, 37, 64, 0.08);
+      --shadow-md: 0 14px 40px rgba(12, 37, 64, 0.12);
+      --shadow-lg: 0 24px 55px rgba(12, 37, 64, 0.16);
+      --radius: 18px;
+
+      --font-bangla: "Hind Siliguri", sans-serif;
+      --font-english: "Inter", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-bangla);
+      background:
+        radial-gradient(circle at top left, rgba(62, 207, 190, 0.07), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(19, 52, 88, 0.08), transparent 25%),
+        var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--navy-blue);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 17px;
+      color: var(--text-gray);
+      max-width: 720px;
+      margin: 0 auto 50px;
+    }
+
+    /* Decorative background */
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -1;
+      opacity: 0.45;
+    }
+
+    .orb-1 {
+      width: 240px;
+      height: 240px;
+      background: rgba(62, 207, 190, 0.22);
+      top: 120px;
+      left: -60px;
+    }
+
+    .orb-2 {
+      width: 260px;
+      height: 260px;
+      background: rgba(19, 52, 88, 0.14);
+      top: 700px;
+      right: -60px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(19, 52, 88, 0.92);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      transition: 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background: rgba(13, 39, 67, 0.96);
+    }
+
+    .nav-container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+
+    .logo i {
+      font-size: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 14px;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-login {
+      background: linear-gradient(135deg, var(--teal), #6ee7d7);
+      color: var(--navy-blue) !important;
+      font-weight: 700 !important;
+      box-shadow: 0 8px 18px rgba(62, 207, 190, 0.25);
+    }
+
+    .btn-login:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #53dacb, #86f0e4);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(19, 52, 88, 0.83), rgba(13, 39, 67, 0.88)),
+        url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+        center/cover no-repeat;
+      color: var(--white);
+      padding: 105px 0 90px;
+    }
+
+    .hero-inner {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge i {
+      color: #ffd166;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-btn,
+    .hero-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .hero-btn {
+      background: linear-gradient(135deg, var(--teal), #70ecdd);
+      color: var(--navy-blue);
+      box-shadow: 0 12px 24px rgba(62, 207, 190, 0.28);
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-btn-outline {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-3px);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-point {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      animation: floatY 4.8s ease-in-out infinite;
+    }
+
+    .hero-card h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .hero-mini-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero-mini-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 14px;
+      border-radius: 16px;
+    }
+
+    .hero-mini-item i {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(62, 207, 190, 0.18);
+      color: var(--teal);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .hero-mini-item strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .hero-mini-item span {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: var(--white);
+      color: var(--navy-blue);
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .badge-top {
+      top: -18px;
+      right: -12px;
+    }
+
+    .badge-bottom {
+      left: -14px;
+      bottom: 18px;
+    }
+
+    @keyframes floatY {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* About Section */
+    .about-section {
+      position: relative;
+      padding: 85px 0 35px;
+    }
+
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .about-card,
+    .about-side {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(19, 52, 88, 0.08);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .profile-avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--navy-blue), var(--teal));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .about-card h2 {
+      font-size: 34px;
+      color: var(--navy-blue);
+      line-height: 1.2;
+    }
+
+    .about-card h2 span {
+      color: var(--teal-dark);
+    }
+
+    .about-role {
+      font-size: 16px;
+      color: var(--text-gray);
+      margin-top: 4px;
+    }
+
+    .about-description {
+      font-size: 17px;
+      color: var(--text-dark);
+      margin-bottom: 22px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .chip {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--navy-blue);
+      border: 1px solid rgba(62, 207, 190, 0.18);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy-blue), #1a4c80);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy-blue);
+      border: 1px solid var(--border-gray);
+    }
+
+    .btn-secondary:hover {
+      background: var(--light-blue);
+    }
+
+    .about-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .mini-card {
+      background: linear-gradient(135deg, #ffffff, #f4fbff);
+      border: 1px solid rgba(19, 52, 88, 0.08);
+      border-radius: 18px;
+      padding: 22px;
+      transition: 0.3s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mini-card i {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 20px;
+    }
+
+    .mini-card h4 {
+      font-size: 18px;
+      color: var(--navy-blue);
+      margin-bottom: 8px;
+    }
+
+    .mini-card p {
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+
+    /* Stats */
+    .stats-section {
+      background: linear-gradient(135deg, var(--navy-blue), var(--navy-deep));
+      color: var(--white);
+      padding: 65px 0;
+      margin: 55px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(62, 207, 190, 0.14), transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06), transparent 18%);
+      pointer-events: none;
+    }
+
+    .stats-grid {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 26px 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: clamp(32px, 4vw, 50px);
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Categories */
+    .section-block {
+      padding: 20px 0 0;
+    }
+
+    .categories {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+    }
+
+    .exam-card {
+      background: var(--white);
+      padding: 32px 24px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: 0.35s ease;
+      border: 1px solid rgba(19, 52, 88, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exam-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(62, 207, 190, 0.08) 100%);
+      opacity: 0;
+      transition: 0.35s ease;
+    }
+
+    .exam-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .exam-card:hover::before {
+      opacity: 1;
+    }
+
+    .exam-icon {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--teal-soft), #f0fffd);
+      color: var(--teal-dark);
+      font-size: 34px;
+      box-shadow: inset 0 0 0 1px rgba(62, 207, 190, 0.12);
+    }
+
+    .exam-card h3 {
+      margin-bottom: 12px;
+      color: var(--navy-blue);
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .exam-card p {
+      font-size: 15px;
+      color: var(--text-gray);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--navy-blue);
+      padding: 10px 20px;
+      border-radius: 12px;
+      color: var(--navy-blue);
+      font-weight: 700;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--navy-blue);
+      color: var(--white);
+    }
+
+    /* Topics */
+    .topics-section {
+      padding: 70px 0;
+      background: var(--white);
+      margin-top: 55px;
+    }
+
+    .topics-grid {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .topic-card {
+      background: linear-gradient(135deg, #f5fbff 0%, #ffffff 100%);
+      border: 1px solid rgba(19, 52, 88, 0.08);
+      border-left: 5px solid var(--teal);
+      padding: 28px 24px;
+      border-radius: 18px;
+      transition: 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .topic-card h3 {
+      color: var(--navy-blue);
+      margin-bottom: 8px;
+      font-size: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .topic-card h3 i {
+      color: var(--teal-dark);
+    }
+
+    .topic-card p {
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    /* Blog & Solutions */
+    .features-section {
+      background: linear-gradient(180deg, var(--light-blue), #f8fcff);
+      padding: 70px 0;
+    }
+
+    .features-grid {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .feature-box {
+      background: var(--white);
+      border: 1px solid rgba(19, 52, 88, 0.08);
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-box h2 {
+      color: var(--navy-blue);
+      margin-bottom: 24px;
+      font-size: 26px;
+      border-bottom: 3px solid var(--teal);
+      display: inline-block;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .list-item {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .list-item a {
+      font-size: 16px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .list-item a i {
+      color: var(--teal-dark);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .list-item a:hover {
+      color: var(--teal-dark);
+      transform: translateX(4px);
+    }
+
+    .view-all-link {
+      color: var(--navy-blue);
+      font-weight: 700;
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .view-all-link:hover {
+      color: var(--teal-dark);
+    }
+
+    /* CTA strip */
+    .cta-strip {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto 70px;
+      background: linear-gradient(135deg, var(--navy-blue), #1e4d7f);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 36px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-strip h3 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .cta-strip p {
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 720px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--navy-blue), var(--navy-deep));
+      color: var(--white);
+      padding: 55px 0 26px;
+      margin-top: 20px;
+    }
+
+    .footer-content {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .footer-col h3 {
+      color: var(--teal);
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+    }
+
+    .footer-col a:hover {
+      color: var(--teal);
+    }
+
+    .footer-about {
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.75;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      color: white;
+    }
+
+    .social-links a:hover {
+      background: var(--teal);
+      color: var(--navy-blue);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+      margin-top: 12px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .hero-inner,
+      .about-wrapper,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 74px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(13, 39, 67, 0.98);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 16px;
+        gap: 8px;
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        border-radius: 12px;
+      }
+
+      .hero {
+        padding: 84px 0 65px;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .hero-points {
+        gap: 10px;
+      }
+
+      .hero-point {
+        width: 100%;
+        text-align: center;
+      }
+
+      .about-side {
+        grid-template-columns: 1fr;
+      }
+
+      .categories,
+      .topics-grid,
+      .features-grid,
+      .stats-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 34px;
+      }
+
+      .about-card,
+      .about-side,
+      .feature-box,
+      .exam-card,
+      .topic-card {
+        padding: 24px;
+      }
+
+      .cta-strip {
+        padding: 28px 22px;
+      }
+
+      .cta-strip h3 {
+        font-size: 24px;
+      }
+
+      .floating-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 12px;
+      }
+
+      .hero-card-wrap {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      .logo i {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+      }
+
+      .hero-actions,
+      .about-actions {
+        flex-direction: column;
+      }
+
+      .hero-btn,
+      .hero-btn-outline,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .about-top {
+        align-items: flex-start;
+      }
+
+      .profile-avatar {
+        width: 72px;
+        height: 72px;
+        font-size: 26px;
+      }
+
+      .about-card h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Computer Master</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu Toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">হোম</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#exams">পরীক্ষা</a></li>
+        <li><a href="#blog">ব্লগ</a></li>
+        <li><a href="#solutions">প্রশ্ন সমাধান</a></li>
+        <li><a href="#" class="btn-login">লগইন / রেজিস্টার</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          <span>BCS, Bank, HSC ও IT Job Preparation Platform</span>
+        </div>
+
+        <h1>চাকরির পরীক্ষায় কম্পিউটারে দক্ষ হন</h1>
+        <p>
+          BCS, Bank, HSC, NTRCA এবং বিভিন্ন চাকরির পরীক্ষার জন্য কম্পিউটার,
+          গণিত, বিজ্ঞান ও IT related smart preparation — সবকিছু এক প্ল্যাটফর্মে।
+        </p>
+
+        <div class="hero-actions">
+          <a href="#exams" class="hero-btn">
+            <i class="fas fa-rocket"></i> প্রস্তুতি শুরু করুন
+          </a>
+          <a href="#about" class="hero-btn-outline">
+            <i class="fas fa-user"></i> About Me দেখুন
+          </a>
+        </div>
+
+        <div class="hero-points">
+          <span class="hero-point"><i class="fas fa-check-circle"></i> Chapter-wise Guide</span>
+          <span class="hero-point"><i class="fas fa-check-circle"></i> Previous Question Solution</span>
+          <span class="hero-point"><i class="fas fa-check-circle"></i> Blog + Practice + Mock</span>
+        </div>
+      </div>
+
+      <div class="hero-card-wrap fade-in">
+        <div class="hero-card">
+          <div class="floating-badge badge-top">🔥 Smart Learning</div>
+
+          <h3>আজকের Highlights</h3>
+
+          <div class="hero-mini-list">
+            <div class="hero-mini-item">
+              <i class="fas fa-landmark"></i>
+              <div>
+                <strong>BCS ICT প্রস্তুতি</strong>
+                <span>প্রিলি + রিটেন + previous question analysis</span>
+              </div>
+            </div>
+
+            <div class="hero-mini-item">
+              <i class="fas fa-university"></i>
+              <div>
+                <strong>Bank IT প্রস্তুতি</strong>
+                <span>বাংলাদেশ ব্যাংক ও commercial bank exams</span>
+              </div>
+            </div>
+
+            <div class="hero-mini-item">
+              <i class="fas fa-code"></i>
+              <div>
+                <strong>HSC ICT & Programming</strong>
+                <span>C, HTML, Web basics, board question solution</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-bottom">✅ 500+ Solutions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-card fade-in">
+          <div class="about-top">
+            <div class="profile-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div>
+              <h2>আমি <span>YOUR NAME</span></h2>
+              <p class="about-role">IT Instructor • Exam Mentor • Content Creator</p>
+            </div>
+          </div>
+
+          <p class="about-description">
+            আমি এই প্ল্যাটফর্মে BCS, Bank, HSC ICT এবং অন্যান্য চাকরির পরীক্ষার
+            জন্য কম্পিউটার, গণিত ও বিজ্ঞান বিষয়গুলো সহজভাবে উপস্থাপন করি।
+            আমার লক্ষ্য হলো জটিল IT topic-গুলোকে সহজ, structured এবং exam-focused
+            করে সবার কাছে পৌঁছে দেওয়া।
+          </p>
+
+          <div class="chip-list">
+            <span class="chip">BCS ICT</span>
+            <span class="chip">Bank Exam IT</span>
+            <span class="chip">HSC ICT</span>
+            <span class="chip">Programming Basics</span>
+            <span class="chip">Question Solution</span>
+            <span class="chip">বাংলা Explain</span>
+          </div>
+
+          <div class="about-actions">
+            <a href="#blog" class="btn-primary">
+              <i class="fas fa-book-open"></i> ব্লগ পড়ুন
+            </a>
+            <a href="#solutions" class="btn-secondary">
+              <i class="fas fa-circle-check"></i> প্রশ্ন সমাধান দেখুন
+            </a>
+          </div>
+        </div>
+
+        <div class="about-side fade-in">
+          <div class="mini-card">
+            <i class="fas fa-bullseye"></i>
+            <h4>আমার লক্ষ্য</h4>
+            <p>Exam-focused, practical এবং সহজ ভাষায় quality preparation material দেওয়া।</p>
+          </div>
+
+          <div class="mini-card">
+            <i class="fas fa-layer-group"></i>
+            <h4>Structured Content</h4>
+            <p>Topic-wise blog, chapter-wise guide এবং category-wise question solution।</p>
+          </div>
+
+          <div class="mini-card">
+            <i class="fas fa-mobile-screen-button"></i>
+            <h4>Mobile Friendly</h4>
+            <p>মোবাইলে সহজে পড়া, scroll করা এবং দ্রুত topic access করার সুবিধা।</p>
+          </div>
+
+          <div class="mini-card">
+            <i class="fas fa-lightbulb"></i>
+            <h4>Smart Preparation</h4>
+            <p>কম সময়ে বেশি output পাওয়ার জন্য shortcut concept + smart revision।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <span class="stat-number counter" data-target="500">0</span>
+        <span class="stat-label">প্রশ্ন সমাধান</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number counter" data-target="150">0</span>
+        <span class="stat-label">IT ব্লগ</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number counter" data-target="10000">0</span>
+        <span class="stat-label">শিক্ষার্থী</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number counter" data-target="6">0</span>
+        <span class="stat-label">পরীক্ষা ক্যাটাগরি</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam Categories -->
+  <section class="section-block" id="exams">
+    <h2 class="section-title">আপনার প্রস্তুতি বেছে নিন</h2>
+    <p class="section-subtitle">
+      লক্ষ্য অনুযায়ী পরীক্ষা নির্বাচন করুন এবং structured প্রস্তুতি শুরু করুন
+    </p>
+
+    <div class="categories">
+      <div class="exam-card fade-in">
+        <div class="exam-icon">
+          <i class="fas fa-landmark"></i>
+        </div>
+        <h3>BCS Computer</h3>
+        <p>
+          সম্পূর্ণ সিলেবাস, previous year question solution, ICT note এবং mock test।
+        </p>
+        <a href="bcs.html" class="btn-outline">
+          BCS দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="exam-card fade-in">
+        <div class="exam-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <h3>Bank Exams</h3>
+        <p>
+          বাংলাদেশ ব্যাংক ও অন্যান্য commercial bank exam-এর জন্য computer ও IT প্রস্তুতি।
+        </p>
+        <a href="bank.html" class="btn-outline">
+          Bank দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="exam-card fade-in">
+        <div class="exam-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>HSC ICT</h3>
+        <p>
+          অধ্যায়ভিত্তিক আলোচনা, C programming, HTML, board question এবং CQ/MCQ solution।
+        </p>
+        <a href="hsc.html" class="btn-outline">
+          HSC দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="exam-card fade-in">
+        <div class="exam-icon">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3>Others / IT Basics</h3>
+        <p>
+          NTRCA, primary, corporate চাকরি ও সাধারণ IT interview preparation-এর জন্য basic guide।
+        </p>
+        <a href="others.html" class="btn-outline">
+          Others দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="topics-section">
+    <h2 class="section-title">বিষয়ভিত্তিক প্রস্তুতি</h2>
+    <p class="section-subtitle">
+      কম্পিউটার, গণিত ও বিজ্ঞান — সব বিষয়ের সংক্ষিপ্ত, সহজ ও exam-focused গাইড
+    </p>
+
+    <div class="topics-grid">
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-laptop-code"></i> কম্পিউটার ফান্ডামেন্টাল</h3>
+        <p>Hardware, Software, Operating System, Networking, Database, Memory.</p>
+      </div>
+
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-code"></i> প্রোগ্রামিং</h3>
+        <p>C, C++, Java, Python, logic building এবং basic problem solving.</p>
+      </div>
+
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-network-wired"></i> Internet & Web</h3>
+        <p>HTML, CSS, JavaScript, Web Technology, Internet protocols এবং web basics.</p>
+      </div>
+
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-calculator"></i> গণিত ও মানসিক দক্ষতা</h3>
+        <p>সংখ্যা, বীজগণিত, জ্যামিতি, শতকরা, অনুপাত, mental ability ও shortcut tricks.</p>
+      </div>
+
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-flask"></i> সাধারণ বিজ্ঞান</h3>
+        <p>পদার্থ, রসায়ন, জীববিজ্ঞান, প্রযুক্তি ও সমসাময়িক বিজ্ঞান বিষয়ক প্রস্তুতি।</p>
+      </div>
+
+      <div class="topic-card fade-in">
+        <h3><i class="fas fa-shield-alt"></i> Cyber Security</h3>
+        <p>Security basics, encryption, cyber threats, malware, data safety ও awareness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog & Solutions -->
+  <section class="features-section" id="blog">
+    <h2 class="section-title">ব্লগ ও প্রশ্ন সমাধান</h2>
+    <p class="section-subtitle">
+      নিয়মিত আপডেট হওয়া IT ব্লগ, model solution এবং পরীক্ষাভিত্তিক প্রস্তুতি
+    </p>
+
+    <div class="features-grid">
+      <!-- Latest Blogs -->
+      <div class="feature-box fade-in">
+        <h2>সর্বশেষ IT ব্লগ</h2>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+            নেটওয়ার্ক টপোলজি বিস্তারিত (BCS সিলেবাস)
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+            ডাটাবেস ম্যানেজমেন্ট সিস্টেম (DBMS) সম্পূর্ণ আলোচনা
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+            সাইবার সিকিউরিটি বেসিক - ব্যাংক পরীক্ষার জন্য
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+            C প্রোগ্রামিং পরিচিতি - HSC ICT
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+            অপারেটিং সিস্টেম কী এবং কিভাবে কাজ করে
+          </a>
+        </div>
+
+        <a href="blog.html" class="view-all-link">
+          সব ব্লগ দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Recent Solutions -->
+      <div class="feature-box fade-in" id="solutions">
+        <h2>সাম্প্রতিক প্রশ্ন সমাধান</h2>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-check-circle"></i>
+            ৪৫তম BCS প্রিলিমিনারি ICT প্রশ্ন সমাধান
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-check-circle"></i>
+            Bangladesh Bank AD 2024 Computer Part Solution
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-check-circle"></i>
+            ঢাকা বোর্ড HSC ICT 2024 MCQ সমাধান
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-check-circle"></i>
+            Sonali Bank Senior Officer 2024 IT Solution
+          </a>
+        </div>
+
+        <div class="list-item">
+          <a href="#">
+            <i class="fas fa-check-circle"></i>
+            ৪৪তম BCS Written Computer প্রশ্ন সমাধান
+          </a>
+        </div>
+
+        <a href="solutions.html" class="view-all-link">
+          সব সমাধান দেখুন <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="cta-strip fade-in">
+    <div>
+      <h3>প্রস্তুতি শুরু করতে আর দেরি কেন?</h3>
+      <p>
+        প্রতিদিন একটু একটু করে পড়লেও structured guide থাকলে preparation অনেক সহজ হয়ে যায়।
+        আজই topic-wise learning শুরু করো।
+      </p>
+    </div>
+    <a href="#exams" class="hero-btn">
+      <i class="fas fa-book"></i> এখনই শুরু করুন
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Computer Master সম্পর্কে</h3>
+          <p class="footer-about">
+            BCS, Bank, HSC সহ সকল চাকরির পরীক্ষার কম্পিউটার, গণিত ও বিজ্ঞান
+            প্রস্তুতির জন্য একটি smart ও structured বাংলা learning platform।
+          </p>
+
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>দ্রুত লিংক</h3>
+          <ul>
+            <li><a href="#home">হোম পেজ</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#exams">পরীক্ষা</a></li>
+            <li><a href="#blog">ব্লগ</a></li>
+            <li><a href="#solutions">প্রশ্ন সমাধান</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>পরীক্ষা ক্যাটাগরি</h3>
+          <ul>
+            <li><a href="bcs.html">BCS Computer</a></li>
+            <li><a href="bank.html">Bank Exams</a></li>
+            <li><a href="hsc.html">HSC ICT</a></li>
+            <li><a href="others.html">Others / IT Basics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>যোগাযোগ</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</li>
+            <li><i class="fas fa-envelope"></i> info@computermaster.bd</li>
+            <li><i class="fas fa-phone"></i> +880 1234-567890</li>
+            <li><i class="fas fa-clock"></i> ২৪/৭ সাপোর্ট</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; ২০২৬ Computer Master. সর্বস্বত্ব সংরক্ষিত।</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      const icon = mobileToggle.querySelector("i");
+
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    // Close menu when clicking links
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = mobileToggle.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      });
+    });
+
+    // Smooth scroll for valid hash links only
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        if (href && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }
+      });
+    });
+
+    // Scroll animation
+    const observerOptions = {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Navbar shadow on scroll
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 60) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll(".counter");
+    let counterStarted = false;
+
+    function animateCounters() {
+      if (counterStarted) return;
+      counterStarted = true;
+
+      counters.forEach((counter) => {
+        const target = +counter.getAttribute("data-target");
+        const duration = 1500;
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            if (target >= 1000) {
+              counter.innerText = Math.floor(current).toLocaleString() + "+";
+            } else {
+              counter.innerText = Math.floor(current) + "+";
+            }
+            requestAnimationFrame(updateCounter);
+          } else {
+            if (target >= 1000) {
+              counter.innerText = target.toLocaleString() + "+";
+            } else {
+              counter.innerText = target + "+";
+            }
+          }
+        };
+
+        updateCounter();
+      });
+    }
+
+    const statsSection = document.querySelector(".stats-section");
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+  </script>
+</body>
+</html>
