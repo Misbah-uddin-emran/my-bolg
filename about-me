@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মিজবাহ উদ্দিন ইমরান - About Me</title>
+    <meta name="description" content="মিজবাহ উদ্দিন ইমরান - CSE Lecturer, Senior Officer IT, BCS Recommended">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #4fd1c5;
+            --gold: #f6ad55;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --white: #ffffff;
+            --gray: #718096;
+            --border: #e2e8f0;
+            
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            
+            --font-bangla: 'Hind Siliguri', sans-serif;
+            --font-english: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-bangla);
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: var(--white);
+            padding: 80px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234fd1c5" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                        0 0 0 20px rgba(79, 209, 197, 0.1);
+            position: relative;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(246, 173, 85, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 52px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--white) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(79, 209, 197, 0.15);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(79, 209, 197, 0.4);
+        }
+
+        .btn-download {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(79, 209, 197, 0.3);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79, 209, 197, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-3);
+            opacity: 0.05;
+            border-radius: 0 15px 0 100%;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .education-degree {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .education-university {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-3);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 48%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(79, 209, 197, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Research Interests */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .research-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-3);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .research-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 35px;
+            margin: 0 auto 20px;
+        }
+
+        .research-card:nth-child(2) .research-icon {
+            background: var(--gradient-2);
+        }
+
+        .research-card:nth-child(3) .research-icon {
+            background: var(--gradient-3);
+        }
+
+        .research-card:nth-child(4) .research-icon {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .research-card:nth-child(5) .research-icon {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .research-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .research-desc {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .publication-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .publication-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .publication-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .publication-badge {
+            background: rgba(79, 209, 197, 0.1);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .publication-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-link, .btn-pdf {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-link {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-link:hover {
+            background: #3eb8ad;
+            transform: translateY(-2px);
+        }
+
+        .btn-pdf {
+            background: #e53e3e;
+            color: var(--white);
+        }
+
+        .btn-pdf:hover {
+            background: #c53030;
+            transform: translateY(-2px);
+        }
+
+        .upload-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px dashed var(--border);
+            text-align: center;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: var(--accent);
+            background: rgba(79, 209, 197, 0.02);
+        }
+
+        .upload-icon {
+            font-size: 50px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .btn-upload {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-upload:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Achievements */
+        .achievement-card {
+            background: linear-gradient(135deg, var(--gold) 0%, #ed8936 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(246, 173, 85, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '🏆';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 150px;
+            opacity: 0.1;
+        }
+
+        .achievement-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .achievement-title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .achievement-desc {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(79, 209, 197, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: var(--accent);
+        }
+
+        .contact-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-item .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .education-grid,
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="profile-photo.jpg" alt="মিজবাহ উদ্দিন ইমরান" class="hero-image">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i> BCS Recommended
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <h1>মিজবাহ উদ্দিন ইমরান</h1>
+                <p class="hero-subtitle">CSE Lecturer | Senior Officer IT | BCS (ICT Education Cadre)</p>
+                <p class="hero-description">
+                    কম্পিউটার সাইন্স ও প্রকৌশলে বিশেষজ্ঞ। শিক্ষকতা ও আইটি সেক্টরে অভিজ্ঞ পেশাদার। IoT, Computer Vision, Robotics এবং Data Mining নিয়ে গবেষণারত।
+                </p>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-google-scholar"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-researchgate"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+
+                <a href="#" class="btn-download">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">শিক্ষাগত যোগ্যতা</h2>
+            <p class="section-subtitle fade-in">Academic Excellence</p>
+
+            <div class="education-grid">
+                <div class="education-card fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="education-degree">Master of Science (M.Sc.)</h3>
+                    <p class="education-university">Computer Science & Engineering</p>
+                    <p class="education-university"><strong>চট্টগ্রাম বিশ্ববিদ্যালয়</strong></p>
+                </div>
+
+                <div class="education-card fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="education-degree">Bachelor of Science (B.Sc.)</h3>
+                    <p class="education-university">Computer Science & Engineering</p>
+                    <p class="education-university"><strong>চট্টগ্রাম বিশ্ববিদ্যালয়</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <h2 class="section-title fade-in">পেশাগত অভিজ্ঞতা</h2>
+            <p class="section-subtitle fade-in">Professional Journey</p>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">বর্তমান</span>
+                        <h3 class="timeline-title">Senior Officer IT</h3>
+                        <p class="timeline-company">Bangladesh Development Bank PLC.</p>
+                        <p class="timeline-description">
+                            ব্যাংকিং সেক্টরে তথ্য প্রযুক্তি বিভাগে দায়িত্বরত। সিস্টেম ম্যানেজমেন্ট, নেটওয়ার্ক সিকিউরিটি এবং ডিজিটাল ব্যাংকিং সলিউশন নিয়ে কাজ করছি।
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">২০২৫</span>
+                        <h3 class="timeline-title">৪৬তম BCS - ICT শিক্ষা ক্যাডার</h3>
+                        <p class="timeline-company">সুপারিশপ্রাপ্ত</p>
+                        <p class="timeline-description">
+                            বাংলাদেশ সিভিল সার্ভিসের ৪৬তম ব্যাচে ICT শিক্ষা ক্যাডারে সুপারিশপ্রাপ্ত হয়েছি।
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">পূর্ববর্তী</span>
+                        <h3 class="timeline-title">Lecturer</h3>
+                        <p class="timeline-company">BGC Trust University Bangladesh</p>
+                        <p class="timeline-description">
+                            Computer Science & Engineering বিভাগে লেকচারার হিসেবে দায়িত্ব পালন করেছি। প্রোগ্রামিং, ডেটা স্ট্রাকচার এবং অ্যালগরিদম পড়িয়েছি।
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">পূর্ববর্তী</span>
+                        <h3 class="timeline-title">Lecturer</h3>
+                        <p class="timeline-company">ইসলামিক বিশ্ববিদ্যালয় চট্টগ্রাম</p>
+                        <p class="timeline-description">
+                            Computer Science & Engineering বিভাগে লেকচারার হিসেবে শিক্ষকতা করেছি। শিক্ষার্থীদের প্রোগ্রামিং ও সফটওয়্যার ডেভেলপমেন্ট শিখিয়েছি।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">গবেষণা আগ্রহ</h2>
+            <p class="section-subtitle fade-in">Research Interests & Expertise</p>
+
+            <div class="research-grid">
+                <div class="research-card fade-in">
+                    <div class="research-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="research-title">Internet of Things (IoT)</h3>
+                    <p class="research-desc">স্মার্ট ডিভাইস এবং IoT সিস্টেম নিয়ে গবেষণা</p>
+                </div>
+
+                <div class="research-card fade-in">
+                    <div class="research-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="research-title">Computer Vision</h3>
+                    <p class="research-desc">ইমেজ প্রসেসিং এবং ভিশন সিস্টেম</p>
+                </div>
+
+                <div class="research-card fade-in">
+                    <div class="research-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="research-title">Robotics</h3>
+                    <p class="research-desc">অটোমেশন এবং রোবোটিক্স সিস্টেম</p>
+                </div>
+
+                <div class="research-card fade-in">
+                    <div class="research-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="research-title">Data Mining</h3>
+                    <p class="research-desc">বিগ ডেটা অ্যানালিটিক্স এবং মাইনিং</p>
+                </div>
+
+                <div class="research-card fade-in">
+                    <div class="research-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="research-title">Emerging Technologies</h3>
+                    <p class="research-desc">নতুন প্রযুক্তি এবং ইনোভেশন</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Highlight -->
+    <section class="section" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+        <div class="container">
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🏆</div>
+                <h2 class="achievement-title">৪৬তম BCS সুপারিশপ্রাপ্ত</h2>
+                <p class="achievement-desc">
+                    বাংলাদেশ সিভিল সার্ভিসের ৪৬তম ব্যাচে ICT শিক্ষা ক্যাডারে সফলভাবে সুপারিশপ্রাপ্ত হয়েছি। এটি আমার একাডেমিক ও পেশাগত যাত্রার একটি গুরুত্বপূর্ণ মাইলফলক।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section publications-section">
+        <div class="container">
+            <h2 class="section-title fade-in">গবেষণা প্রকাশনা</h2>
+            <p class="section-subtitle fade-in">Research Publications & Papers</p>
+
+            <div class="publication-list">
+                <!-- Sample Publication Items -->
+                <div class="publication-item fade-in">
+                    <h3 class="publication-title">IoT-based Smart Home Automation System using Machine Learning</h3>
+                    <div class="publication-meta">
+                        <span class="publication-badge">
+                            <i class="fas fa-calendar"></i> 2024
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-book"></i> International Journal
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-wifi"></i> IoT
+                        </span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="#" class="btn-link">
+                            <i class="fas fa-link"></i> View Paper
+                        </a>
+                        <a href="#" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3 class="publication-title">Computer Vision Application for Real-time Object Detection</h3>
+                    <div class="publication-meta">
+                        <span class="publication-badge">
+                            <i class="fas fa-calendar"></i> 2023
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-book"></i> Conference Paper
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-eye"></i> Computer Vision
+                        </span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="#" class="btn-link">
+                            <i class="fas fa-link"></i> View Paper
+                        </a>
+                        <a href="#" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3 class="publication-title">Robotics Control System using Advanced Algorithms</h3>
+                    <div class="publication-meta">
+                        <span class="publication-badge">
+                            <i class="fas fa-calendar"></i> 2023
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-book"></i> Journal Article
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-robot"></i> Robotics
+                        </span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="#" class="btn-link">
+                            <i class="fas fa-link"></i> View Paper
+                        </a>
+                        <a href="#" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-item fade-in">
+                    <h3 class="publication-title">Data Mining Techniques for Big Data Analytics</h3>
+                    <div class="publication-meta">
+                        <span class="publication-badge">
+                            <i class="fas fa-calendar"></i> 2022
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-book"></i> Research Paper
+                        </span>
+                        <span class="publication-badge">
+                            <i class="fas fa-database"></i> Data Mining
+                        </span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="#" class="btn-link">
+                            <i class="fas fa-link"></i> View Paper
+                        </a>
+                        <a href="#" class="btn-pdf">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section fade-in">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3 style="margin-bottom: 10px; color: var(--primary);">Add New Publication</h3>
+                <p style="color: var(--gray); margin-bottom: 20px;">Upload your research paper or add a link to your publication</p>
+                
+                <input type="file" id="fileInput" class="file-input" accept=".pdf">
+                <label for="fileInput" class="btn-upload">
+                    <i class="fas fa-upload"></i> Upload PDF
+                </label>
+                
+                <p style="margin: 15px 0; color: var(--gray);">অথবা</p>
+                
+                <button class="btn-upload" style="background: var(--accent); color: var(--primary);">
+                    <i class="fas fa-link"></i> Add Link
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: var(--white);">যোগাযোগ করুন</h2>
+            <p class="section-subtitle fade-in" style="color: rgba(255, 255, 255, 0.7);">Get In Touch</p>
+
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">mizbah.imran@email.com</p>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">Phone</h3>
+                    <p class="contact-info">+880 1XXX-XXXXXX</p>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Location</h3>
+                    <p class="contact-info">চট্টগ্রাম, বাংলাদেশ</p>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 class="contact-title">LinkedIn</h3>
+                    <p class="contact-info">linkedin.com/in/mizbahimran</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; ২০২৬ মিজবাহ উদ্দিন ইমরান। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p style="margin-top: 10px; font-size: 14px;">CSE | Researcher | Lecturer | IT Professional</p>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // File Upload Handler
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                alert('File selected: ' + e.target.files[0].name + '\n\nThis is a demo. In production, this would upload to your server.');
+            }
+        });
+    </script>
+
+</body>
+</html>
