@@ -1131,6 +1131,17 @@
       .about-card h2 {
         font-size: 28px;
       }
+
+      .hero-mini-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-mini-link:hover{
+  text-decoration: none;
+  color: inherit;
+}
     }
   </style>
 </head>
@@ -1151,11 +1162,13 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">হোম</a></li>
+        <li><a href="#home">হোম</a></li>
+
         <li><a href="#exams">পরীক্ষা</a></li>
         <li><a href="#blog">ব্লগ</a></li>
         <li><a href="#solutions">প্রশ্ন সমাধান</a></li>
-   <li><a href="#"class="btn-login">লগইন / রেজিস্টার</a></li>
+
+   <li><a href="#"class="btn-login">লগইন / রেজিস্টার</a></li>
 <li><a href="about.html">আমার সম্পর্কে </a>
 </li>
 
@@ -1201,30 +1214,38 @@
           <h3>আজকের Highlights</h3>
 
           <div class="hero-mini-list">
-            <div class="hero-mini-item">
-              <i class="fas fa-landmark"></i>
-              <div>
-                <strong>BCS ICT প্রস্তুতি</strong>
-                <span>প্রিলি + রিটেন + previous question analysis</span>
-              </div>
-            </div>
 
-            <div class="hero-mini-item">
-              <i class="fas fa-university"></i>
-              <div>
-                <strong>Bank IT প্রস্তুতি</strong>
-                <span>বাংলাদেশ ব্যাংক ও commercial bank exams</span>
-              </div>
-            </div>
+  <a href="bcs-ict.html" class="hero-mini-link">
+    <div class="hero-mini-item">
+      <i class="fas fa-landmark"></i>
+      <div>
+        <strong>BCS ICT প্রস্তুতি</strong>
+        <span>প্রিলি + রিটেন + previous question analysis</span>
+      </div>
+    </div>
+  </a>
 
-            <div class="hero-mini-item">
-              <i class="fas fa-code"></i>
-              <div>
-                <strong>HSC ICT & Programming</strong>
-                <span>C, HTML, Web basics, board question solution</span>
-              </div>
-            </div>
-          </div>
+  <a href="bank-it.html" class="hero-mini-link">
+    <div class="hero-mini-item">
+      <i class="fas fa-university"></i>
+      <div>
+        <strong>Bank IT প্রস্তুতি</strong>
+        <span>বাংলাদেশ ব্যাংক ও commercial bank exams</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="hsc-ict.html" class="hero-mini-link">
+    <div class="hero-mini-item">
+      <i class="fas fa-code"></i>
+      <div>
+        <strong>HSC ICT & Programming</strong>
+        <span>C, HTML, Web basics, board question solution</span>
+      </div>
+    </div>
+  </a>
+
+</div>
 
           <div class="floating-badge badge-bottom">✅ 500+ Solutions</div>
         </div>
@@ -1254,14 +1275,14 @@
             করে সবার কাছে পৌঁছে দেওয়া।
           </p>
 
-          <div class="chip-list">
-            <span class="chip">BCS ICT</span>
-            <span class="chip">Bank Exam IT</span>
-            <span class="chip">HSC ICT</span>
-            <span class="chip">Programming Basics</span>
-            <span class="chip">Question Solution</span>
-            <span class="chip">বাংলা Explain</span>
-          </div>
+        <div class="chip-list">
+  <a class="chip" href="bcs-ict.html">BCS ICT</a>
+  <a class="chip" href="bank-exam-it.html">Bank Exam IT</a>
+  <a class="chip" href="hsc-ict.html">HSC ICT</a>
+  <a class="chip" href="programming-basics.html">Programming Basics</a>
+  <a class="chip" href="question-solution.html">Question Solution</a>
+  <a class="chip" href="bangla-explain.html">বাংলা Explain</a>
+</div>
 
           <div class="about-actions">
             <a href="#blog" class="btn-primary">
@@ -1336,12 +1357,12 @@
         <div class="exam-icon">
           <i class="fas fa-landmark"></i>
         </div>
-        <h3>BCS Computer</h3>
+        <h3>BCS Computer & Information</h3>
         <p>
           সম্পূর্ণ সিলেবাস, previous year question solution, ICT note এবং mock test।
         </p>
         <a href="bcs.html" class="btn-outline">
-          BCS দেখুন <i class="fas fa-arrow-right"></i>
+          BCS Computer & Information দেখুন <i class="fas fa-arrow-right"></i>
         </a>
       </div>
 
@@ -1366,7 +1387,7 @@
         <p>
           অধ্যায়ভিত্তিক আলোচনা, C programming, HTML, board question এবং CQ/MCQ solution।
         </p>
-        <a href="hsc.html" class="btn-outline">
+        <a href="hsc-ict.html" class="btn-outline">
           HSC দেখুন <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -1460,7 +1481,7 @@
         </div>
 
         <div class="list-item">
-          <a href="#">
+          <a href="hsc-ict.html">
             <i class="fas fa-chevron-right"></i>
             C প্রোগ্রামিং পরিচিতি - HSC ICT
           </a>
@@ -1571,9 +1592,9 @@
         <div class="footer-col">
           <h3>পরীক্ষা ক্যাটাগরি</h3>
           <ul>
-            <li><a href="bcs.html">BCS Computer</a></li>
+            <li><a href="bcs-ict.html">BCS Computer</a></li>
             <li><a href="bank.html">Bank Exams</a></li>
-            <li><a href="hsc.html">HSC ICT</a></li>
+            <li><a href="hsc-ict.html">HSC ICT</a></li>
             <li><a href="others.html">Others / IT Basics</a></li>
           </ul>
         </div>
