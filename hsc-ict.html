@@ -1344,6 +1344,12 @@
   </style>
 </head>
 <body>
+
+  <!-- PDF file use করার নিয়ম:
+       1) PDF upload folder: assets/pdf/
+       2) Direct open link: href="assets/pdf/your-file.pdf" target="_blank"
+       3) Viewer page link: href="pdf-viewer.html?file=assets/pdf/your-file.pdf&title=Your%20PDF%20Title"
+  -->
   <div class="topbar">
     <div class="container topbar-wrap">
       <div class="topbar-left">
@@ -1667,10 +1673,10 @@
             </div>
 
             <div class="tab-pane" id="update">
-              <a href="#pdf-resources" class="list-post">
+              <a href="pdf-viewer.html?file=assets/pdf/hsc-ict-chapter-1.pdf&title=HSC%20ICT%20Chapter%201%20PDF" class="list-post">
                 <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&auto=format&fit=crop" alt="">
                 <div>
-                  <h5>নতুন PDF library section যোগ করা হয়েছে</h5>
+                  <h5>HSC ICT Chapter 1 PDF viewer page যোগ করা হয়েছে</h5>
                   <div class="meta"><span>New</span><span>Feature</span></div>
                 </div>
               </a>
