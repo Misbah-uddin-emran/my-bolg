@@ -1226,6 +1226,45 @@
   color:#7a5200;
   font-weight:700;
 }
+
+.auth-nav-item {
+  list-style: none;
+}
+
+.btn-auth {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.login-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.login-btn:hover {
+  background: #ffffff;
+  color: #1e3a8a;
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+}
     }
   </style>
 </head>
@@ -1252,7 +1291,12 @@
         <li><a href="#blog">ব্লগ</a></li>
         <li><a href="#solutions">প্রশ্ন সমাধান</a></li>
 
-   <li><a href="#"class="btn-login">লগইন / রেজিস্টার</a></li>
+<li class="auth-nav-item">
+  <a href="login.html" class="btn-auth login-btn">লগইন</a>
+</li>
+<li class="auth-nav-item">
+  <a href="registration.html" class="btn-auth register-btn">রেজিস্টার</a>
+</li>
 <li><a href="about.html">আমার সম্পর্কে </a>
 </li>
 
