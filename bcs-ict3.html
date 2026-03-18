@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCS ICT সিলেবাস | ICTguide Bangladesh</title>
+  <meta name="description" content="BCS প্রিলিমিনারি পরীক্ষার ICT সিলেবাস — সম্পূর্ণ বাংলা গাইড।"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet"/>
+
+  <style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --primary : #1a3a6b;
+    --pri-lt  : #2563c7;
+    --accent  : #e63946;
+    --green   : #2a9d5c;
+    --gold    : #f4a01c;
+    --bg      : #ffffff;
+    --lt-bg   : #f0f4ff;
+    --card-bg : #f8faff;
+    --border  : #cdd8f0;
+    --text    : #1a1a2e;
+    --muted   : #4a5568;
+    --shadow  : 0 4px 20px rgba(26,58,107,.10);
+    --r       : 12px;
+    --nav-h   : 64px;
+    --side-w  : 275px;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Hind Siliguri','Tiro Bangla',serif;
+    background:var(--bg); color:var(--text);
+    font-size:17px; line-height:1.85;
+  }
+  a { text-decoration:none; color:inherit; }
+
+  /* ── MARQUEE ── */
+  .marquee-bar {
+    background:linear-gradient(90deg,var(--primary),var(--pri-lt),var(--primary));
+    color:#fff; padding:9px 0; font-size:15px; font-weight:500;
+    overflow:hidden; white-space:nowrap;
+  }
+  .marquee-bar span { margin:0 26px; }
+  .marquee-bar .star { color:var(--gold); }
+
+  /* ── NAVBAR ── */
+  nav {
+    background:#fff; border-bottom:3px solid var(--primary);
+    position:sticky; top:0; z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.08); height:var(--nav-h);
+  }
+  .nav-inner {
+    max-width:1280px; margin:auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 20px; height:100%;
+  }
+  .nav-logo { display:flex; align-items:center; gap:10px; }
+  .logo-box {
+    width:42px; height:42px; border-radius:10px;
+    background:var(--primary); color:#fff;
+    font-size:13px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .logo-name { font-size:22px; font-weight:700; color:var(--primary); }
+  .logo-name span { color:var(--accent); }
+  .nav-links { display:flex; gap:4px; list-style:none; align-items:center; }
+  .nav-links a {
+    font-size:15px; font-weight:500; padding:7px 13px;
+    border-radius:8px; transition:.2s;
+  }
+  .nav-links a:hover { background:var(--primary); color:#fff; }
+  .nav-links .btn-mcq { background:var(--accent); color:#fff !important; }
+  .burger {
+    display:none; flex-direction:column; gap:5px;
+    cursor:pointer; background:none; border:none;
+  }
+  .burger span {
+    display:block; width:25px; height:3px;
+    background:var(--primary); border-radius:3px; transition:.3s;
+  }
+  @media(max-width:900px){
+    .nav-links { display:none; }
+    .nav-links.open {
+      display:flex; flex-direction:column;
+      position:absolute; top:var(--nav-h); left:0; right:0;
+      background:#fff; padding:12px 16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.1);
+      border-top:2px solid var(--border); gap:3px;
+    }
+    .nav-links.open a { padding:11px 14px; font-size:16px; }
+    .burger { display:flex; }
+    nav { position:relative; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background:linear-gradient(135deg,var(--primary) 0%,#1e4fa3 55%,#1a3a6b 100%);
+    color:#fff; padding:52px 20px 44px; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0;
+    background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display:inline-block; background:var(--gold); color:var(--primary);
+    font-size:13px; font-weight:700; padding:4px 16px;
+    border-radius:20px; margin-bottom:16px;
+  }
+  .hero h1 { font-size:clamp(26px,5vw,46px); font-weight:700; margin-bottom:12px; line-height:1.3; }
+  .hero h1 span { color:var(--gold); }
+  .hero p { font-size:17px; opacity:.9; max-width:620px; margin:0 auto 26px; }
+  .hero-stats { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .stat-box {
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
+    padding:11px 22px; border-radius:10px; backdrop-filter:blur(6px);
+  }
+  .stat-box .num { font-size:24px; font-weight:700; color:var(--gold); }
+  .stat-box .lbl { font-size:13px; opacity:.85; }
+
+  /* ── QUICK NAV TABS ── */
+  .quick-nav {
+    background:var(--lt-bg); border-bottom:2px solid var(--border);
+    position:sticky; top:var(--nav-h); z-index:99;
+  }
+  @media(max-width:900px){ .quick-nav{ top:0; } }
+  .quick-inner {
+    max-width:1280px; margin:auto;
+    display:flex; gap:4px; padding:10px 20px;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .quick-inner::-webkit-scrollbar { display:none; }
+  .q-btn {
+    background:#fff; border:2px solid var(--border);
+    border-radius:30px; padding:8px 18px;
+    font-family:'Hind Siliguri',serif; font-size:14px; font-weight:600;
+    cursor:pointer; white-space:nowrap; color:var(--text); transition:.22s;
+  }
+  .q-btn:hover,.q-btn.ab { background:var(--primary); border-color:var(--primary); color:#fff; }
+  .q-btn.ag              { background:var(--green);   border-color:var(--green);   color:#fff; }
+
+  /* ── PAGE LAYOUT ── */
+  .page-body {
+    max-width:1280px; margin:0 auto;
+    display:grid; grid-template-columns:var(--side-w) 1fr;
+    gap:28px; padding:32px 20px 60px; align-items:start;
+  }
+  @media(max-width:900px){
+    .page-body { grid-template-columns:1fr; }
+    .sidebar { position:static; max-height:none; overflow:visible; }
+  }
+
+  /* ── STICKY SIDEBAR ── */
+  .sidebar {
+    position:sticky;
+    top:calc(var(--nav-h) + 56px);
+    max-height:calc(100vh - var(--nav-h) - 76px);
+    overflow-y:auto; scrollbar-width:thin;
+    scrollbar-color:var(--border) transparent;
+    border:2px solid var(--border); border-radius:var(--r);
+    background:var(--lt-bg); padding:0 0 12px;
+  }
+  .sidebar::-webkit-scrollbar { width:5px; }
+  .sidebar::-webkit-scrollbar-thumb { background:var(--border); border-radius:5px; }
+
+  /* search */
+  .sb-search {
+    padding:12px 12px 8px;
+    position:sticky; top:0; background:var(--lt-bg); z-index:2;
+    border-bottom:2px solid var(--border);
+  }
+  .sb-wrap { position:relative; }
+  .sb-wrap .s-ico {
+    position:absolute; left:10px; top:50%;
+    transform:translateY(-50%); font-size:15px; pointer-events:none;
+  }
+  .sb-wrap input {
+    width:100%; padding:8px 12px 8px 32px;
+    border:2px solid var(--border); border-radius:8px;
+    font-family:'Hind Siliguri',serif; font-size:15px;
+    background:#fff; color:var(--text); outline:none; transition:.2s;
+  }
+  .sb-wrap input:focus { border-color:var(--primary); }
+
+  #noResult { display:none; padding:12px; font-size:14px; color:var(--muted); text-align:center; }
+
+  /* sidebar section */
+  .sb-head {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:10px 13px; cursor:pointer;
+    font-size:13px; font-weight:700; user-select:none;
+    border-top:1px solid var(--border); transition:.2s;
+  }
+  .sb-head:first-of-type { border-top:none; }
+  .sb-head.blue  { color:var(--primary); }
+  .sb-head.grn   { color:var(--green); }
+  .sb-head .arr  { font-size:11px; transition:.3s; }
+  .sb-head.coll .arr { transform:rotate(-90deg); }
+  .sb-body { padding:0 6px 6px; }
+  .sb-body.hide { display:none; }
+
+  .sb-lnk {
+    display:flex; align-items:center; gap:7px;
+    padding:6px 8px; border-radius:7px;
+    font-size:13px; font-weight:500; color:var(--text);
+    cursor:pointer; transition:.18s;
+  }
+  .sb-lnk:hover { background:rgba(26,58,107,.1); color:var(--primary); }
+  .sb-lnk .nn {
+    min-width:20px; height:20px; border-radius:50%;
+    background:var(--primary); color:#fff;
+    font-size:10px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .grn ~ .sb-body .sb-lnk .nn { background:var(--green); }
+  .sb-lnk.hide-s { display:none; }
+
+  /* ── CONTENT ── */
+  .content { min-width:0; }
+
+  /* info box */
+  .info-box {
+    background:linear-gradient(135deg,#fff8e7,#fff3cd);
+    border:2px solid var(--gold); border-radius:var(--r);
+    padding:20px 22px; margin-bottom:34px;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .info-box .ico { font-size:28px; flex-shrink:0; margin-top:3px; }
+  .info-box h3 { font-size:17px; font-weight:700; color:#8a5a00; margin-bottom:4px; }
+  .info-box p  { font-size:15px; color:#6b4700; line-height:1.7; }
+
+  /* section header */
+  .sec-head {
+    display:flex; align-items:center; gap:14px;
+    margin-bottom:22px; padding-bottom:14px;
+    border-bottom:3px solid var(--border);
+    cursor:pointer; user-select:none;
+  }
+  .sec-ico {
+    width:50px; height:50px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px; flex-shrink:0;
+  }
+  .si-b { background:linear-gradient(135deg,var(--primary),#3b6fd4); }
+  .si-g { background:linear-gradient(135deg,var(--green),#22c55e); }
+  .si-r { background:linear-gradient(135deg,var(--accent),#ff6b6b); }
+  .sec-head h2 { font-size:clamp(20px,3vw,28px); font-weight:700; color:var(--primary); }
+  .sec-head h2.g { color:var(--green); }
+  .sec-head h2.r { color:var(--accent); }
+  .cnt {
+    font-size:12px; font-weight:700; padding:3px 10px;
+    border-radius:20px; color:#fff; margin-left:6px; vertical-align:middle;
+  }
+  .cnt.b { background:var(--primary); }
+  .cnt.g { background:var(--green); }
+  .sec-head .sub { font-size:13px; color:var(--muted); margin-top:2px; }
+  .sec-toggle { margin-left:auto; font-size:20px; color:var(--muted); transition:.3s; }
+  .sec-head.coll .sec-toggle { transform:rotate(-90deg); }
+
+  /* collapsible body */
+  .sec-body { overflow:hidden; transition:max-height .4s ease; }
+  .sec-body.coll { max-height:0 !important; }
+
+  /* topic grid */
+  .topic-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+    gap:18px; margin-bottom:42px;
+  }
+  @media(max-width:540px){ .topic-grid{ grid-template-columns:1fr; } }
+
+  /* topic card */
+  .topic-card {
+    background:var(--card-bg); border:2px solid var(--border);
+    border-radius:var(--r); padding:18px 16px;
+    display:block; color:inherit; transition:all .28s;
+    position:relative; overflow:hidden;
+  }
+  .topic-card::before {
+    content:''; position:absolute; top:0; left:0;
+    width:5px; height:100%; background:var(--primary); transition:.28s;
+  }
+  .topic-card.gc::before { background:var(--green); }
+  .topic-card:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--primary); }
+  .topic-card.gc:hover { border-color:var(--green); }
+  .topic-card:hover::before { width:8px; }
+  .topic-card.hide-c { display:none; }
+
+  .card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:7px; }
+  .card-num {
+    width:28px; height:28px; border-radius:50%;
+    background:var(--primary); color:#fff; font-size:12px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .gc .card-num { background:var(--green); }
+  .card-arrow { font-size:18px; color:var(--border); transition:.2s; }
+  .topic-card:hover .card-arrow { color:var(--primary); }
+  .gc:hover .card-arrow { color:var(--green); }
+  .card-title { font-size:17px; font-weight:700; color:var(--primary); margin-bottom:3px; line-height:1.4; }
+  .gc .card-title { color:var(--green); }
+  .card-en   { font-size:13px; color:var(--muted); margin-bottom:7px; font-style:italic; }
+  .card-desc { font-size:14px; color:var(--muted); }
+  .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:9px; }
+  .tag {
+    font-size:12px; padding:2px 9px; border-radius:12px;
+    background:#e8eeff; color:var(--primary); font-weight:500;
+  }
+  .gc .tag { background:#e4f7ed; color:var(--green); }
+  .badge-new {
+    position:absolute; top:10px; right:10px;
+    font-size:10px; font-weight:700; background:var(--gold);
+    color:#fff; padding:2px 7px; border-radius:8px;
+  }
+
+  /* progress */
+  .progress-wrap {
+    background:var(--lt-bg); border-radius:var(--r);
+    padding:22px 20px; margin-bottom:40px;
+  }
+  .progress-wrap h3 { font-size:17px; font-weight:700; color:var(--primary); margin-bottom:16px; }
+  .prog-item { margin-bottom:13px; }
+  .prog-label { display:flex; justify-content:space-between; font-size:14px; font-weight:600; margin-bottom:5px; }
+  .prog-bar { height:10px; background:var(--border); border-radius:5px; overflow:hidden; }
+  .prog-fill { height:100%; border-radius:5px; background:linear-gradient(90deg,var(--primary),#3b82f6); }
+  .prog-fill.gf { background:linear-gradient(90deg,var(--green),#22c55e); }
+
+  /* tips */
+  .tips-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:14px; margin-bottom:40px;
+  }
+  .tip-card {
+    background:#fff; border:2px solid var(--border);
+    border-radius:var(--r); padding:16px;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .tip-n {
+    width:32px; height:32px; border-radius:8px;
+    background:var(--accent); color:#fff; font-weight:700; font-size:16px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .tip-card h4 { font-size:15px; font-weight:600; margin-bottom:3px; }
+  .tip-card p  { font-size:13px; color:var(--muted); }
+
+  /* ── FOOTER ── */
+  footer { background:var(--primary); color:rgba(255,255,255,.9); }
+  .ft-top {
+    max-width:1280px; margin:auto;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr));
+    gap:30px; padding:44px 20px 32px;
+  }
+  .ft-col h4 {
+    font-size:16px; font-weight:700; color:var(--gold);
+    margin-bottom:13px; padding-bottom:7px;
+    border-bottom:2px solid rgba(255,255,255,.15);
+  }
+  .ft-col ul { list-style:none; }
+  .ft-col ul li { margin-bottom:8px; }
+  .ft-col ul li a { font-size:14px; color:rgba(255,255,255,.8); transition:.2s; }
+  .ft-col ul li a:hover { color:var(--gold); }
+  .ft-col p { font-size:14px; color:rgba(255,255,255,.75); line-height:1.8; }
+  .ft-bot {
+    background:rgba(0,0,0,.2); text-align:center;
+    padding:14px 20px; font-size:14px; color:rgba(255,255,255,.65);
+  }
+  .ft-bot a { color:var(--gold); }
+
+  /* back-to-top */
+  #btt {
+    position:fixed; bottom:24px; right:22px;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--primary); color:#fff; border:none;
+    font-size:20px; cursor:pointer; display:none;
+    align-items:center; justify-content:center;
+    box-shadow:0 4px 16px rgba(26,58,107,.4);
+    transition:.2s; z-index:600;
+  }
+  #btt:hover { transform:translateY(-3px); }
+  </style>
+</head>
+<body>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <marquee scrollamount="5">
+    <span>🎯 BCS প্রিলিমিনারি ICT সিলেবাস ২০২৫</span>
+    <span class="star">★</span>
+    <span>💻 কম্পিউটার ও তথ্যপ্রযুক্তি সম্পূর্ণ গাইড</span>
+    <span class="star">★</span>
+    <span>📚 বিসিএস, ব্যাংক, HSC সকল পরীক্ষার জন্য উপযোগী</span>
+    <span class="star">★</span>
+    <span>🏆 ICTguide Bangladesh — আপনার ICT শেখার বিশ্বস্ত সঙ্গী</span>
+    <span class="star">★</span>
+    <span>✅ প্রতিটি টপিক বাংলায় সহজে বোঝানো হয়েছে</span>
+    <span class="star">★</span>
+  </marquee>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://ictguide.github.io/" class="nav-logo">
+      <div class="logo-box">ICT</div>
+      <div class="logo-name">ICT<span>guide</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://ictguide.github.io/">🏠 হোম</a></li>
+      <li><a href="#sec-computer">💻 কম্পিউটার</a></li>
+      <li><a href="#sec-it">🌐 তথ্যপ্রযুক্তি</a></li>
+      <li><a href="#tips">📝 টিপস</a></li>
+      <li><a href="bcs-mcq.html" class="btn-mcq">MCQ প্র্যাকটিস</a></li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📋 বিসিএস প্রিলিমিনারি সিলেবাস</div>
+  <h1>বিসিএস ICT <span>সম্পূর্ণ সিলেবাস</span> গাইড</h1>
+  <p>কম্পিউটার ও তথ্যপ্রযুক্তি বিষয়ক সমস্ত টপিক বাংলায় — পরিপূর্ণ প্রস্তুতি নিন।</p>
+  <div class="hero-stats">
+    <div class="stat-box"><div class="num">১১</div><div class="lbl">কম্পিউটার টপিক</div></div>
+    <div class="stat-box"><div class="num">১৬</div><div class="lbl">তথ্যপ্রযুক্তি টপিক</div></div>
+    <div class="stat-box"><div class="num">২৭</div><div class="lbl">মোট টপিক</div></div>
+    <div class="stat-box"><div class="num">১০০%</div><div class="lbl">বাংলা মাধ্যম</div></div>
+  </div>
+</div>
+
+<!-- QUICK NAV TABS -->
+<div class="quick-nav">
+  <div class="quick-inner" id="qnav">
+    <button class="q-btn ab" onclick="gotoSec('sec-computer')">💻 কম্পিউটার</button>
+    <button class="q-btn"    onclick="gotoSec('sec-it')">🌐 তথ্যপ্রযুক্তি</button>
+    <button class="q-btn"    onclick="gotoSec('peripherals')">⌨️ পেরিফেরালস</button>
+    <button class="q-btn"    onclick="gotoSec('network')">📡 নেটওয়ার্ক</button>
+    <button class="q-btn"    onclick="gotoSec('os-topic')">🖥️ OS</button>
+    <button class="q-btn"    onclick="gotoSec('internet-topic')">🌍 ইন্টারনেট</button>
+    <button class="q-btn"    onclick="gotoSec('cyber-topic')">🔒 সাইবার</button>
+    <button class="q-btn"    onclick="gotoSec('tips')">📝 পরীক্ষার টিপস</button>
+  </div>
+</div>
+
+<!-- PAGE BODY: sidebar + content -->
+<div class="page-body">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar">
+
+    <!-- Search -->
+    <div class="sb-search">
+      <div class="sb-wrap">
+        <span class="s-ico">🔍</span>
+        <input type="text" id="searchBox" placeholder="টপিক খুঁজুন..." oninput="doSearch(this.value)"/>
+      </div>
+    </div>
+    <div id="noResult">কোনো টপিক পাওয়া যায়নি ❌</div>
+
+    <!-- Computer -->
+    <div class="sb-head blue" onclick="sbToggle(this)">
+      💻 কম্পিউটার বিভাগ <span class="arr">▼</span>
+    </div>
+    <div class="sb-body" id="sbComp">
+      <a class="sb-lnk" href="#peripherals"   data-kw="কম্পিউটার পেরিফেরালস কিবোর্ড মাউস OCR প্রিন্টার"><span class="nn">১</span>কম্পিউটার পেরিফেরালস</a>
+      <a class="sb-lnk" href="#architecture"  data-kw="অভ্যন্তরীণ গঠন CPU RAM ALU হার্ড ডিস্ক রেজিস্টার"><span class="nn">২</span>অভ্যন্তরীণ গঠন</a>
+      <a class="sb-lnk" href="#performance"   data-kw="পারফরম্যান্স প্রসেসর ক্যাশ ব্যান্ডউইথ গতি"><span class="nn">৩</span>কম্পিউটার পারফরম্যান্স</a>
+      <a class="sb-lnk" href="#practical-comp" data-kw="দৈনন্দিন জীবনে কম্পিউটার কৃষি শিক্ষা স্বাস্থ্য"><span class="nn">৪</span>দৈনন্দিন কম্পিউটার</a>
+      <a class="sb-lnk" href="#number-sys"    data-kw="নম্বর পদ্ধতি বাইনারি অক্টাল ডেসিমাল হেক্স রূপান্তর"><span class="nn">৫</span>নম্বর পদ্ধতি</a>
+      <a class="sb-lnk" href="#os-topic"      data-kw="অপারেটিং সিস্টেম Windows Linux Android OS"><span class="nn">৬</span>অপারেটিং সিস্টেম</a>
+      <a class="sb-lnk" href="#embedded"      data-kw="এম্বেডেড কম্পিউটার IoT মাইক্রোকন্ট্রোলার"><span class="nn">৭</span>এম্বেডেড কম্পিউটার</a>
+      <a class="sb-lnk" href="#history-comp"  data-kw="কম্পিউটারের ইতিহাস ENIAC প্রজন্ম ব্যাবেজ"><span class="nn">৮</span>কম্পিউটারের ইতিহাস</a>
+      <a class="sb-lnk" href="#types-comp"    data-kw="প্রকারভেদ সুপার মেইনফ্রেম মিনি মাইক্রো অ্যানালগ"><span class="nn">৯</span>কম্পিউটারের প্রকারভেদ</a>
+      <a class="sb-lnk" href="#program"       data-kw="প্রোগ্রাম ভাইরাস ম্যালওয়্যার ফায়ারওয়াল ট্রোজান"><span class="nn">১০</span>কম্পিউটার প্রোগ্রাম</a>
+      <a class="sb-lnk" href="#database"      data-kw="ডেটাবেইস DBMS SQL রিলেশনাল টেবিল"><span class="nn">১১</span>ডেটাবেইস সিস্টেম</a>
+    </div>
+
+    <!-- IT -->
+    <div class="sb-head grn" onclick="sbToggle(this)">
+      🌐 তথ্যপ্রযুক্তি বিভাগ <span class="arr">▼</span>
+    </div>
+    <div class="sb-body" id="sbIt">
+      <a class="sb-lnk" href="#ecommerce"     data-kw="ই-কমার্স অনলাইন কেনাবেচা B2B B2C পেমেন্ট"><span class="nn">১</span>ই-কমার্স</a>
+      <a class="sb-lnk" href="#cellular"      data-kw="সেলুলার নেটওয়ার্ক 2G 3G 4G 5G WiMAX মোবাইল"><span class="nn">২</span>সেলুলার নেটওয়ার্ক</a>
+      <a class="sb-lnk" href="#network"       data-kw="কম্পিউটার নেটওয়ার্ক LAN MAN WAN WiFi টপোলজি"><span class="nn">৩</span>কম্পিউটার নেটওয়ার্ক</a>
+      <a class="sb-lnk" href="#it-daily"      data-kw="দৈনন্দিন তথ্যপ্রযুক্তি ই-গভর্ন্যান্স টেলিমেডিসিন"><span class="nn">৪</span>দৈনন্দিন IT ব্যবহার</a>
+      <a class="sb-lnk" href="#smartphone"    data-kw="স্মার্টফোন Android iOS অ্যাপ মোবাইল"><span class="nn">৫</span>স্মার্টফোন</a>
+      <a class="sb-lnk" href="#www"           data-kw="ওয়ার্ল্ড ওয়াইড ওয়েব WWW HTML HTTP URL ব্রাউজার"><span class="nn">৬</span>WWW</a>
+      <a class="sb-lnk" href="#internet-topic" data-kw="ইন্টারনেট IP DNS ISP TCP প্রোটোকল"><span class="nn">৭</span>ইন্টারনেট</a>
+      <a class="sb-lnk" href="#daily-tech"    data-kw="নিত্যপ্রয়োজনীয় কম্পিউটিং ইমেইল ফ্যাক্স ভিডিও"><span class="nn">৮</span>নিত্য কম্পিউটিং</a>
+      <a class="sb-lnk" href="#client-server" data-kw="ক্লায়েন্ট সার্ভার হোস্টিং ডোমেইন ওয়েব সার্ভার"><span class="nn">৯</span>ক্লায়েন্ট-সার্ভার</a>
+      <a class="sb-lnk" href="#mobile-feat"   data-kw="মোবাইল প্রযুক্তি Bluetooth NFC GPS bKash রকেট"><span class="nn">১০</span>মোবাইল ফিচারস</a>
+      <a class="sb-lnk" href="#tech-giants"   data-kw="প্রযুক্তি প্রতিষ্ঠান Google Microsoft IBM Apple Meta"><span class="nn">১১</span>প্রযুক্তি প্রতিষ্ঠান</a>
+      <a class="sb-lnk" href="#cloud"         data-kw="ক্লাউড কম্পিউটিং SaaS PaaS IaaS AWS Azure"><span class="nn">১২</span>ক্লাউড কম্পিউটিং</a>
+      <a class="sb-lnk" href="#social"        data-kw="সোশ্যাল নেটওয়ার্কিং Facebook Twitter Instagram YouTube"><span class="nn">১৩</span>সোশ্যাল নেটওয়ার্ক</a>
+      <a class="sb-lnk" href="#robotics"      data-kw="রোবোটিক্স AI কৃত্রিম বুদ্ধিমত্তা অটোমেশন"><span class="nn">১৪</span>রোবোটিক্স</a>
+      <a class="sb-lnk" href="#cyber-topic"   data-kw="সাইবার অপরাধ হ্যাকিং ফিশিং আইন নিরাপত্তা"><span class="nn">১৫</span>সাইবার অপরাধ</a>
+      <a class="sb-lnk" href="#ai"            data-kw="কৃত্রিম বুদ্ধিমত্তা AI ML Deep Learning ChatGPT"><span class="nn">১৬</span>AI ও ভবিষ্যৎ</a>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════ MAIN CONTENT ══════════════ -->
+  <main class="content">
+
+    <!-- Info banner -->
+    <div class="info-box">
+      <div class="ico">💡</div>
+      <div>
+        <h3>কীভাবে পড়বেন?</h3>
+        <p>প্রতিটি কার্ডে ক্লিক করলে বিস্তারিত নোট ও MCQ পাবেন। বামে সার্চ বক্সে টাইপ করে দ্রুত টপিক খুঁজুন। বিসিএস প্রিলিমিনারিতে <strong>১৫ নম্বর</strong> ICT থেকে আসে।</p>
+      </div>
+    </div>
+
+    <!-- ══ COMPUTER SECTION ══ -->
+    <section id="sec-computer">
+      <div class="sec-head" onclick="secToggle(this,'body-comp')">
+        <div class="sec-ico si-b">💻</div>
+        <div>
+          <h2>কম্পিউটার <span class="cnt b">১১টি টপিক</span></h2>
+          <div class="sub">সিলেবাসের প্রথম অংশ — ক্লিক করে সেকশন বন্ধ / খুলুন</div>
+        </div>
+        <span class="sec-toggle">▾</span>
+      </div>
+      <div class="sec-body" id="body-comp" style="max-height:none">
+        <div class="topic-grid">
+
+          <a href="computer-peripherals.html" class="topic-card" id="peripherals" data-kw="কম্পিউটার পেরিফেরালস কিবোর্ড মাউস OCR প্রিন্টার">
+            <div class="card-top"><div class="card-num">১</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটার পেরিফেরালস</div>
+            <div class="card-en">Computer Peripherals</div>
+            <div class="card-desc">কি-বোর্ড, মাউস, প্রিন্টার, স্ক্যানার, OCR — ইনপুট/আউটপুট ডিভাইস।</div>
+            <div class="card-tags"><span class="tag">কি-বোর্ড</span><span class="tag">মাউস</span><span class="tag">OCR</span><span class="tag">প্রিন্টার</span></div>
+          </a>
+
+          <a href="computer-architecture.html" class="topic-card" id="architecture" data-kw="অভ্যন্তরীণ গঠন CPU RAM ALU হার্ড ডিস্ক রেজিস্টার">
+            <div class="card-top"><div class="card-num">২</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটারের অভ্যন্তরীণ গঠন</div>
+            <div class="card-en">Computer Architecture</div>
+            <div class="card-desc">CPU, হার্ড ডিস্ক, RAM, ALU, রেজিস্টার — ভেতরের কাজ ও কাঠামো।</div>
+            <div class="card-tags"><span class="tag">CPU</span><span class="tag">RAM</span><span class="tag">ALU</span><span class="tag">হার্ড ডিস্ক</span></div>
+          </a>
+
+          <a href="computer-performance.html" class="topic-card" id="performance" data-kw="পারফরম্যান্স প্রসেসর ক্যাশ ব্যান্ডউইথ গতি">
+            <div class="card-top"><div class="card-num">৩</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটার পারফরম্যান্স</div>
+            <div class="card-en">Computer Performance</div>
+            <div class="card-desc">প্রসেসরের গতি, ক্যাশ মেমরি — কম্পিউটারের কর্মক্ষমতা নির্ধারণকারী বিষয়।</div>
+            <div class="card-tags"><span class="tag">প্রসেসর</span><span class="tag">ক্যাশ</span><span class="tag">ব্যান্ডউইথ</span></div>
+          </a>
+
+          <a href="computer-practical.html" class="topic-card" id="practical-comp" data-kw="দৈনন্দিন জীবনে কম্পিউটার কৃষি শিক্ষা স্বাস্থ্য যোগাযোগ">
+            <div class="card-top"><div class="card-num">৪</div><div class="card-arrow">→</div></div>
+            <div class="card-title">দৈনন্দিন জীবনে কম্পিউটার</div>
+            <div class="card-en">Computer in Practical Fields</div>
+            <div class="card-desc">কৃষি, শিক্ষা, স্বাস্থ্য, যোগাযোগে কম্পিউটারের ব্যবহার।</div>
+            <div class="card-tags"><span class="tag">কৃষি</span><span class="tag">শিক্ষা</span><span class="tag">স্বাস্থ্য</span></div>
+          </a>
+
+          <a href="number-system.html" class="topic-card" id="number-sys" data-kw="নম্বর পদ্ধতি বাইনারি অক্টাল ডেসিমাল হেক্স রূপান্তর">
+            <div class="card-top"><div class="card-num">৫</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটারের নম্বর পদ্ধতি</div>
+            <div class="card-en">Number Systems</div>
+            <div class="card-desc">বাইনারি, অক্টাল, ডেসিমাল, হেক্সাডেসিমাল — সংখ্যা রূপান্তর পদ্ধতি।</div>
+            <div class="card-tags"><span class="tag">বাইনারি</span><span class="tag">অক্টাল</span><span class="tag">হেক্স</span></div>
+          </a>
+
+          <a href="operating-system.html" class="topic-card" id="os-topic" data-kw="অপারেটিং সিস্টেম Windows Linux Android OS">
+            <div class="card-top"><div class="card-num">৬</div><div class="card-arrow">→</div></div>
+            <div class="card-title">অপারেটিং সিস্টেমস</div>
+            <div class="card-en">Operating Systems</div>
+            <div class="card-desc">Windows, Linux, Android — OS এর কাজ, প্রকার ও বৈশিষ্ট্য।</div>
+            <div class="card-tags"><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Android</span></div>
+          </a>
+
+          <a href="embedded-computer.html" class="topic-card" id="embedded" data-kw="এম্বেডেড কম্পিউটার IoT মাইক্রোকন্ট্রোলার গৃহস্থালি">
+            <div class="card-top"><div class="card-num">৭</div><div class="card-arrow">→</div></div>
+            <div class="card-title">এম্বেডেড কম্পিউটার</div>
+            <div class="card-en">Embedded Computer</div>
+            <div class="card-desc">গৃহস্থালি যন্ত্র, গাড়ি, মেডিকেল ডিভাইসে সংযুক্ত বিশেষ কম্পিউটার।</div>
+            <div class="card-tags"><span class="tag">মাইক্রোকন্ট্রোলার</span><span class="tag">IoT</span></div>
+          </a>
+
+          <a href="history-of-computer.html" class="topic-card" id="history-comp" data-kw="কম্পিউটারের ইতিহাস ENIAC প্রজন্ম চার্লস ব্যাবেজ">
+            <div class="card-top"><div class="card-num">৮</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটারের ইতিহাস</div>
+            <div class="card-en">History of Computer</div>
+            <div class="card-desc">ENIAC থেকে আধুনিক কম্পিউটার — প্রজন্মভিত্তিক ইতিহাস ও উদ্ভাবন।</div>
+            <div class="card-tags"><span class="tag">ENIAC</span><span class="tag">প্রজন্ম</span><span class="tag">ব্যাবেজ</span></div>
+          </a>
+
+          <a href="types-of-computer.html" class="topic-card" id="types-comp" data-kw="কম্পিউটারের প্রকারভেদ সুপার মেইনফ্রেম মিনি মাইক্রো অ্যানালগ ডিজিটাল">
+            <div class="card-top"><div class="card-num">৯</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটারের প্রকারভেদ</div>
+            <div class="card-en">Types of Computers</div>
+            <div class="card-desc">সুপার, মেইনফ্রেম, মিনি, মাইক্রো, অ্যানালগ, ডিজিটাল কম্পিউটারের পার্থক্য।</div>
+            <div class="card-tags"><span class="tag">সুপার</span><span class="tag">মেইনফ্রেম</span><span class="tag">মাইক্রো</span></div>
+          </a>
+
+          <a href="computer-program.html" class="topic-card" id="program" data-kw="কম্পিউটার প্রোগ্রাম সফটওয়্যার ভাইরাস ম্যালওয়্যার ফায়ারওয়াল ট্রোজান">
+            <div class="card-top"><div class="card-num">১০</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটার প্রোগ্রাম</div>
+            <div class="card-en">Computer Program</div>
+            <div class="card-desc">সফটওয়্যার, ভাইরাস, অ্যান্টিভাইরাস, ফায়ারওয়াল, ট্রোজান হর্স।</div>
+            <div class="card-tags"><span class="tag">ভাইরাস</span><span class="tag">ফায়ারওয়াল</span><span class="tag">ম্যালওয়্যার</span></div>
+          </a>
+
+          <a href="database-system.html" class="topic-card" id="database" data-kw="ডেটাবেইস DBMS SQL রিলেশনাল টেবিল ডেটা">
+            <div class="card-top"><div class="card-num">১১</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ডেটাবেইস সিস্টেম</div>
+            <div class="card-en">Database System</div>
+            <div class="card-desc">DBMS, SQL, রিলেশনাল ডেটাবেইস — ডেটা সংরক্ষণ ও পরিচালনার পদ্ধতি।</div>
+            <div class="card-tags"><span class="tag">DBMS</span><span class="tag">SQL</span><span class="tag">টেবিল</span></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ IT SECTION ══ -->
+    <section id="sec-it">
+      <div class="sec-head" onclick="secToggle(this,'body-it')">
+        <div class="sec-ico si-g">🌐</div>
+        <div>
+          <h2 class="g">তথ্যপ্রযুক্তি <span class="cnt g">১৬টি টপিক</span></h2>
+          <div class="sub">সিলেবাসের দ্বিতীয় অংশ — ক্লিক করে সেকশন বন্ধ / খুলুন</div>
+        </div>
+        <span class="sec-toggle">▾</span>
+      </div>
+      <div class="sec-body" id="body-it" style="max-height:none">
+        <div class="topic-grid">
+
+          <a href="e-commerce.html" class="topic-card gc" id="ecommerce" data-kw="ই-কমার্স অনলাইন কেনাবেচা B2B B2C C2C পেমেন্ট গেটওয়ে">
+            <div class="card-top"><div class="card-num">১</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ই-কমার্স</div>
+            <div class="card-en">E-Commerce</div>
+            <div class="card-desc">অনলাইন কেনাবেচা, B2B, B2C, C2C মডেল, ডিজিটাল পেমেন্ট ও নিরাপত্তা।</div>
+            <div class="card-tags"><span class="tag">B2B</span><span class="tag">B2C</span><span class="tag">পেমেন্ট</span></div>
+          </a>
+
+          <a href="cellular-network.html" class="topic-card gc" id="cellular" data-kw="সেলুলার নেটওয়ার্ক 2G 3G 4G LTE 5G WiMAX মোবাইল">
+            <div class="card-top"><div class="card-num">২</div><div class="card-arrow">→</div></div>
+            <div class="card-title">সেলুলার ডেটা নেটওয়ার্ক</div>
+            <div class="card-en">Cellular Data Network</div>
+            <div class="card-desc">2G, 3G, 4G LTE, 5G — প্রজন্মভিত্তিক মোবাইল নেটওয়ার্ক ও WiMAX প্রযুক্তি।</div>
+            <div class="card-tags"><span class="tag">2G</span><span class="tag">4G</span><span class="tag">5G</span><span class="tag">WiMAX</span></div>
+          </a>
+
+          <a href="computer-network.html" class="topic-card gc" id="network" data-kw="কম্পিউটার নেটওয়ার্ক LAN MAN WAN WiFi WiMAX টপোলজি প্রোটোকল">
+            <div class="card-top"><div class="card-num">৩</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কম্পিউটার নেটওয়ার্ক</div>
+            <div class="card-en">Computer Network</div>
+            <div class="card-desc">LAN, MAN, WAN, Wi-Fi, WiMAX — নেটওয়ার্কের প্রকার, টপোলজি ও প্রোটোকল।</div>
+            <div class="card-tags"><span class="tag">LAN</span><span class="tag">WAN</span><span class="tag">Wi-Fi</span></div>
+          </a>
+
+          <a href="it-practical.html" class="topic-card gc" id="it-daily" data-kw="দৈনন্দিন তথ্যপ্রযুক্তি ই-গভর্ন্যান্স টেলিমেডিসিন প্রশাসন">
+            <div class="card-top"><div class="card-num">৪</div><div class="card-arrow">→</div></div>
+            <div class="card-title">দৈনন্দিন জীবনে তথ্যপ্রযুক্তি</div>
+            <div class="card-en">IT in Practical Fields</div>
+            <div class="card-desc">ব্যবসা, শিক্ষা, চিকিৎসা, প্রশাসনে IT ব্যবহারের বাস্তব উদাহরণ।</div>
+            <div class="card-tags"><span class="tag">ই-গভর্ন্যান্স</span><span class="tag">টেলিমেডিসিন</span></div>
+          </a>
+
+          <a href="smartphone.html" class="topic-card gc" id="smartphone" data-kw="স্মার্টফোন Android iOS অ্যাপ মোবাইল ফোন">
+            <div class="card-top"><div class="card-num">৫</div><div class="card-arrow">→</div></div>
+            <div class="card-title">স্মার্টফোন</div>
+            <div class="card-en">SmartPhone</div>
+            <div class="card-desc">স্মার্টফোনের বৈশিষ্ট্য, OS (Android/iOS), অ্যাপ্লিকেশন ও ব্যবহার।</div>
+            <div class="card-tags"><span class="tag">Android</span><span class="tag">iOS</span><span class="tag">অ্যাপ</span></div>
+          </a>
+
+          <a href="www.html" class="topic-card gc" id="www" data-kw="ওয়ার্ল্ড ওয়াইড ওয়েব WWW HTML HTTP URL ব্রাউজার সার্চ ইঞ্জিন">
+            <div class="card-top"><div class="card-num">৬</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ওয়ার্ল্ড ওয়াইড ওয়েব</div>
+            <div class="card-en">World Wide Web — WWW</div>
+            <div class="card-desc">WWW এর ইতিহাস, HTML, HTTP, URL, ওয়েব ব্রাউজার ও সার্চ ইঞ্জিন।</div>
+            <div class="card-tags"><span class="tag">HTML</span><span class="tag">HTTP</span><span class="tag">URL</span></div>
+          </a>
+
+          <a href="internet.html" class="topic-card gc" id="internet-topic" data-kw="ইন্টারনেট IP DNS ISP TCP প্রোটোকল উৎপত্তি">
+            <div class="card-top"><div class="card-num">৭</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ইন্টারনেট</div>
+            <div class="card-en">Internet</div>
+            <div class="card-desc">ইন্টারনেটের উৎপত্তি, ISP, IP অ্যাড্রেস, DNS, TCP/IP প্রোটোকল।</div>
+            <div class="card-tags"><span class="tag">IP</span><span class="tag">DNS</span><span class="tag">ISP</span><span class="tag">TCP/IP</span></div>
+          </a>
+
+          <a href="daily-computing.html" class="topic-card gc" id="daily-tech" data-kw="নিত্যপ্রয়োজনীয় কম্পিউটিং ইমেইল ফ্যাক্স ভিডিও কনফারেন্স অফিস">
+            <div class="card-top"><div class="card-num">৮</div><div class="card-arrow">→</div></div>
+            <div class="card-title">নিত্যপ্রয়োজনীয় কম্পিউটিং</div>
+            <div class="card-en">Daily-Use Computing Technology</div>
+            <div class="card-desc">ই-মেইল, ফ্যাক্স, ভিডিও কনফারেন্সিং — প্রতিদিনের অফিস প্রযুক্তি।</div>
+            <div class="card-tags"><span class="tag">ই-মেইল</span><span class="tag">ফ্যাক্স</span><span class="tag">ভিডিও কল</span></div>
+          </a>
+
+          <a href="client-server.html" class="topic-card gc" id="client-server" data-kw="ক্লায়েন্ট সার্ভার হোস্টিং ডোমেইন ওয়েব সার্ভার আর্কিটেকচার">
+            <div class="card-top"><div class="card-num">৯</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ক্লায়েন্ট-সার্ভার ম্যানেজমেন্ট</div>
+            <div class="card-en">Client-Server Management</div>
+            <div class="card-desc">ক্লায়েন্ট-সার্ভার আর্কিটেকচার, ওয়েব সার্ভার, হোস্টিং ও ডোমেইন।</div>
+            <div class="card-tags"><span class="tag">সার্ভার</span><span class="tag">হোস্টিং</span><span class="tag">ডোমেইন</span></div>
+          </a>
+
+          <a href="mobile-features.html" class="topic-card gc" id="mobile-feat" data-kw="মোবাইল প্রযুক্তি Bluetooth NFC GPS bKash রকেট মোবাইল ব্যাংকিং">
+            <div class="card-top"><div class="card-num">১০</div><div class="card-arrow">→</div></div>
+            <div class="card-title">মোবাইল প্রযুক্তির বৈশিষ্ট্য</div>
+            <div class="card-en">Mobile Features</div>
+            <div class="card-desc">Bluetooth, NFC, GPS, মোবাইল ব্যাংকিং, bKash, রকেট — আধুনিক ফিচার।</div>
+            <div class="card-tags"><span class="tag">Bluetooth</span><span class="tag">NFC</span><span class="tag">GPS</span></div>
+          </a>
+
+          <a href="tech-giants.html" class="topic-card gc" id="tech-giants" data-kw="প্রযুক্তি প্রতিষ্ঠান Google Microsoft IBM Apple Meta সেবা">
+            <div class="card-top"><div class="card-num">১১</div><div class="card-arrow">→</div></div>
+            <div class="card-title">প্রযুক্তি প্রতিষ্ঠান ও সেবা</div>
+            <div class="card-en">Tech-Giants & Services</div>
+            <div class="card-desc">Google, Microsoft, IBM, Apple, Meta — বড় প্রযুক্তি কোম্পানির সেবা।</div>
+            <div class="card-tags"><span class="tag">Google</span><span class="tag">Microsoft</span><span class="tag">IBM</span></div>
+          </a>
+
+          <a href="cloud-computing.html" class="topic-card gc" id="cloud" data-kw="ক্লাউড কম্পিউটিং SaaS PaaS IaaS AWS Azure Google Cloud">
+            <div class="card-top"><div class="card-num">১২</div><div class="card-arrow">→</div></div>
+            <div class="card-title">ক্লাউড কম্পিউটিং</div>
+            <div class="card-en">Cloud Computing</div>
+            <div class="card-desc">SaaS, PaaS, IaaS — ক্লাউড সার্ভিসের প্রকার, সুবিধা ও বাস্তব উদাহরণ।</div>
+            <div class="card-tags"><span class="tag">SaaS</span><span class="tag">PaaS</span><span class="tag">IaaS</span></div>
+          </a>
+
+          <a href="social-networking.html" class="topic-card gc" id="social" data-kw="সোশ্যাল নেটওয়ার্কিং Facebook Twitter Instagram YouTube সামাজিক">
+            <div class="card-top"><div class="card-num">১৩</div><div class="card-arrow">→</div></div>
+            <div class="card-title">সোশ্যাল নেটওয়ার্কিং</div>
+            <div class="card-en">Social Networking</div>
+            <div class="card-desc">Facebook, Twitter (X), Instagram, YouTube — সামাজিক যোগাযোগ মাধ্যম।</div>
+            <div class="card-tags"><span class="tag">Facebook</span><span class="tag">Twitter</span><span class="tag">YouTube</span></div>
+          </a>
+
+          <a href="robotics.html" class="topic-card gc" id="robotics" data-kw="রোবোটিক্স AI কৃত্রিম বুদ্ধিমত্তা অটোমেশন শিল্প রোবট">
+            <div class="card-top"><div class="card-num">১৪</div><div class="card-arrow">→</div></div>
+            <div class="card-title">রোবোটিক্স</div>
+            <div class="card-en">Robotics</div>
+            <div class="card-desc">রোবটের সংজ্ঞা, প্রকার, কৃত্রিম বুদ্ধিমত্তা (AI) ও রোবটের ব্যবহার ক্ষেত্র।</div>
+            <div class="card-tags"><span class="tag">AI</span><span class="tag">অটোমেশন</span><span class="tag">শিল্প</span></div>
+          </a>
+
+          <a href="cyber-crime.html" class="topic-card gc" id="cyber-topic" data-kw="সাইবার অপরাধ হ্যাকিং ফিশিং আইডেন্টিটি আইন নিরাপত্তা সাইবার">
+            <div class="card-top"><div class="card-num">১৫</div><div class="card-arrow">→</div></div>
+            <div class="card-title">সাইবার অপরাধ</div>
+            <div class="card-en">Cyber Crime</div>
+            <div class="card-desc">হ্যাকিং, ফিশিং, আইডেন্টিটি চুরি, সাইবার আইন ও নিরাপদ ইন্টারনেট।</div>
+            <div class="card-tags"><span class="tag">হ্যাকিং</span><span class="tag">ফিশিং</span><span class="tag">সাইবার আইন</span></div>
+          </a>
+
+          <a href="artificial-intelligence.html" class="topic-card gc" id="ai" data-kw="কৃত্রিম বুদ্ধিমত্তা AI ML Machine Learning Deep Learning ChatGPT ভবিষ্যৎ">
+            <span class="badge-new">নতুন</span>
+            <div class="card-top"><div class="card-num">১৬</div><div class="card-arrow">→</div></div>
+            <div class="card-title">কৃত্রিম বুদ্ধিমত্তা ও ভবিষ্যৎ</div>
+            <div class="card-en">AI & Future Technology</div>
+            <div class="card-desc">Machine Learning, Deep Learning, ChatGPT — ভবিষ্যতের প্রযুক্তি।</div>
+            <div class="card-tags"><span class="tag">ML</span><span class="tag">Deep Learning</span><span class="tag">ChatGPT</span></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <div class="progress-wrap">
+      <h3>📊 সিলেবাস কভারেজ</h3>
+      <div class="prog-item">
+        <div class="prog-label"><span>💻 কম্পিউটার বিভাগ</span><span>১১/১১</span></div>
+        <div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-label"><span>🌐 তথ্যপ্রযুক্তি বিভাগ</span><span>১৬/১৬</span></div>
+        <div class="prog-bar"><div class="prog-fill gf" style="width:100%"></div></div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <section id="tips">
+      <div class="sec-head" onclick="secToggle(this,'body-tips')">
+        <div class="sec-ico si-r">📝</div>
+        <div>
+          <h2 class="r">পরীক্ষার টিপস ও কৌশল</h2>
+          <div class="sub">বিসিএস ICT প্রিলিমিনারিতে ভালো করার কৌশল</div>
+        </div>
+        <span class="sec-toggle">▾</span>
+      </div>
+      <div class="sec-body" id="body-tips" style="max-height:none">
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-n">১</div>
+            <div><h4>সংজ্ঞা মুখস্থ করুন</h4><p>প্রতিটি টপিকের সংজ্ঞা ও সংক্ষিপ্ত রূপ ভালো করে জানুন।</p></div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-n">২</div>
+            <div><h4>প্রজন্মভিত্তিক তথ্য</h4><p>কম্পিউটার প্রজন্ম ও মোবাইল নেটওয়ার্ক প্রজন্ম (2G-5G) ভালো করে পড়ুন।</p></div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-n">৩</div>
+            <div><h4>নম্বর পদ্ধতি</h4><p>বাইনারি-ডেসিমাল রূপান্তর নিয়মিত অনুশীলন করুন।</p></div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-n">৪</div>
+            <div><h4>পুরনো প্রশ্ন সমাধান</h4><p>বিগত ১০ বছরের BCS প্রশ্ন সমাধান করুন — প্যাটার্ন বুঝতে পারবেন।</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-col">
+      <h4>ICTguide BD</h4>
+      <p>বাংলাদেশের ICT শিক্ষার্থীদের জন্য বিশ্বস্ত অনলাইন পোর্টাল। HSC, BCS, ব্যাংক পরীক্ষার সম্পূর্ণ গাইড।</p>
+    </div>
+    <div class="ft-col">
+      <h4>দ্রুত লিংক</h4>
+      <ul>
+        <li><a href="https://ictguide.github.io/">🏠 হোম পেইজ</a></li>
+        <li><a href="#sec-computer">💻 কম্পিউটার বিভাগ</a></li>
+        <li><a href="#sec-it">🌐 তথ্যপ্রযুক্তি বিভাগ</a></li>
+        <li><a href="bcs-mcq.html">📋 BCS MCQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>পরীক্ষাভিত্তিক</h4>
+      <ul>
+        <li><a href="bcs-ict.html">🏆 BCS ICT গাইড</a></li>
+        <li><a href="bank-ict.html">🏦 ব্যাংক ICT</a></li>
+        <li><a href="hsc-ict.html">📚 HSC ICT</a></li>
+        <li><a href="mcq-practice.html">✏️ MCQ প্র্যাকটিস</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>গুরুত্বপূর্ণ টপিক</h4>
+      <ul>
+        <li><a href="number-system.html">🔢 নম্বর পদ্ধতি</a></li>
+        <li><a href="computer-network.html">📡 কম্পিউটার নেটওয়ার্ক</a></li>
+        <li><a href="cyber-crime.html">🔒 সাইবার অপরাধ</a></li>
+        <li><a href="cloud-computing.html">☁️ ক্লাউড কম্পিউটিং</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    © ২০২৫ <a href="https://ictguide.github.io/">ICTguide Bangladesh</a> — সর্বস্বত্ব সংরক্ষিত |
+    <a href="about.html">আমাদের সম্পর্কে</a> |
+    <a href="contact.html">যোগাযোগ</a>
+  </div>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ═══ Back to top ═══ */
+window.addEventListener('scroll',()=>{
+  const b = document.getElementById('btt');
+  b.style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+
+/* ═══ Smooth scroll helper ═══ */
+function gotoSec(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  // open section if collapsed
+  const body = el.closest('.sec-body');
+  if(body && body.classList.contains('coll')){
+    const head = body.previousElementSibling;
+    secToggle(head, body.id);
+  }
+  setTimeout(()=>{
+    const off = 140;
+    window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior:'smooth'});
+  }, body && body.classList.contains('coll') ? 420 : 0);
+}
+
+/* ═══ Anchor <a href="#id"> smooth scroll ═══ */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if(el){ e.preventDefault(); gotoSec(id); }
+  });
+});
+
+/* ═══ Collapsible main sections ═══ */
+function secToggle(head, bodyId){
+  const body = document.getElementById(bodyId);
+  const closing = !head.classList.contains('coll');
+  if(closing){
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        body.style.maxHeight = '0px';
+        body.classList.add('coll');
+        head.classList.add('coll');
+      });
+    });
+  } else {
+    body.classList.remove('coll');
+    head.classList.remove('coll');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.addEventListener('transitionend',()=>{ body.style.maxHeight='none'; },{once:true});
+  }
+}
+
+/* ═══ Sidebar section toggle ═══ */
+function sbToggle(head){
+  head.classList.toggle('coll');
+  head.nextElementSibling.classList.toggle('hide');
+}
+
+/* ═══ Topic search ═══ */
+function doSearch(q){
+  q = q.trim().toLowerCase();
+  const cards = document.querySelectorAll('.topic-card');
+  const links = document.querySelectorAll('.sb-lnk');
+  let found = 0;
+
+  cards.forEach(c=>{
+    const txt = ((c.dataset.kw||'') + ' ' + c.textContent).toLowerCase();
+    const ok = !q || txt.includes(q);
+    c.classList.toggle('hide-c', !ok);
+    if(ok) found++;
+  });
+
+  links.forEach(l=>{
+    const txt = ((l.dataset.kw||'') + ' ' + l.textContent).toLowerCase();
+    l.classList.toggle('hide-s', !!q && !txt.includes(q));
+  });
+
+  // Auto-open sections when searching
+  if(q){
+    document.querySelectorAll('.sec-body.coll').forEach(b=>{
+      b.classList.remove('coll'); b.style.maxHeight='none';
+      b.previousElementSibling.classList.remove('coll');
+    });
+    document.querySelectorAll('.sb-body.hide').forEach(b=>{
+      b.classList.remove('hide');
+      b.previousElementSibling.classList.remove('coll');
+    });
+  }
+
+  document.getElementById('noResult').style.display = (!q || found) ? 'none' : 'block';
+}
+
+/* ═══ Quick nav active highlight on scroll ═══ */
+const qBtns = document.querySelectorAll('.q-btn');
+window.addEventListener('scroll',()=>{
+  const ids = ['sec-computer','sec-it','tips'];
+  let cur = '';
+  ids.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 170) cur = id;
+  });
+  qBtns.forEach(b=>{
+    b.classList.remove('ab','ag');
+    const fn = b.getAttribute('onclick')||'';
+    if(fn.includes('sec-computer') && cur==='sec-computer') b.classList.add('ab');
+    if(fn.includes('sec-it')       && cur==='sec-it')       b.classList.add('ag');
+  });
+});
+</script>
+</body>
+</html>
