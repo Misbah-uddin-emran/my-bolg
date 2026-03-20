@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ক্লাউড কম্পিউটিং | ICTguide Bangladesh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --primary:#1a3a6b;--pri-lt:#2563c7;--accent:#e63946;
+    --green:#16a34a;--gold:#f59e0b;--purple:#7c3aed;
+    --teal:#0d9488;--orange:#ea580c;
+    --bg:#fff;--lt:#f0f4ff;--card:#f8faff;
+    --border:#cdd8f0;--text:#1a1a2e;--muted:#4a5568;
+    --shadow:0 4px 24px rgba(26,58,107,.10);--r:12px;--nav-h:64px;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Hind Siliguri','Tiro Bangla',serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.9}
+  a{text-decoration:none;color:inherit}
+  .mq{background:linear-gradient(90deg,var(--primary),var(--pri-lt),var(--primary));color:#fff;padding:8px 0;font-size:14px;font-weight:500;overflow:hidden}
+  .mq span{margin:0 24px}.mq .star{color:var(--gold)}
+  nav{background:#fff;border-bottom:3px solid var(--primary);position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,.08);height:var(--nav-h)}
+  .nav-in{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:100%}
+  .logo{display:flex;align-items:center;gap:9px}
+  .logo-box{width:40px;height:40px;border-radius:9px;background:var(--primary);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .logo-name{font-size:21px;font-weight:700;color:var(--primary)}.logo-name span{color:var(--accent)}
+  .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+  .nav-links a{font-size:14px;font-weight:500;padding:7px 12px;border-radius:7px;transition:.2s}
+  .nav-links a:hover{background:var(--primary);color:#fff}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+  .burger span{display:block;width:24px;height:3px;background:var(--primary);border-radius:3px}
+  @media(max-width:860px){
+    .nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:#fff;padding:12px 16px;box-shadow:0 8px 20px rgba(0,0,0,.1);border-top:2px solid var(--border);gap:2px}
+    .nav-links.open a{padding:10px 14px;font-size:15px}.burger{display:flex}nav{position:relative}
+  }
+  .breadcrumb{background:var(--lt);border-bottom:1px solid var(--border);padding:10px 20px;font-size:14px;color:var(--muted)}
+  .breadcrumb a{color:var(--primary)}.breadcrumb span{margin:0 6px}
+  .hero{background:linear-gradient(135deg,#0c2461 0%,#1e4fa3 60%,#0a3d62 100%);color:#fff;padding:44px 20px 36px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
+  .hero-chip{display:inline-block;background:var(--gold);color:#1a1a2e;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:14px}
+  .hero h1{font-size:clamp(24px,5vw,42px);font-weight:700;margin-bottom:10px;line-height:1.3}
+  .hero h1 span{color:var(--gold)}
+  .hero p{font-size:16px;opacity:.9;max-width:580px;margin:0 auto 20px}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .hero-tag{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:500}
+  .qj{background:var(--lt);border-bottom:2px solid var(--border);position:sticky;top:var(--nav-h);z-index:99}
+  @media(max-width:860px){.qj{top:0}}
+  .qj-in{max-width:1200px;margin:auto;display:flex;gap:4px;padding:9px 20px;overflow-x:auto;scrollbar-width:none}
+  .qj-in::-webkit-scrollbar{display:none}
+  .jbtn{background:#fff;border:2px solid var(--border);border-radius:20px;padding:7px 15px;font-family:'Hind Siliguri',serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;color:var(--text);transition:.2s}
+  .jbtn:hover,.jbtn.on{background:var(--primary);border-color:var(--primary);color:#fff}
+  .wrap{max-width:1200px;margin:0 auto;padding:36px 20px 60px}
+  .sec{margin-bottom:48px}
+  .sec-title{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:12px;border-bottom:3px solid var(--border)}
+  .sec-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .ic-b{background:linear-gradient(135deg,var(--primary),#3b6fd4)}.ic-g{background:linear-gradient(135deg,var(--green),#22c55e)}
+  .ic-gold{background:linear-gradient(135deg,var(--gold),#fbbf24)}.ic-r{background:linear-gradient(135deg,var(--accent),#ff6b6b)}
+  .ic-p{background:linear-gradient(135deg,var(--purple),#a855f7)}.ic-t{background:linear-gradient(135deg,var(--teal),#2dd4bf)}
+  .ic-o{background:linear-gradient(135deg,var(--orange),#fb923c)}
+  .sec-title h2{font-size:clamp(19px,3vw,26px);font-weight:700;color:var(--primary)}
+  .sec-title .badge{font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff;background:var(--primary);margin-left:6px;vertical-align:middle}
+  .def-box{background:linear-gradient(135deg,#e8f0ff,#f0f4ff);border-left:5px solid var(--primary);border-radius:0 var(--r) var(--r) 0;padding:20px 22px;margin-bottom:22px;font-size:16px;line-height:1.85}
+  .def-box strong{color:var(--primary)}
+  .info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .icard{background:var(--card);border:2px solid var(--border);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;transition:.25s}
+  .icard::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--primary)}
+  .icard.g::before{background:var(--green)}.icard.gold::before{background:var(--gold)}
+  .icard.r::before{background:var(--accent)}.icard.p::before{background:var(--purple)}
+  .icard.t::before{background:var(--teal)}.icard.o::before{background:var(--orange)}
+  .icard:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .icard h3{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:8px}
+  .icard.g h3{color:var(--green)}.icard.gold h3{color:#92400e}.icard.r h3{color:var(--accent)}
+  .icard.p h3{color:var(--purple)}.icard.t h3{color:var(--teal)}.icard.o h3{color:var(--orange)}
+  .icard p,.icard ul{font-size:15px;color:var(--muted);line-height:1.8}
+  .icard ul{list-style:none;padding:0}
+  .icard ul li{padding:3px 0;display:flex;gap:6px}
+  .icard ul li::before{content:'▸';color:var(--primary);font-size:13px;flex-shrink:0;margin-top:3px}
+  .icard.g ul li::before{color:var(--green)}.icard.r ul li::before{color:var(--accent)}
+  .icard.p ul li::before{color:var(--purple)}.icard.t ul li::before{color:var(--teal)}
+  .tbl-wrap{overflow-x:auto;margin-bottom:24px;border-radius:var(--r);border:2px solid var(--border)}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  thead{background:var(--primary);color:#fff}
+  thead th{padding:12px 14px;text-align:left;font-weight:600;font-size:14px}
+  tbody tr:nth-child(even){background:#f5f7ff}
+  tbody tr:hover{background:#e8eeff}
+  td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  td:first-child{font-weight:600;color:var(--primary)}
+  .badge-tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:8px;font-weight:600;margin:1px}
+  .bt-b{background:#dbeafe;color:#1d4ed8}.bt-g{background:#dcfce7;color:#15803d}
+  .bt-r{background:#fee2e2;color:#b91c1c}.bt-gold{background:#fef3c7;color:#92400e}
+  .exam-box{background:linear-gradient(135deg,#fef3c7,#fff8e7);border:2px solid var(--gold);border-radius:var(--r);padding:20px 22px;margin-bottom:24px}
+  .exam-box h3{font-size:16px;font-weight:700;color:#92400e;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .exam-box ul{list-style:none;padding:0}
+  .exam-box ul li{padding:5px 0;font-size:15px;display:flex;gap:8px;align-items:flex-start}
+  .exam-box ul li::before{content:'⭐';flex-shrink:0}
+  .exam-box ul li b{color:#92400e}
+  .alert{border-radius:var(--r);padding:16px 18px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start;font-size:15px}
+  .alert-b{background:#eff6ff;border-left:5px solid var(--primary)}.alert-g{background:#f0fdf4;border-left:5px solid var(--green)}
+  .alert-r{background:#fff1f2;border-left:5px solid var(--accent)}.alert-gold{background:#fffbeb;border-left:5px solid var(--gold)}
+  .alert .ico{font-size:20px;flex-shrink:0;margin-top:1px}
+  .key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:24px}
+  .kcard{background:var(--card);border:2px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+  .kcard .ki{font-size:24px;flex-shrink:0}
+  .kcard h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px}
+  .kcard p{font-size:14px;color:var(--muted)}
+  /* FEATURE GRID */
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+  .feature-item{border:2px solid var(--border);border-radius:14px;padding:18px;background:var(--card)}
+  .feature-item .fnum{display:inline-block;color:var(--primary);font-weight:800;font-size:1.4rem;margin-bottom:8px}
+  .feature-item h4{font-size:15px;font-weight:700;margin-bottom:6px;color:var(--primary)}
+  .feature-item p{font-size:14px;color:var(--muted);margin:0}
+  /* SERVICE CARD */
+  .service-card{display:flex;gap:14px;align-items:flex-start;padding:18px;border:2px solid var(--border);border-radius:14px;background:#fff;margin-bottom:12px}
+  .service-badge{width:60px;height:60px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:var(--primary);background:var(--lt);border:2px solid var(--border);flex-shrink:0}
+  .service-card p{margin:0;color:var(--muted);font-size:15px}
+  .service-card h3{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:6px}
+  /* ADV LIST */
+  .adv-list{list-style:none;display:grid;gap:10px;margin-bottom:0}
+  .adv-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:2px solid var(--border);border-radius:12px;background:#fff}
+  .adv-icon{font-size:1.2rem;flex-shrink:0;margin-top:3px}
+  .adv-text strong{display:block;font-size:15px;margin-bottom:3px;color:var(--text)}
+  .adv-text span{color:var(--muted);font-size:14px}
+  /* TWO COLUMN */
+  .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:24px}
+  /* TERM GRID */
+  .term-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:24px}
+  .term-card{padding:18px;border:2px solid var(--border);border-radius:14px;background:var(--card)}
+  .term-card .icon{font-size:1.9rem;margin-bottom:8px}
+  .term-card h4{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:6px}
+  .term-card p{font-size:14px;color:var(--muted);margin:0}
+  /* KEY POINTS BAR */
+  .key-points{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+  .key-points span{padding:9px 14px;border-radius:999px;background:var(--lt);border:2px solid var(--border);color:var(--primary);font-weight:700;font-size:13px}
+  /* PARAGRAPH BOX */
+  .para-box{background:var(--card);border:2px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:16px;font-size:15px;line-height:2;color:var(--muted)}
+  .para-title{font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+  .copy-btn{background:var(--primary);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-family:'Hind Siliguri',serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:10px;transition:.2s}
+  .copy-btn:hover{opacity:.9}
+  /* GATEWAY CARDS */
+  .gateway-section{margin-bottom:52px}
+  .gateway-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  @media(max-width:640px){.gateway-grid{grid-template-columns:1fr}}
+  .gateway-card{border-radius:16px;padding:32px 28px;cursor:pointer;transition:.3s;position:relative;overflow:hidden;border:3px solid transparent}
+  .gateway-card:hover{transform:translateY(-4px)}
+  .gc-mcq{background:linear-gradient(135deg,#1a3a6b 0%,#2563c7 100%);color:#fff}
+  .gc-mcq:hover{box-shadow:0 16px 48px rgba(26,58,107,.4)}
+  .gc-pyq{background:linear-gradient(135deg,#7c3aed 0%,#a855f7 100%);color:#fff}
+  .gc-pyq:hover{box-shadow:0 16px 48px rgba(124,58,237,.4)}
+  .gc-icon{font-size:52px;margin-bottom:14px;display:block}
+  .gc-title{font-size:22px;font-weight:700;margin-bottom:8px}
+  .gc-desc{font-size:14px;opacity:.85;line-height:1.6;margin-bottom:18px}
+  .gc-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+  .gc-tag{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+  .gc-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Hind Siliguri',serif;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+  .gc-mcq .gc-btn{color:var(--primary)}.gc-pyq .gc-btn{color:var(--purple)}
+  .gc-btn:hover{opacity:.9;transform:scale(1.03)}
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(10,14,40,.75);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;backdrop-filter:blur(4px)}
+  .modal-overlay.open{display:flex}
+  .modal{background:#fff;border-radius:20px;width:100%;max-width:900px;max-height:calc(100vh - 40px);overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.3);position:relative;animation:slideUp .3s ease}
+  @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  .modal-header{padding:22px 24px 16px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;position:sticky;top:0;background:#fff;border-radius:20px 20px 0 0;z-index:10}
+  .modal-title{font-size:18px;font-weight:700;color:var(--primary)}
+  .modal-close{width:36px;height:36px;border-radius:50%;background:var(--lt);border:2px solid var(--border);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+  .modal-close:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .mode-toggle{display:flex;background:var(--lt);border:2px solid var(--border);border-radius:30px;padding:4px;gap:3px}
+  .mode-btn{padding:7px 18px;border:none;border-radius:24px;font-family:'Hind Siliguri',serif;font-size:13px;font-weight:600;cursor:pointer;background:none;color:var(--muted);transition:.25s;white-space:nowrap}
+  .mode-btn.active{background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(26,58,107,.25)}
+  .mode-btn.active.reading{background:var(--green)}
+  .modal-stats{padding:12px 24px;background:var(--lt);display:flex;gap:18px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
+  .mstat{display:flex;flex-direction:column;align-items:center}
+  .mstat .n{font-size:20px;font-weight:700;color:var(--primary)}.mstat .l{font-size:11px;color:var(--muted)}
+  .mprog{flex:1;min-width:120px}
+  .mprog-bar{background:#e2e8f0;border-radius:10px;height:6px;overflow:hidden;margin-top:6px}
+  .mprog-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--pri-lt));border-radius:10px;transition:width .4s}
+  .modal-body{padding:24px}
+  /* MCQ CARDS */
+  .mcq-card{background:#fff;border:2px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:18px;transition:.2s}
+  .mcq-card:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+  .mcq-q{font-size:16px;font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.7}
+  .mcq-q .qnum{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--primary);color:#fff;border-radius:50%;font-size:13px;font-weight:700;margin-right:8px;flex-shrink:0}
+  .mcq-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+  @media(max-width:540px){.mcq-opts{grid-template-columns:1fr}}
+  .opt{padding:10px 14px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:15px;transition:.2s;background:#fff;font-family:'Hind Siliguri',serif;text-align:left;display:flex;align-items:center;gap:8px}
+  .opt:hover{border-color:var(--primary);background:#f0f4ff}
+  .opt.correct{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:600}
+  .opt.wrong{background:#fee2e2;border-color:var(--accent);color:#b91c1c}
+  .opt.show-correct{background:#dcfce7;border-color:var(--green);color:#15803d}
+  .opt-letter{width:24px;height:24px;border-radius:50%;background:var(--border);color:var(--text);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s}
+  .opt.correct .opt-letter{background:var(--green);color:#fff}
+  .opt.wrong .opt-letter{background:var(--accent);color:#fff}
+  .opt.show-correct .opt-letter{background:var(--green);color:#fff}
+  .mcq-answer{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.7;margin-bottom:12px}
+  .mcq-answer.show{display:block}
+  .mcq-answer strong{color:var(--green)}
+  .mcq-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .mcq-tag{font-size:12px;padding:3px 9px;border-radius:8px;font-weight:600}
+  .tag-bcs{background:#dbeafe;color:#1e40af}.tag-bank{background:#dcfce7;color:#15803d}
+  .tag-pri{background:#fef3c7;color:#92400e}.tag-reg{background:#f3e8ff;color:#7e22ce}
+  .tag-imp{background:#fee2e2;color:#b91c1c}
+  .hint-btn{background:none;border:2px solid var(--primary);color:var(--primary);padding:6px 14px;border-radius:8px;font-family:'Hind Siliguri',serif;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+  .hint-btn:hover{background:var(--primary);color:#fff}
+  /* Reading mode */
+  .reading-mode .mcq-card{border-color:#bbf7d0}
+  .reading-mode .mcq-answer{display:block!important}
+  .reading-mode .opt{pointer-events:none}
+  /* SCORE BOX */
+  .score-box{background:linear-gradient(135deg,var(--primary),#1e4fa3);color:#fff;border-radius:var(--r);padding:22px;text-align:center;margin:24px 0;display:none}
+  .score-box h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .score-box .score{font-size:44px;font-weight:700;color:var(--gold)}
+  .score-box p{font-size:15px;opacity:.85}
+  .reset-btn{margin-top:14px;background:var(--gold);color:#1a1a2e;border:none;padding:10px 24px;border-radius:8px;font-family:'Hind Siliguri',serif;font-size:15px;font-weight:700;cursor:pointer;transition:.2s}
+  .reset-btn:hover{transform:scale(1.04)}
+  /* PYQ */
+  .pyq-card{background:var(--card);border:2px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:16px}
+  .pyq-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .pyq-exam{font-size:12px;font-weight:700;padding:3px 10px;border-radius:8px;color:#fff}
+  .pyq-bcs{background:var(--primary)}.pyq-bank{background:var(--green)}.pyq-pri{background:var(--gold);color:#1a1a2e}.pyq-reg{background:var(--purple)}
+  .pyq-year{font-size:12px;color:var(--muted);background:var(--lt);padding:3px 9px;border-radius:8px}
+  .pyq-q{font-size:15px;font-weight:600;margin-bottom:10px;line-height:1.7}
+  .pyq-opts{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+  .pyq-opt{font-size:14px;padding:8px 12px;border-radius:7px;border:2px solid var(--border);cursor:pointer;transition:.2s;background:#fff;font-family:'Hind Siliguri',serif}
+  .pyq-opt.ans{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:600}
+  .pyq-opt.pyq-clickable:hover{border-color:var(--primary);background:#f0f4ff}
+  .pyq-opt.pyq-selected-correct{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:600}
+  .pyq-opt.pyq-selected-wrong{background:#fee2e2;border-color:var(--accent);color:#b91c1c}
+  .pyq-opt.pyq-reveal-correct{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:600}
+  .pyq-ans-label{font-size:13px;line-height:1.7;display:none;border-radius:8px;padding:10px 14px;margin-top:8px}
+  .pyq-ans-label.show{display:block}
+  .pyq-ans-label.ans-correct{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d}
+  .pyq-ans-label.ans-wrong{background:#fff1f2;border:1px solid #fecdd3;color:#b91c1c}
+  .pyq-exam-mode .pyq-opt.ans{background:#fff;border-color:var(--border);color:var(--text);font-weight:400}
+  .pyq-exam-mode .pyq-ans-label{display:none}
+  .pyq-exam-mode .pyq-ans-label.show{display:block!important}
+  .pyq-reading-mode .pyq-opt.ans{background:#dcfce7;border-color:var(--green);color:#15803d;font-weight:600}
+  .pyq-reading-mode .pyq-ans-label{display:block!important}
+  .modal-sec-head{display:flex;align-items:center;gap:10px;margin:20px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+  .modal-sec-head h3{font-size:17px;font-weight:700;color:var(--primary)}
+  footer{background:var(--primary);color:rgba(255,255,255,.9)}
+  .ft-top{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:28px;padding:40px 20px 28px}
+  .ft-col h4{font-size:15px;font-weight:700;color:var(--gold);margin-bottom:12px;padding-bottom:7px;border-bottom:2px solid rgba(255,255,255,.15)}
+  .ft-col ul{list-style:none}.ft-col ul li{margin-bottom:8px}
+  .ft-col ul li a{font-size:14px;color:rgba(255,255,255,.8);transition:.2s}
+  .ft-col ul li a:hover{color:var(--gold)}
+  .ft-bot{background:rgba(0,0,0,.2);text-align:center;padding:13px 20px;font-size:13px;color:rgba(255,255,255,.6)}
+  .ft-bot a{color:var(--gold)}
+  #btt{position:fixed;bottom:22px;right:20px;width:42px;height:42px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(26,58,107,.4);z-index:600;transition:.2s}
+  #btt:hover{transform:translateY(-3px)}
+  @media(max-width:540px){.info-grid{grid-template-columns:1fr}.hero h1{font-size:22px}.modal{border-radius:14px 14px 0 0}.modal-overlay{align-items:flex-end;padding:0}}
+  </style>
+</head>
+<body>
+
+<div class="mq">
+  <marquee scrollamount="5">
+    <span>☁️ ক্লাউড কম্পিউটিং — BCS, Bank ও সরকারি চাকরির সম্পূর্ণ গাইড</span>
+    <span class="star">★</span>
+    <span>📋 NIST · IaaS · PaaS · SaaS · Virtualization</span>
+    <span class="star">★</span>
+    <span>🏆 ICTguide Bangladesh</span>
+    <span class="star">★</span>
+    <span>✅ MCQ Practice ও বিগত BCS প্রশ্ন সহ</span>
+    <span class="star">★</span>
+  </marquee>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <a href="https://ictguide.github.io/" class="logo">
+      <div class="logo-box">ICT</div>
+      <div class="logo-name">ICT<span>guide</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://ictguide.github.io/">🏠 হোম</a></li>
+      <li><a href="index.html">📋 BCS সিলেবাস</a></li>
+      <li><a href="#definition">📖 তত্ত্ব</a></li>
+      <li><a href="#practice-hub">🎯 অনুশীলন</a></li>
+    </ul>
+    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="https://ictguide.github.io/">🏠 হোম</a><span>›</span>
+  <a href="index.html">BCS ICT সিলেবাস</a><span>›</span>
+  <strong>ক্লাউড কম্পিউটিং</strong>
+</div>
+
+<div class="hero">
+  <div class="hero-chip">☁️ আধুনিক প্রযুক্তি — IT অধ্যায়</div>
+  <h1>ক্লাউড <span>কম্পিউটিং</span></h1>
+  <p>BCS, Bank ও সরকারি চাকরির পরীক্ষার জন্য ক্লাউড কম্পিউটিং-এর সম্পূর্ণ গাইড — NIST বৈশিষ্ট্য, Service Model, Deployment Model, MCQ ও বিগত BCS প্রশ্নসহ</p>
+  <div class="hero-tags">
+    <span class="hero-tag">☁️ NIST ৫ বৈশিষ্ট্য</span>
+    <span class="hero-tag">🔧 IaaS · PaaS · SaaS</span>
+    <span class="hero-tag">🌍 Public · Private · Hybrid</span>
+    <span class="hero-tag">💻 Virtualization</span>
+    <span class="hero-tag">📜 BCS বিগত প্রশ্ন</span>
+  </div>
+</div>
+
+<div class="qj">
+  <div class="qj-in">
+    <button class="jbtn on" onclick="jump('definition')">📌 সংজ্ঞা</button>
+    <button class="jbtn" onclick="jump('nist')">🔢 NIST বৈশিষ্ট্য</button>
+    <button class="jbtn" onclick="jump('service-model')">🔧 Service Model</button>
+    <button class="jbtn" onclick="jump('deployment')">🌍 Deployment</button>
+    <button class="jbtn" onclick="jump('adv-dis')">⚖️ সুবিধা-অসুবিধা</button>
+    <button class="jbtn" onclick="jump('providers')">🏢 Providers</button>
+    <button class="jbtn" onclick="jump('terms')">📚 Key Terms</button>
+    <button class="jbtn" onclick="jump('exam-tips')">⭐ পরীক্ষার টিপস</button>
+    <button class="jbtn" onclick="jump('paragraph')">✍️ Paragraph</button>
+    <button class="jbtn" onclick="jump('practice-hub')">🎯 অনুশীলন</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ১. সংজ্ঞা -->
+<section class="sec" id="definition">
+  <div class="sec-title">
+    <div class="sec-icon ic-b">📌</div>
+    <h2>সংজ্ঞা ও পরিচিতি</h2>
+  </div>
+
+  <div class="def-box">
+    <strong>NIST (National Institute of Standards and Technology)</strong> এর মতে, ক্লাউড কম্পিউটিং হলো এমন একটি মডেল, যার মাধ্যমে ইন্টারনেটের সাহায্যে সার্ভার, স্টোরেজ, নেটওয়ার্ক, সফটওয়্যারসহ বিভিন্ন কম্পিউটিং রিসোর্স চাহিদামতো, দ্রুত এবং <strong>ন্যূনতম ব্যবস্থাপনা প্রচেষ্টায়</strong> ব্যবহার করা যায়।
+  </div>
+
+  <div class="alert alert-gold">
+    <div class="ico">💡</div>
+    <div><strong>পরীক্ষায় খুব গুরুত্বপূর্ণ:</strong> NIST-এর সংজ্ঞা, শব্দটির উৎপত্তি, জনক, প্রথম commercial cloud service এবং <b>Pay as you go</b> ধারণা — এগুলো MCQ-তে বারবার আসে।</div>
+  </div>
+
+  <div class="info-grid">
+    <div class="icard r">
+      <h3>🗣️ "Cloud Computing" শব্দটি</h3>
+      <ul>
+        <li>প্রথম ব্যবহার: <b>Eric Schmidt</b> (Google CEO)</li>
+        <li>সাল: <b>২০০৬</b></li>
+        <li>Google-এর সার্চ ইঞ্জিন উপস্থাপনায়</li>
+      </ul>
+    </div>
+    <div class="icard p">
+      <h3>👨‍💻 Cloud Computing-এর জনক</h3>
+      <ul>
+        <li><b>J.C.R. Licklider</b></li>
+        <li>১৯৬০-এর দশকে interconnected network ধারণা দেন</li>
+        <li>Intergalactic Computer Network কল্পনা করেন</li>
+      </ul>
+    </div>
+    <div class="icard g">
+      <h3>💡 Utility Computing ধারণা</h3>
+      <ul>
+        <li><b>John McCarthy</b> — ১৯৬১ সালে</li>
+        <li>Computing হবে পানি-বিদ্যুতের মতো utility</li>
+        <li>এই ধারণাই আজকের cloud computing</li>
+      </ul>
+    </div>
+    <div class="icard gold">
+      <h3>🚀 প্রথম Commercial Cloud</h3>
+      <ul>
+        <li><b>Amazon Web Services (AWS)</b></li>
+        <li>সাল: <b>২০০৬</b> — EC2 ও S3 চালু</li>
+        <li>আধুনিক cloud era-র সূচনা</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ২. NIST ৫টি বৈশিষ্ট্য -->
+<section class="sec" id="nist">
+  <div class="sec-title">
+    <div class="sec-icon ic-b">🔢</div>
+    <h2>NIST-এর ৫টি Essential Characteristics <span class="badge">অবশ্যই মনে রাখুন</span></h2>
+  </div>
+
+  <div class="alert alert-r">
+    <div class="ico">🚨</div>
+    <div><strong>পরীক্ষায় সরাসরি আসে:</strong> "NIST অনুযায়ী cloud computing-এর essential characteristics কয়টি?" — উত্তর সবসময় <b>৫টি</b>।</div>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="fnum">০১</div>
+      <h4>On-Demand Self-Service</h4>
+      <p>মানবীয় সহায়তা ছাড়াই ব্যবহারকারী নিজে computing resource নিতে পারে।</p>
+    </div>
+    <div class="feature-item">
+      <div class="fnum">০২</div>
+      <h4>Broad Network Access</h4>
+      <p>মোবাইল, ল্যাপটপ, ট্যাবসহ বিভিন্ন ডিভাইস থেকে ইন্টারনেটের মাধ্যমে অ্যাক্সেস।</p>
+    </div>
+    <div class="feature-item">
+      <div class="fnum">০৩</div>
+      <h4>Resource Pooling</h4>
+      <p>একই infrastructure একাধিক user একসাথে শেয়ার করে ব্যবহার করে।</p>
+    </div>
+    <div class="feature-item">
+      <div class="fnum">০৪</div>
+      <h4>Rapid Elasticity</h4>
+      <p>চাহিদা বাড়লে দ্রুত resource বাড়ানো, কমলে কমানো যায়।</p>
+    </div>
+    <div class="feature-item">
+      <div class="fnum">০৫</div>
+      <h4>Measured Service</h4>
+      <p>ব্যবহার অনুযায়ী বিল — এটাই <strong>Pay as you go</strong> মডেল।</p>
+    </div>
+  </div>
+
+  <div class="exam-box">
+    <h3>⭐ মনে রাখার কৌশল</h3>
+    <ul>
+      <li><b>On-Demand</b> = নিজে নিতে পারে | <b>Broad Access</b> = যেকোনো ডিভাইস</li>
+      <li><b>Resource Pooling</b> = শেয়ারড ইনফ্রাস্ট্রাকচার | <b>Elasticity</b> = বাড়া-কমা</li>
+      <li><b>Measured Service</b> = Pay as you go — বিদ্যুৎ বিলের মতো</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ৩. Service Model -->
+<section class="sec" id="service-model">
+  <div class="sec-title">
+    <div class="sec-icon ic-r">🔧</div>
+    <h2>তিনটি Service Model <span class="badge" style="background:var(--accent)">BCS-এ বারবার আসে</span></h2>
+  </div>
+
+  <div class="service-card">
+    <div class="service-badge">IaaS</div>
+    <div>
+      <h3>Infrastructure as a Service</h3>
+      <p>সার্ভার, স্টোরেজ, নেটওয়ার্ক ইত্যাদি অবকাঠামো ভাড়া নেওয়া হয়। ব্যবহারকারী নিজে OS, application ও data manage করে।<br><strong>উদাহরণ:</strong> Amazon EC2, Azure Virtual Machines, Google Compute Engine</p>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-badge">PaaS</div>
+    <div>
+      <h3>Platform as a Service</h3>
+      <p>Developer-দের জন্য ready-made platform — infrastructure provider manage করে। শুধু code লিখতে হয়।<br><strong>উদাহরণ:</strong> Google App Engine, Microsoft Azure App Service, Heroku</p>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-badge">SaaS</div>
+    <div>
+      <h3>Software as a Service</h3>
+      <p>সম্পূর্ণ software ইন্টারনেটের মাধ্যমে সরবরাহ করা হয়। ব্যবহারকারী শুধু ব্যবহার করে।<br><strong>উদাহরণ:</strong> Gmail, Google Docs, Zoom, Microsoft 365, Salesforce</p>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Model</th><th>পূর্ণ নাম</th><th>কে Manage করে</th><th>উদাহরণ</th><th>পরীক্ষায়</th></tr></thead>
+      <tbody>
+        <tr><td>IaaS</td><td>Infrastructure as a Service</td><td>ব্যবহারকারী (OS ও উপরে)</td><td>AWS EC2, Azure VM</td><td><span class="badge-tag bt-b">BCS</span><span class="badge-tag bt-g">Bank</span></td></tr>
+        <tr><td>PaaS</td><td>Platform as a Service</td><td>ব্যবহারকারী (Application ও উপরে)</td><td>Google App Engine</td><td><span class="badge-tag bt-b">BCS</span><span class="badge-tag bt-g">Bank</span></td></tr>
+        <tr><td>SaaS</td><td>Software as a Service</td><td>Provider সবকিছু manage করে</td><td>Gmail, Zoom</td><td><span class="badge-tag bt-b">BCS</span><span class="badge-tag bt-g">Bank</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ৪. Deployment Model -->
+<section class="sec" id="deployment">
+  <div class="sec-title">
+    <div class="sec-icon ic-g">🌍</div>
+    <h2>চার ধরনের Deployment Model</h2>
+  </div>
+
+  <div class="info-grid">
+    <div class="icard">
+      <h3>🌍 Public Cloud</h3>
+      <ul>
+        <li>সাধারণ মানুষের জন্য উন্মুক্ত</li>
+        <li>অনেক user একই infrastructure share করে</li>
+        <li>সবচেয়ে সাশ্রয়ী</li>
+        <li>উদাহরণ: AWS, Azure, Google Cloud</li>
+      </ul>
+    </div>
+    <div class="icard p">
+      <h3>🏢 Private Cloud</h3>
+      <ul>
+        <li>শুধু একটি প্রতিষ্ঠানের জন্য</li>
+        <li>সবচেয়ে নিরাপদ ও নিয়ন্ত্রিত</li>
+        <li>ব্যাংক ও সরকারি প্রতিষ্ঠানে ব্যবহৃত</li>
+        <li>খরচ বেশি</li>
+      </ul>
+    </div>
+    <div class="icard t">
+      <h3>🔀 Hybrid Cloud</h3>
+      <ul>
+        <li>Public ও Private cloud-এর সমন্বয়</li>
+        <li>Sensitive data private-এ রাখা হয়</li>
+        <li>সাধারণ কাজ public-এ করা হয়</li>
+        <li>বর্তমানে সবচেয়ে practical model</li>
+      </ul>
+    </div>
+    <div class="icard g">
+      <h3>🤝 Community Cloud</h3>
+      <ul>
+        <li>একই ধরনের চাহিদার একাধিক প্রতিষ্ঠান</li>
+        <li>যেমন: কয়েকটি বিশ্ববিদ্যালয়, হাসপাতাল</li>
+        <li>খরচ ও resource ভাগ করা যায়</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ৫. সুবিধা-অসুবিধা -->
+<section class="sec" id="adv-dis">
+  <div class="sec-title">
+    <div class="sec-icon ic-g">⚖️</div>
+    <h2>সুবিধা ও সীমাবদ্ধতা</h2>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="sec-title" style="border-bottom:2px solid var(--green);margin-bottom:14px;padding-bottom:8px">
+        <div class="sec-icon ic-g" style="width:36px;height:36px;font-size:16px">✅</div>
+        <h2 style="font-size:18px;color:var(--green)">সুবিধা</h2>
+      </div>
+      <ul class="adv-list">
+        <li><span class="adv-icon">💰</span><div class="adv-text"><strong>কম খরচ</strong><span>নিজস্ব hardware কেনা লাগে না; ব্যবহার অনুযায়ী বিল।</span></div></li>
+        <li><span class="adv-icon">📍</span><div class="adv-text"><strong>যেকোনো স্থান থেকে অ্যাক্সেস</strong><span>ইন্টারনেট থাকলেই anywhere access।</span></div></li>
+        <li><span class="adv-icon">📈</span><div class="adv-text"><strong>Scalability ও Elasticity</strong><span>সহজে resource বাড়ানো বা কমানো যায়।</span></div></li>
+        <li><span class="adv-icon">💾</span><div class="adv-text"><strong>Backup ও Recovery</strong><span>ডেটা সংরক্ষণ ও disaster recovery সহজ।</span></div></li>
+        <li><span class="adv-icon">🔄</span><div class="adv-text"><strong>Automatic Update</strong><span>Provider নিজে system update করে।</span></div></li>
+        <li><span class="adv-icon">🤝</span><div class="adv-text"><strong>Collaboration</strong><span>একাধিক user real-time-এ একই project-এ কাজ।</span></div></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sec-title" style="border-bottom:2px solid var(--accent);margin-bottom:14px;padding-bottom:8px">
+        <div class="sec-icon ic-r" style="width:36px;height:36px;font-size:16px">❌</div>
+        <h2 style="font-size:18px;color:var(--accent)">সীমাবদ্ধতা</h2>
+      </div>
+      <ul class="adv-list">
+        <li><span class="adv-icon">🌐</span><div class="adv-text"><strong>Internet Dependency</strong><span>ইন্টারনেট ছাড়া service ব্যবহার করা যায় না।</span></div></li>
+        <li><span class="adv-icon">🔒</span><div class="adv-text"><strong>Security Risk</strong><span>Attack হলে data breach হতে পারে।</span></div></li>
+        <li><span class="adv-icon">🕵️</span><div class="adv-text"><strong>Privacy Concern</strong><span>ডেটা third-party data center-এ থাকে।</span></div></li>
+        <li><span class="adv-icon">⏳</span><div class="adv-text"><strong>Downtime</strong><span>Provider-এর সমস্যায় service বন্ধ হতে পারে।</span></div></li>
+        <li><span class="adv-icon">🔗</span><div class="adv-text"><strong>Vendor Lock-in</strong><span>এক provider থেকে অন্যত্র migration কঠিন।</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ৬. Providers -->
+<section class="sec" id="providers">
+  <div class="sec-title">
+    <div class="sec-icon ic-gold">🏢</div>
+    <h2>বিশ্বের শীর্ষ Cloud Provider</h2>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>পূর্ণ নাম</th><th>সংক্ষেপ</th><th>কোম্পানি</th><th>মনে রাখুন</th></tr></thead>
+      <tbody>
+        <tr><td>Amazon Web Services</td><td>AWS</td><td>Amazon</td><td>সবচেয়ে বড় provider · ২০০৬ সালে EC2 ও S3 চালু</td></tr>
+        <tr><td>Microsoft Azure</td><td>Azure</td><td>Microsoft</td><td>Azure = Microsoft</td></tr>
+        <tr><td>Google Cloud Platform</td><td>GCP</td><td>Google</td><td>GCP = Google · App Engine = PaaS</td></tr>
+        <tr><td>Alibaba Cloud</td><td>Alibaba Cloud</td><td>Alibaba</td><td>চীনভিত্তিক বৃহত্তম provider</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ৭. Key Terms -->
+<section class="sec" id="terms">
+  <div class="sec-title">
+    <div class="sec-icon ic-p">📚</div>
+    <h2>পরীক্ষায় আসার মতো Key Terms</h2>
+  </div>
+
+  <div class="term-grid">
+    <div class="term-card">
+      <div class="icon">⚙️</div>
+      <h4>Virtualization</h4>
+      <p>একটি physical server-কে একাধিক virtual machine-এ ভাগ করার প্রযুক্তি। <strong>Cloud computing-এর মূল ভিত্তি।</strong></p>
+    </div>
+    <div class="term-card">
+      <div class="icon">📦</div>
+      <h4>Containerization</h4>
+      <p>Application-কে container-এ package করে যেকোনো environment-এ চালানো যায়। উদাহরণ: Docker, Kubernetes।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">🔁</div>
+      <h4>Scalability vs Elasticity</h4>
+      <p><strong>Scalability</strong> = resource বাড়ানো (manual);<br><strong>Elasticity</strong> = demand অনুযায়ী স্বয়ংক্রিয়ভাবে বাড়া-কমা।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">🌐</div>
+      <h4>CDN</h4>
+      <p>Content Delivery Network — বিভিন্ন জায়গায় server রেখে নিকটবর্তী location থেকে content দ্রুত সরবরাহ করে।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">📜</div>
+      <h4>SLA</h4>
+      <p>Service Level Agreement — provider ও user-এর মধ্যে service quality, uptime ইত্যাদি নিয়ে চুক্তি।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">🤖</div>
+      <h4>Serverless Computing</h4>
+      <p>Server manage না করেই code run করা যায়। Code চললে তবেই bill হয়। উদাহরণ: AWS Lambda।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">💧</div>
+      <h4>Utility Computing</h4>
+      <p>পানি-বিদ্যুতের মতো computing service সরবরাহ। John McCarthy এই ধারণা দেন। Measured Service-এর ভিত্তি।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">📡</div>
+      <h4>Edge Computing</h4>
+      <p>Data processing user-এর কাছাকাছি স্থানে করা হয়। IoT ডিভাইসে খুব গুরুত্বপূর্ণ। Low latency নিশ্চিত করে।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">🔗</div>
+      <h4>Vendor Lock-in</h4>
+      <p>এক cloud provider থেকে অন্য provider-এ যাওয়া কঠিন হওয়া। Migration cost ও compatibility সমস্যা।</p>
+    </div>
+    <div class="term-card">
+      <div class="icon">🏘️</div>
+      <h4>Multi-tenancy</h4>
+      <p>অনেক user একই মূল resource ও infrastructure share করে। Resource Pooling-এর মূল ধারণা।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ৮. পরীক্ষার টিপস -->
+<section class="sec" id="exam-tips">
+  <div class="sec-title">
+    <div class="sec-icon ic-r">⭐</div>
+    <h2>পরীক্ষার গুরুত্বপূর্ণ তথ্য ও টিপস</h2>
+  </div>
+
+  <div class="exam-box">
+    <h3>🏆 BCS পরীক্ষায় বারবার আসে</h3>
+    <ul>
+      <li><b>"Cloud Computing"</b> শব্দটি প্রথম ব্যবহার → <b>Eric Schmidt</b> (Google CEO, ২০০৬)</li>
+      <li>Cloud computing-এর জনক → <b>J.C.R. Licklider</b></li>
+      <li>NIST-এর essential characteristics → <b>৫টি</b></li>
+      <li><b>Pay as you go</b> → Measured Service (৫ম বৈশিষ্ট্য)</li>
+      <li>Cloud computing-এর মূল ভিত্তি → <b>Virtualization</b></li>
+      <li>Developer-দের platform দেয় → <b>PaaS</b> (Google App Engine, Heroku)</li>
+      <li>Infrastructure ভাড়া নেওয়া → <b>IaaS</b> (AWS EC2)</li>
+      <li>সম্পূর্ণ software service → <b>SaaS</b> (Gmail, Zoom)</li>
+      <li>সবচেয়ে নিরাপদ deployment → <b>Private Cloud</b></li>
+      <li>বিশ্বের সবচেয়ে বড় cloud provider → <b>AWS</b></li>
+    </ul>
+  </div>
+
+  <div class="exam-box" style="border-color:var(--green);background:linear-gradient(135deg,#f0fdf4,#dcfce7)">
+    <h3 style="color:#15803d">🏦 ব্যাংক পরীক্ষায় বেশি আসে</h3>
+    <ul style="color:#15803d">
+      <li><b>SLA</b> = Service Level Agreement — service quality নিশ্চিতের চুক্তি</li>
+      <li><b>AWS</b> = Amazon Web Services — সবচেয়ে বড় provider</li>
+      <li><b>Azure</b> = Microsoft-এর cloud | <b>GCP</b> = Google-এর cloud</li>
+      <li><b>Hybrid Cloud</b> = Public + Private একসাথে</li>
+      <li><b>Serverless</b> = AWS Lambda — server ছাড়াই code চালানো</li>
+    </ul>
+  </div>
+
+  <div class="key-grid">
+    <div class="kcard"><div class="ki">📅</div><div><h4>সাল মনে রাখুন</h4><p>Eric Schmidt "Cloud Computing" শব্দ ব্যবহার: ২০০৬ | AWS চালু: ২০০৬ | J.C.R. Licklider: ১৯৬০s | John McCarthy: ১৯৬১</p></div></div>
+    <div class="kcard"><div class="ki">🔧</div><div><h4>Service Model তুলনা</h4><p>IaaS = ভিত্তি (হার্ডওয়্যার) | PaaS = মাঝে (প্ল্যাটফর্ম) | SaaS = উপরে (সফটওয়্যার)</p></div></div>
+    <div class="kcard"><div class="ki">🌍</div><div><h4>Deployment মনে রাখুন</h4><p>Public = সবার জন্য | Private = একটি প্রতিষ্ঠান | Hybrid = দুটোই | Community = একই ধরনের প্রতিষ্ঠান</p></div></div>
+    <div class="kcard"><div class="ki">💡</div><div><h4>Exam Trick</h4><p>Gmail, Zoom, Netflix → SaaS | AWS EC2 → IaaS | Google App Engine → PaaS</p></div></div>
+  </div>
+</section>
+
+<!-- ৯. Paragraph -->
+<section class="sec" id="paragraph">
+  <div class="sec-title">
+    <div class="sec-icon ic-t">✍️</div>
+    <h2>লিখিত পরীক্ষার জন্য Paragraph</h2>
+  </div>
+
+  <div class="alert alert-b">
+    <div class="ico">📝</div>
+    <div>নিচের বাংলা ও ইংরেজি paragraph লিখিত পরীক্ষায় সরাসরি ব্যবহার করা যাবে। Copy বাটনে click করে clipboard-এ কপি করুন।</div>
+  </div>
+
+  <div class="para-title">বাংলা প্যারাগ্রাফ</div>
+  <div class="para-box" id="bnPara">ক্লাউড কম্পিউটিং হলো আধুনিক তথ্যপ্রযুক্তির একটি যুগান্তকারী ধারণা, যেখানে ইন্টারনেটের মাধ্যমে দূরবর্তী data center থেকে কম্পিউটারের hardware, software, server, storage এবং network service ব্যবহার করা যায়। National Institute of Standards and Technology (NIST) এর মতে, cloud computing এমন একটি model যার মাধ্যমে ব্যবহারকারী প্রয়োজনমতো, দ্রুত এবং ন্যূনতম ব্যবস্থাপনায় computing resource পেতে পারে। এই ব্যবস্থায় ব্যবহারকারীকে ব্যয়বহুল server বা data center নির্মাণ করতে হয় না; বরং provider-এর অবকাঠামো ব্যবহার করে প্রয়োজন অনুযায়ী service নেওয়া যায়। এ কারণে cloud computing-এ Pay as you go billing model খুব জনপ্রিয়। NIST cloud computing-এর পাঁচটি মূল বৈশিষ্ট্য নির্ধারণ করেছে — On-demand Self-service, Broad Network Access, Resource Pooling, Rapid Elasticity এবং Measured Service। সার্ভিস মডেলের দিক থেকে এটি তিন ভাগে বিভক্ত: IaaS, PaaS এবং SaaS। আবার deployment model অনুযায়ী Public, Private, Hybrid ও Community Cloud রয়েছে। Virtualization হলো cloud computing-এর মূল ভিত্তি। বর্তমানে AWS, Microsoft Azure এবং Google Cloud Platform বিশ্বের শীর্ষ cloud service provider।</div>
+  <button class="copy-btn" onclick="copyPara('bnPara',this)">📋 বাংলা কপি করুন</button>
+
+  <div class="para-title" style="margin-top:24px">English Paragraph</div>
+  <div class="para-box" id="enPara">Cloud computing is one of the most important concepts in modern information technology. It means that computer resources such as servers, storage, software, databases, and networks are provided over the internet from remote data centers. According to NIST, cloud computing is a model that gives users convenient, on-demand access to shared computing resources with very little management effort. NIST describes five essential characteristics: On-demand Self-service, Broad Network Access, Resource Pooling, Rapid Elasticity, and Measured Service. The "Pay as you go" model is directly linked to the Measured Service characteristic. Cloud computing is divided into three service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Based on deployment, it can be Public, Private, Hybrid, or Community Cloud. Virtualization is the foundation of cloud computing. Today, Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform are the leading providers.</div>
+  <button class="copy-btn" onclick="copyPara('enPara',this)">📋 English Copy</button>
+</section>
+
+<!-- PRACTICE HUB -->
+<section class="sec gateway-section" id="practice-hub">
+  <div class="sec-title">
+    <div class="sec-icon ic-r">🎯</div>
+    <h2>অনুশীলন কেন্দ্র <span class="badge" style="background:var(--accent)">Practice Hub</span></h2>
+  </div>
+
+  <div class="alert alert-b" style="margin-bottom:28px">
+    <div class="ico">💡</div>
+    <div>নিচের Card-এ Click করে MCQ Practice বা বিগত BCS প্রশ্ন দেখুন। প্রতিটিতে <b>✍️ Exam Mode</b> (নিজে পরীক্ষা দিন) ও <b>📖 Reading Mode</b> (উত্তর সহ পড়ুন) দুটি মোড আছে।</div>
+  </div>
+
+  <div class="gateway-grid">
+    <div class="gateway-card gc-mcq" onclick="openModal('mcq')">
+      <span class="gc-icon">🎯</span>
+      <div class="gc-title">MCQ অনুশীলন</div>
+      <div class="gc-desc">ক্লাউড কম্পিউটিং বিষয়ক ৫০টি বহুনির্বাচনী প্রশ্ন। Exam Mode-এ পরীক্ষা দিন অথবা Reading Mode-এ উত্তর ও ব্যাখ্যা সহ পড়ুন।</div>
+      <div class="gc-meta">
+        <span class="gc-tag">📝 ৫০টি প্রশ্ন</span>
+        <span class="gc-tag">🏆 BCS</span>
+        <span class="gc-tag">🏦 Bank</span>
+        <span class="gc-tag">📚 সরকারি চাকরি</span>
+      </div>
+      <button class="gc-btn">▶ Practice শুরু করুন</button>
+    </div>
+
+    <div class="gateway-card gc-pyq" onclick="openModal('pyq')">
+      <span class="gc-icon">📜</span>
+      <div class="gc-title">Previous Year Questions</div>
+      <div class="gc-desc">৩৫তম থেকে ৫০তম BCS পর্যন্ত ক্লাউড কম্পিউটিং থেকে আসা বিগত প্রশ্নসমূহ। প্রকৃত পরীক্ষা উৎস সহ উত্তর ও ব্যাখ্যা।</div>
+      <div class="gc-meta">
+        <span class="gc-tag">📋 ৩০+ প্রশ্ন</span>
+        <span class="gc-tag">🏆 BCS ৩৫-৫০</span>
+        <span class="gc-tag">🏦 Bank</span>
+      </div>
+      <button class="gc-btn">▶ প্রশ্ন দেখুন</button>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- MCQ MODAL -->
+<div class="modal-overlay" id="mcqModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">🎯 MCQ অনুশীলন — ক্লাউড কম্পিউটিং</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="examModeBtn" onclick="setMode('exam')">✍️ Exam Mode</button>
+          <button class="mode-btn reading" id="readingModeBtn" onclick="setMode('reading')">📖 Reading Mode</button>
+        </div>
+        <button class="modal-close" onclick="closeModal('mcq')">✕</button>
+      </div>
+    </div>
+    <div class="modal-stats" id="mcqStats">
+      <div class="mstat"><div class="n">50</div><div class="l">মোট</div></div>
+      <div class="mstat"><div class="n" id="answeredQ">0</div><div class="l">উত্তর দেওয়া</div></div>
+      <div class="mstat"><div class="n" id="correctQ">0</div><div class="l">সঠিক</div></div>
+      <div class="mstat"><div class="n" id="scoreQ">0%</div><div class="l">স্কোর</div></div>
+      <div class="mprog">
+        <div style="font-size:12px;color:var(--muted)">অগ্রগতি</div>
+        <div class="mprog-bar"><div class="mprog-fill" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <button class="hint-btn" onclick="resetMCQ()" style="font-size:12px;padding:5px 12px">🔄 রিসেট</button>
+    </div>
+    <div class="modal-body">
+      <div id="scoreBox" class="score-box">
+        <h3>🎉 পরীক্ষা সম্পন্ন!</h3>
+        <div class="score" id="finalScore">0/50</div>
+        <p id="scoreMsg"></p>
+        <button class="reset-btn" onclick="resetMCQ()">🔄 আবার চেষ্টা করুন</button>
+      </div>
+
+      <div id="mcqContainer">
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">১</span> "Cloud Computing" শব্দটি প্রথম কে ব্যবহার করেন?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','1')"><span class="opt-letter">ক</span> J.C.R. Licklider</button><button class="opt" onclick="checkAnswer(this,'b','1')"><span class="opt-letter">খ</span> Eric Schmidt</button><button class="opt" onclick="checkAnswer(this,'c','1')"><span class="opt-letter">গ</span> Jeff Bezos</button><button class="opt" onclick="checkAnswer(this,'d','1')"><span class="opt-letter">ঘ</span> Bill Gates</button></div><div class="mcq-answer" id="ans-1"><strong>✅ সঠিক উত্তর: খ — Eric Schmidt।</strong> Google-এর CEO Eric Schmidt ২০০৬ সালে এই শব্দটি প্রথম ব্যবহার করেন।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('1')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">২</span> Cloud Computing-এর জনক হিসেবে কাকে বিবেচনা করা হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','2')"><span class="opt-letter">ক</span> J.C.R. Licklider</button><button class="opt" onclick="checkAnswer(this,'b','2')"><span class="opt-letter">খ</span> Eric Schmidt</button><button class="opt" onclick="checkAnswer(this,'c','2')"><span class="opt-letter">গ</span> John McCarthy</button><button class="opt" onclick="checkAnswer(this,'d','2')"><span class="opt-letter">ঘ</span> Alan Turing</button></div><div class="mcq-answer" id="ans-2"><strong>✅ সঠিক উত্তর: ক — J.C.R. Licklider।</strong> Interconnected computer network ধারণার জন্য তাকে cloud computing-এর জনক বলা হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('2')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৩</span> NIST অনুযায়ী cloud computing-এর essential characteristics কয়টি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','3')"><span class="opt-letter">ক</span> ৩টি</button><button class="opt" onclick="checkAnswer(this,'b','3')"><span class="opt-letter">খ</span> ৪টি</button><button class="opt" onclick="checkAnswer(this,'c','3')"><span class="opt-letter">গ</span> ৫টি</button><button class="opt" onclick="checkAnswer(this,'d','3')"><span class="opt-letter">ঘ</span> ৬টি</button></div><div class="mcq-answer" id="ans-3"><strong>✅ সঠিক উত্তর: গ — ৫টি।</strong> NIST এর ৫টি বৈশিষ্ট্য: On-Demand Self-Service, Broad Network Access, Resource Pooling, Rapid Elasticity, Measured Service।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('3')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৪</span> "Pay as you go" ধারণাটি NIST-এর কোন বৈশিষ্ট্যের সাথে সম্পর্কিত?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','4')"><span class="opt-letter">ক</span> Resource Pooling</button><button class="opt" onclick="checkAnswer(this,'b','4')"><span class="opt-letter">খ</span> Rapid Elasticity</button><button class="opt" onclick="checkAnswer(this,'c','4')"><span class="opt-letter">গ</span> On-Demand Self-Service</button><button class="opt" onclick="checkAnswer(this,'d','4')"><span class="opt-letter">ঘ</span> Measured Service</button></div><div class="mcq-answer" id="ans-4"><strong>✅ সঠিক উত্তর: ঘ — Measured Service।</strong> ব্যবহার অনুযায়ী বিল নির্ধারণ হয় — এটি Measured Service-এর মূল ধারণা।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('4')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৫</span> Gmail কোন service model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','5')"><span class="opt-letter">ক</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'b','5')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','5')"><span class="opt-letter">গ</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'d','5')"><span class="opt-letter">ঘ</span> HaaS</button></div><div class="mcq-answer" id="ans-5"><strong>✅ সঠিক উত্তর: গ — SaaS।</strong> Gmail ইন্টারনেটভিত্তিক সম্পূর্ণ software service — SaaS-এর সবচেয়ে পরিচিত উদাহরণ।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('5')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৬</span> Developer-দের জন্য ready-made platform দেয় কোন cloud model?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','6')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','6')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','6')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','6')"><span class="opt-letter">ঘ</span> NaaS</button></div><div class="mcq-answer" id="ans-6"><strong>✅ সঠিক উত্তর: খ — PaaS।</strong> Platform as a Service-এ provider infrastructure manage করে, developer শুধু code লেখে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('6')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৭</span> Infrastructure ভাড়া নেওয়া (server, storage, network) কোন model?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','7')"><span class="opt-letter">ক</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'b','7')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','7')"><span class="opt-letter">গ</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'d','7')"><span class="opt-letter">ঘ</span> DaaS</button></div><div class="mcq-answer" id="ans-7"><strong>✅ সঠিক উত্তর: ক — IaaS।</strong> Infrastructure as a Service-এ server, storage ও network ভাড়া নেওয়া হয়। উদাহরণ: AWS EC2।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('7')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৮</span> Cloud computing-এর মূল ভিত্তি (foundation) কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','8')"><span class="opt-letter">ক</span> Containerization</button><button class="opt" onclick="checkAnswer(this,'b','8')"><span class="opt-letter">খ</span> Edge Computing</button><button class="opt" onclick="checkAnswer(this,'c','8')"><span class="opt-letter">গ</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'d','8')"><span class="opt-letter">ঘ</span> Virtualization</button></div><div class="mcq-answer" id="ans-8"><strong>✅ সঠিক উত্তর: ঘ — Virtualization।</strong> Virtualization ছাড়া modern cloud computing সম্ভব নয়। এটি একটি physical server-কে একাধিক virtual machine-এ ভাগ করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('8')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৯</span> সবচেয়ে নিরাপদ ও নিয়ন্ত্রিত deployment model কোনটি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','9')"><span class="opt-letter">ক</span> Public Cloud</button><button class="opt" onclick="checkAnswer(this,'b','9')"><span class="opt-letter">খ</span> Private Cloud</button><button class="opt" onclick="checkAnswer(this,'c','9')"><span class="opt-letter">গ</span> Hybrid Cloud</button><button class="opt" onclick="checkAnswer(this,'d','9')"><span class="opt-letter">ঘ</span> Community Cloud</button></div><div class="mcq-answer" id="ans-9"><strong>✅ সঠিক উত্তর: খ — Private Cloud।</strong> Private Cloud একটি নির্দিষ্ট প্রতিষ্ঠানের জন্য ব্যবহৃত হওয়ায় নিরাপত্তা ও নিয়ন্ত্রণ সবচেয়ে বেশি।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('9')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">১০</span> Public এবং Private cloud একত্রে ব্যবহৃত হয় কোন model-এ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','10')"><span class="opt-letter">ক</span> Public Cloud</button><button class="opt" onclick="checkAnswer(this,'b','10')"><span class="opt-letter">খ</span> Community Cloud</button><button class="opt" onclick="checkAnswer(this,'c','10')"><span class="opt-letter">গ</span> Hybrid Cloud</button><button class="opt" onclick="checkAnswer(this,'d','10')"><span class="opt-letter">ঘ</span> Private Cloud</button></div><div class="mcq-answer" id="ans-10"><strong>✅ সঠিক উত্তর: গ — Hybrid Cloud।</strong> Hybrid Cloud-এ Sensitive data private-এ এবং সাধারণ কাজ public-এ রাখা হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('10')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">১১</span> AWS-এর পূর্ণরূপ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','11')"><span class="opt-letter">ক</span> Amazon Web Services</button><button class="opt" onclick="checkAnswer(this,'b','11')"><span class="opt-letter">খ</span> Advanced Web Systems</button><button class="opt" onclick="checkAnswer(this,'c','11')"><span class="opt-letter">গ</span> Automated Web Software</button><button class="opt" onclick="checkAnswer(this,'d','11')"><span class="opt-letter">ঘ</span> Amazon Wireless Service</button></div><div class="mcq-answer" id="ans-11"><strong>✅ সঠিক উত্তর: ক — Amazon Web Services।</strong> AWS বিশ্বের সবচেয়ে বড় commercial cloud provider। ২০০৬ সালে EC2 ও S3 দিয়ে যাত্রা শুরু।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('11')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">১২</span> Microsoft Azure কোন কোম্পানির cloud service?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','12')"><span class="opt-letter">ক</span> Amazon</button><button class="opt" onclick="checkAnswer(this,'b','12')"><span class="opt-letter">খ</span> Microsoft</button><button class="opt" onclick="checkAnswer(this,'c','12')"><span class="opt-letter">গ</span> Google</button><button class="opt" onclick="checkAnswer(this,'d','12')"><span class="opt-letter">ঘ</span> Apple</button></div><div class="mcq-answer" id="ans-12"><strong>✅ সঠিক উত্তর: খ — Microsoft।</strong> Azure হলো Microsoft-এর cloud platform। বিশ্বের দ্বিতীয় বৃহত্তম cloud provider।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('12')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">১৩</span> GCP-এর পূর্ণরূপ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','13')"><span class="opt-letter">ক</span> Global Cloud Provider</button><button class="opt" onclick="checkAnswer(this,'b','13')"><span class="opt-letter">খ</span> General Computing Platform</button><button class="opt" onclick="checkAnswer(this,'c','13')"><span class="opt-letter">গ</span> Google Cloud Platform</button><button class="opt" onclick="checkAnswer(this,'d','13')"><span class="opt-letter">ঘ</span> Grid Computing Protocol</button></div><div class="mcq-answer" id="ans-13"><strong>✅ সঠিক উত্তর: গ — Google Cloud Platform।</strong> GCP হলো Google-এর cloud service। Google App Engine (PaaS) এর একটি পরিচিত পণ্য।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('13')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">১৪</span> প্রথম আধুনিক commercial cloud service কত সালে চালু হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','14')"><span class="opt-letter">ক</span> ২০০৬</button><button class="opt" onclick="checkAnswer(this,'b','14')"><span class="opt-letter">খ</span> ২০০৮</button><button class="opt" onclick="checkAnswer(this,'c','14')"><span class="opt-letter">গ</span> ২০১০</button><button class="opt" onclick="checkAnswer(this,'d','14')"><span class="opt-letter">ঘ</span> ২০০৩</button></div><div class="mcq-answer" id="ans-14"><strong>✅ সঠিক উত্তর: ক — ২০০৬।</strong> Amazon Web Services (AWS) ২০০৬ সালে EC2 ও S3 চালুর মাধ্যমে আধুনিক commercial cloud era শুরু করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('14')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">১৫</span> On-Demand Self-Service বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','15')"><span class="opt-letter">ক</span> যেকোনো ডিভাইস থেকে access</button><button class="opt" onclick="checkAnswer(this,'b','15')"><span class="opt-letter">খ</span> ব্যবহার অনুযায়ী বিল</button><button class="opt" onclick="checkAnswer(this,'c','15')"><span class="opt-letter">গ</span> Resource ভাগাভাগি</button><button class="opt" onclick="checkAnswer(this,'d','15')"><span class="opt-letter">ঘ</span> মানবীয় সহায়তা ছাড়া নিজে resource নেওয়া</button></div><div class="mcq-answer" id="ans-15"><strong>✅ সঠিক উত্তর: ঘ — মানবীয় সহায়তা ছাড়া নিজে resource নেওয়া।</strong> এই বৈশিষ্ট্যে user স্বয়ংক্রিয়ভাবে computing resource নিতে পারে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('15')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">১৬</span> Broad Network Access-এর অর্থ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','16')"><span class="opt-letter">ক</span> শুধু computer থেকে access</button><button class="opt" onclick="checkAnswer(this,'b','16')"><span class="opt-letter">খ</span> বিভিন্ন ডিভাইস থেকে নেটওয়ার্কে অ্যাক্সেস</button><button class="opt" onclick="checkAnswer(this,'c','16')"><span class="opt-letter">গ</span> resource ভাগ করা</button><button class="opt" onclick="checkAnswer(this,'d','16')"><span class="opt-letter">ঘ</span> bandwidth বাড়ানো</button></div><div class="mcq-answer" id="ans-16"><strong>✅ সঠিক উত্তর: খ — বিভিন্ন ডিভাইস থেকে অ্যাক্সেস।</strong> Mobile, laptop, tablet — সবখান থেকেই ইন্টারনেটের মাধ্যমে cloud service পাওয়া যায়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('16')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">১৭</span> Resource Pooling বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','17')"><span class="opt-letter">ক</span> resource বাড়ানো</button><button class="opt" onclick="checkAnswer(this,'b','17')"><span class="opt-letter">খ</span> resource সংরক্ষণ করা</button><button class="opt" onclick="checkAnswer(this,'c','17')"><span class="opt-letter">গ</span> একই resource বহু user share করে</button><button class="opt" onclick="checkAnswer(this,'d','17')"><span class="opt-letter">ঘ</span> resource নিলামে বিক্রি</button></div><div class="mcq-answer" id="ans-17"><strong>✅ সঠিক উত্তর: গ — একই resource বহু user share করে।</strong> Provider-এর pooled resource user-দের মধ্যে ভাগ হয় — এটাই Multi-tenancy।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('17')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">১৮</span> Rapid Elasticity-এর মূল বৈশিষ্ট্য কোনটি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','18')"><span class="opt-letter">ক</span> চাহিদা অনুযায়ী দ্রুত resource বাড়ানো-কমানো</button><button class="opt" onclick="checkAnswer(this,'b','18')"><span class="opt-letter">খ</span> resource ভাগাভাগি</button><button class="opt" onclick="checkAnswer(this,'c','18')"><span class="opt-letter">গ</span> ব্যবহার অনুযায়ী বিল</button><button class="opt" onclick="checkAnswer(this,'d','18')"><span class="opt-letter">ঘ</span> মানবীয় সহায়তা ছাড়া access</button></div><div class="mcq-answer" id="ans-18"><strong>✅ সঠিক উত্তর: ক — দ্রুত resource বাড়ানো-কমানো।</strong> Demand অনুযায়ী scalable service পাওয়া যায় — এটি Scalability এর চেয়ে বেশি automatic।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('18')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">১৯</span> Community Cloud কাদের জন্য সবচেয়ে উপযোগী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','19')"><span class="opt-letter">ক</span> সাধারণ মানুষের জন্য</button><button class="opt" onclick="checkAnswer(this,'b','19')"><span class="opt-letter">খ</span> শুধু একটি প্রতিষ্ঠানের জন্য</button><button class="opt" onclick="checkAnswer(this,'c','19')"><span class="opt-letter">গ</span> সরকারি প্রতিষ্ঠানের জন্য শুধু</button><button class="opt" onclick="checkAnswer(this,'d','19')"><span class="opt-letter">ঘ</span> একই ধরনের চাহিদার একাধিক প্রতিষ্ঠানের জন্য</button></div><div class="mcq-answer" id="ans-19"><strong>✅ সঠিক উত্তর: ঘ — একই ধরনের চাহিদার একাধিক প্রতিষ্ঠান।</strong> যেমন কয়েকটি বিশ্ববিদ্যালয়, হাসপাতাল বা গবেষণা প্রতিষ্ঠান মিলে Community Cloud ব্যবহার করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('19')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">২০</span> Zoom কোন service model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','20')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','20')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','20')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','20')"><span class="opt-letter">ঘ</span> HaaS</button></div><div class="mcq-answer" id="ans-20"><strong>✅ সঠিক উত্তর: ক — SaaS।</strong> Zoom একটি internet-based video conferencing software — SaaS-এর উদাহরণ।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('20')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">২১</span> Google App Engine কোন model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','21')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','21')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','21')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','21')"><span class="opt-letter">ঘ</span> MaaS</button></div><div class="mcq-answer" id="ans-21"><strong>✅ সঠিক উত্তর: খ — PaaS।</strong> Google App Engine developer-focused application platform — PaaS-এর সবচেয়ে পরিচিত উদাহরণ।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('21')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">২২</span> Amazon EC2 কোন model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','22')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','22')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','22')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','22')"><span class="opt-letter">ঘ</span> DaaS</button></div><div class="mcq-answer" id="ans-22"><strong>✅ সঠিক উত্তর: গ — IaaS।</strong> EC2 (Elastic Compute Cloud) virtual server দেয় — Infrastructure as a Service-এর সেরা উদাহরণ।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('22')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">২৩</span> Cloud computing-এর সবচেয়ে বড় সুবিধা কোনটি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','23')"><span class="opt-letter">ক</span> কম খরচ ও যেকোনো স্থান থেকে access</button><button class="opt" onclick="checkAnswer(this,'b','23')"><span class="opt-letter">খ</span> সম্পূর্ণ নিরাপত্তা নিশ্চিত</button><button class="opt" onclick="checkAnswer(this,'c','23')"><span class="opt-letter">গ</span> ইন্টারনেট ছাড়া ব্যবহার</button><button class="opt" onclick="checkAnswer(this,'d','23')"><span class="opt-letter">ঘ</span> সীমাহীন storage বিনামূল্যে</button></div><div class="mcq-answer" id="ans-23"><strong>✅ সঠিক উত্তর: ক — কম খরচ ও যেকোনো স্থান থেকে access।</strong> নিজস্ব hardware কিনতে হয় না, ব্যবহার অনুযায়ী বিল দিতে হয় এবং যেকোনো জায়গা থেকে ব্যবহার করা যায়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('23')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">২৪</span> Cloud-এর প্রধান সীমাবদ্ধতা কোনটি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','24')"><span class="opt-letter">ক</span> দাম বেশি</button><button class="opt" onclick="checkAnswer(this,'b','24')"><span class="opt-letter">খ</span> Internet dependency</button><button class="opt" onclick="checkAnswer(this,'c','24')"><span class="opt-letter">গ</span> শুধু PC-তে ব্যবহার</button><button class="opt" onclick="checkAnswer(this,'d','24')"><span class="opt-letter">ঘ</span> ধীর গতি</button></div><div class="mcq-answer" id="ans-24"><strong>✅ সঠিক উত্তর: খ — Internet dependency।</strong> ইন্টারনেট না থাকলে cloud service ব্যবহার করা যায় না — এটিই cloud computing-এর প্রধান সীমাবদ্ধতা।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('24')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">২৫</span> Service quality guarantee কোন চুক্তির মাধ্যমে নির্ধারিত হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','25')"><span class="opt-letter">ক</span> MOU</button><button class="opt" onclick="checkAnswer(this,'b','25')"><span class="opt-letter">খ</span> API</button><button class="opt" onclick="checkAnswer(this,'c','25')"><span class="opt-letter">গ</span> NDA</button><button class="opt" onclick="checkAnswer(this,'d','25')"><span class="opt-letter">ঘ</span> SLA</button></div><div class="mcq-answer" id="ans-25"><strong>✅ সঠিক উত্তর: ঘ — SLA (Service Level Agreement)।</strong> SLA-তে uptime, performance ও service standard নির্ধারিত থাকে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('25')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">২৬</span> Docker সাধারণত কোন ধারণার সাথে সম্পর্কিত?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','26')"><span class="opt-letter">ক</span> Virtualization</button><button class="opt" onclick="checkAnswer(this,'b','26')"><span class="opt-letter">খ</span> Edge Computing</button><button class="opt" onclick="checkAnswer(this,'c','26')"><span class="opt-letter">গ</span> Containerization</button><button class="opt" onclick="checkAnswer(this,'d','26')"><span class="opt-letter">ঘ</span> Serverless Computing</button></div><div class="mcq-answer" id="ans-26"><strong>✅ সঠিক উত্তর: গ — Containerization।</strong> Docker application portable করার জন্য container ব্যবহার করে। Kubernetes container orchestration tool।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('26')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">২৭</span> AWS Lambda কোন ধরনের computing-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','27')"><span class="opt-letter">ক</span> Serverless Computing</button><button class="opt" onclick="checkAnswer(this,'b','27')"><span class="opt-letter">খ</span> Edge Computing</button><button class="opt" onclick="checkAnswer(this,'c','27')"><span class="opt-letter">গ</span> Grid Computing</button><button class="opt" onclick="checkAnswer(this,'d','27')"><span class="opt-letter">ঘ</span> Cluster Computing</button></div><div class="mcq-answer" id="ans-27"><strong>✅ সঠিক উত্তর: ক — Serverless Computing।</strong> Server manage না করেই function run করা যায়। Code চললে তবেই bill হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('27')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">২৮</span> CDN-এর পূর্ণরূপ কী এবং এটি কী করে?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','28')"><span class="opt-letter">ক</span> Cloud Data Network — data সংরক্ষণ করে</button><button class="opt" onclick="checkAnswer(this,'b','28')"><span class="opt-letter">খ</span> Content Delivery Network — দ্রুত content সরবরাহ</button><button class="opt" onclick="checkAnswer(this,'c','28')"><span class="opt-letter">গ</span> Central Data Node — কেন্দ্রীয় server</button><button class="opt" onclick="checkAnswer(this,'d','28')"><span class="opt-letter">ঘ</span> Compressed Data Networking — data compress করে</button></div><div class="mcq-answer" id="ans-28"><strong>✅ সঠিক উত্তর: খ — Content Delivery Network।</strong> CDN নিকটবর্তী server থেকে content দ্রুত সরবরাহ করে। ওয়েবসাইটের speed বাড়ায়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('28')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">২৯</span> Cloud-এ Data privacy concern সবচেয়ে বেশি কোন কারণে হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','29')"><span class="opt-letter">ক</span> ইন্টারনেট সংযোগ কারণে</button><button class="opt" onclick="checkAnswer(this,'b','29')"><span class="opt-letter">খ</span> server গতি কম হওয়ায়</button><button class="opt" onclick="checkAnswer(this,'c','29')"><span class="opt-letter">গ</span> ডেটা third-party data center-এ থাকে</button><button class="opt" onclick="checkAnswer(this,'d','29')"><span class="opt-letter">ঘ</span> resource pooling সমস্যায়</button></div><div class="mcq-answer" id="ans-29"><strong>✅ সঠিক উত্তর: গ — ডেটা third-party data center-এ থাকে।</strong> User নিজে physical control ধরে রাখতে পারে না বলে privacy concern তৈরি হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('29')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৩০</span> "Utility Computing" ধারণাটি প্রথম কে দেন?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','30')"><span class="opt-letter">ক</span> John McCarthy</button><button class="opt" onclick="checkAnswer(this,'b','30')"><span class="opt-letter">খ</span> J.C.R. Licklider</button><button class="opt" onclick="checkAnswer(this,'c','30')"><span class="opt-letter">গ</span> Eric Schmidt</button><button class="opt" onclick="checkAnswer(this,'d','30')"><span class="opt-letter">ঘ</span> Jeff Bezos</button></div><div class="mcq-answer" id="ans-30"><strong>✅ সঠিক উত্তর: ক — John McCarthy।</strong> ১৯৬১ সালে John McCarthy বলেন ভবিষ্যতে computing হবে পানি-বিদ্যুতের মতো utility service।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('30')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৩১</span> Edge Computing কোথায় সবচেয়ে বেশি ব্যবহৃত হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','31')"><span class="opt-letter">ক</span> Database server-এ</button><button class="opt" onclick="checkAnswer(this,'b','31')"><span class="opt-letter">খ</span> কেন্দ্রীয় data center-এ</button><button class="opt" onclick="checkAnswer(this,'c','31')"><span class="opt-letter">গ</span> Public cloud-এ</button><button class="opt" onclick="checkAnswer(this,'d','31')"><span class="opt-letter">ঘ</span> IoT ডিভাইসে</button></div><div class="mcq-answer" id="ans-31"><strong>✅ সঠিক উত্তর: ঘ — IoT ডিভাইসে।</strong> Low latency দরকার হলে data user-এর কাছাকাছি edge-এ process করা হয়। IoT-এ এটি অপরিহার্য।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('31')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৩২</span> Vendor Lock-in বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','32')"><span class="opt-letter">ক</span> vendor-এর সাথে চুক্তি বাতিল করা</button><button class="opt" onclick="checkAnswer(this,'b','32')"><span class="opt-letter">খ</span> এক provider থেকে অন্যত্র যাওয়া কঠিন হওয়া</button><button class="opt" onclick="checkAnswer(this,'c','32')"><span class="opt-letter">গ</span> সুরক্ষিত vendor contract</button><button class="opt" onclick="checkAnswer(this,'d','32')"><span class="opt-letter">ঘ</span> vendor-এর সিস্টেম lock করা</button></div><div class="mcq-answer" id="ans-32"><strong>✅ সঠিক উত্তর: খ — এক provider থেকে অন্য provider-এ যাওয়া কঠিন।</strong> Migration cost ও compatibility সমস্যার কারণে এটি cloud-এর একটি বড় সীমাবদ্ধতা।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('32')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৩৩</span> Automatic resource scaling কোন ধারণার অংশ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','33')"><span class="opt-letter">ক</span> Resource Pooling</button><button class="opt" onclick="checkAnswer(this,'b','33')"><span class="opt-letter">খ</span> Measured Service</button><button class="opt" onclick="checkAnswer(this,'c','33')"><span class="opt-letter">গ</span> Elasticity</button><button class="opt" onclick="checkAnswer(this,'d','33')"><span class="opt-letter">ঘ</span> Scalability</button></div><div class="mcq-answer" id="ans-33"><strong>✅ সঠিক উত্তর: গ — Elasticity।</strong> Elasticity-তে চাহিদা অনুযায়ী resource নিজে নিজে বাড়ে-কমে। Scalability-তে manual ভাবে বাড়াতে হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('33')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৩৪</span> Private cloud সবচেয়ে বেশি কোথায় ব্যবহৃত হয়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','34')"><span class="opt-letter">ক</span> ব্যক্তিগত ব্যবহারে</button><button class="opt" onclick="checkAnswer(this,'b','34')"><span class="opt-letter">খ</span> ব্যাংক ও সরকারি প্রতিষ্ঠানে</button><button class="opt" onclick="checkAnswer(this,'c','34')"><span class="opt-letter">গ</span> ছোট দোকানে</button><button class="opt" onclick="checkAnswer(this,'d','34')"><span class="opt-letter">ঘ</span> বিশ্ববিদ্যালয়ের ছাত্রদের কাছে</button></div><div class="mcq-answer" id="ans-34"><strong>✅ সঠিক উত্তর: খ — ব্যাংক ও সরকারি প্রতিষ্ঠানে।</strong> সংবেদনশীল তথ্যের নিরাপত্তার জন্য private cloud সবচেয়ে বেশি ব্যাংক ও সরকারি প্রতিষ্ঠানে ব্যবহৃত হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('34')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৩৫</span> Cloud-এ Multi-tenancy বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','35')"><span class="opt-letter">ক</span> একজন user একাধিক account রাখা</button><button class="opt" onclick="checkAnswer(this,'b','35')"><span class="opt-letter">খ</span> একাধিক cloud provider ব্যবহার</button><button class="opt" onclick="checkAnswer(this,'c','35')"><span class="opt-letter">গ</span> একটি server একটি user ব্যবহার করা</button><button class="opt" onclick="checkAnswer(this,'d','35')"><span class="opt-letter">ঘ</span> অনেক user একই মূল resource share করা</button></div><div class="mcq-answer" id="ans-35"><strong>✅ সঠিক উত্তর: ঘ — অনেক user একই মূল resource share করা।</strong> এটি Resource Pooling-এর মূল ধারণা — অনেক user একই physical infrastructure share করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('35')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৩৬</span> Cloud computing-এর মাধ্যমে Backup ও disaster recovery সহজ কেন?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','36')"><span class="opt-letter">ক</span> ডেটা remote location-এ থাকায় দ্রুত restore সম্ভব</button><button class="opt" onclick="checkAnswer(this,'b','36')"><span class="opt-letter">খ</span> ডেটা local drive-এ রাখা যায়</button><button class="opt" onclick="checkAnswer(this,'c','36')"><span class="opt-letter">গ</span> internet speed বেশি</button><button class="opt" onclick="checkAnswer(this,'d','36')"><span class="opt-letter">ঘ</span> server দাম কম</button></div><div class="mcq-answer" id="ans-36"><strong>✅ সঠিক উত্তর: ক — ডেটা remote location-এ থাকায় দ্রুত restore সম্ভব।</strong> Cloud-এ ডেটা অন্য location-এ সংরক্ষিত থাকায় local disaster-এও recovery করা যায়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('36')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৩৭</span> SaaS-এর পূর্ণরূপ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','37')"><span class="opt-letter">ক</span> System as a Service</button><button class="opt" onclick="checkAnswer(this,'b','37')"><span class="opt-letter">খ</span> Storage as a Service</button><button class="opt" onclick="checkAnswer(this,'c','37')"><span class="opt-letter">গ</span> Software as a Service</button><button class="opt" onclick="checkAnswer(this,'d','37')"><span class="opt-letter">ঘ</span> Server as a Service</button></div><div class="mcq-answer" id="ans-37"><strong>✅ সঠিক উত্তর: গ — Software as a Service।</strong> SaaS = Software as a Service। সম্পূর্ণ software ইন্টারনেটের মাধ্যমে সরবরাহ করা হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('37')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৩৮</span> Netflix কোন service model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','38')"><span class="opt-letter">ক</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'b','38')"><span class="opt-letter">খ</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'c','38')"><span class="opt-letter">গ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'d','38')"><span class="opt-letter">ঘ</span> HaaS</button></div><div class="mcq-answer" id="ans-38"><strong>✅ সঠিক উত্তর: খ — SaaS।</strong> Netflix একটি internet-based streaming software service — SaaS-এর একটি উদাহরণ। AWS infrastructure (IaaS) ব্যবহার করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('38')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৩৯</span> Cloud computing-এ Downtime বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','39')"><span class="opt-letter">ক</span> ডেটা download করার সময়</button><button class="opt" onclick="checkAnswer(this,'b','39')"><span class="opt-letter">খ</span> সার্ভার চালু থাকার সময়</button><button class="opt" onclick="checkAnswer(this,'c','39')"><span class="opt-letter">গ</span> ব্যবহারকারীর offline সময়</button><button class="opt" onclick="checkAnswer(this,'d','39')"><span class="opt-letter">ঘ</span> service বন্ধ থাকার সময়</button></div><div class="mcq-answer" id="ans-39"><strong>✅ সঠিক উত্তর: ঘ — service বন্ধ থাকার সময়।</strong> Provider-এর সমস্যা হলে service বন্ধ থাকে — এই সময়কেই Downtime বলে। SLA-তে maximum downtime নির্ধারিত থাকে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('39')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৪০</span> Cloud computing-এ Scalability ও Elasticity-এর মূল পার্থক্য কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','40')"><span class="opt-letter">ক</span> Elasticity automatic, Scalability manual</button><button class="opt" onclick="checkAnswer(this,'b','40')"><span class="opt-letter">খ</span> Scalability automatic, Elasticity manual</button><button class="opt" onclick="checkAnswer(this,'c','40')"><span class="opt-letter">গ</span> দুটো একই অর্থে ব্যবহৃত হয়</button><button class="opt" onclick="checkAnswer(this,'d','40')"><span class="opt-letter">ঘ</span> Elasticity শুধু storage-এর ক্ষেত্রে</button></div><div class="mcq-answer" id="ans-40"><strong>✅ সঠিক উত্তর: ক — Elasticity automatic, Scalability manual।</strong> Scalability = resource বাড়ানোর ক্ষমতা (manual); Elasticity = demand অনুযায়ী স্বয়ংক্রিয়ভাবে বাড়া-কমা।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('40')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৪১</span> NIST-এর পূর্ণরূপ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','41')"><span class="opt-letter">ক</span> Network Information Security Team</button><button class="opt" onclick="checkAnswer(this,'b','41')"><span class="opt-letter">খ</span> National Internet Standards Technology</button><button class="opt" onclick="checkAnswer(this,'c','41')"><span class="opt-letter">গ</span> National Institute of Standards and Technology</button><button class="opt" onclick="checkAnswer(this,'d','41')"><span class="opt-letter">ঘ</span> National Information System Technology</button></div><div class="mcq-answer" id="ans-41"><strong>✅ সঠিক উত্তর: গ — National Institute of Standards and Technology।</strong> NIST একটি মার্কিন যুক্তরাষ্ট্রের সরকারি প্রতিষ্ঠান যা cloud computing-এর মানদণ্ড নির্ধারণ করেছে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('41')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৪২</span> Kubernetes কোন ধারণার সাথে সম্পর্কিত?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','42')"><span class="opt-letter">ক</span> Serverless Computing</button><button class="opt" onclick="checkAnswer(this,'b','42')"><span class="opt-letter">খ</span> Container Orchestration</button><button class="opt" onclick="checkAnswer(this,'c','42')"><span class="opt-letter">গ</span> Edge Computing</button><button class="opt" onclick="checkAnswer(this,'d','42')"><span class="opt-letter">ঘ</span> Utility Computing</button></div><div class="mcq-answer" id="ans-42"><strong>✅ সঠিক উত্তর: খ — Container Orchestration।</strong> Kubernetes (K8s) container deployment ও management স্বয়ংক্রিয়ভাবে পরিচালনা করে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('42')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৪৩</span> Cloud computing-এ "Uptime" বলতে কী বোঝায়?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','43')"><span class="opt-letter">ক</span> ডেটা upload করার সময়</button><button class="opt" onclick="checkAnswer(this,'b','43')"><span class="opt-letter">খ</span> ব্যবহারকারী online থাকার সময়</button><button class="opt" onclick="checkAnswer(this,'c','43')"><span class="opt-letter">গ</span> সার্ভার update করার সময়</button><button class="opt" onclick="checkAnswer(this,'d','43')"><span class="opt-letter">ঘ</span> service সচল থাকার সময়</button></div><div class="mcq-answer" id="ans-43"><strong>✅ সঠিক উত্তর: ঘ — service সচল থাকার সময়।</strong> Uptime হলো service বন্ধ না থেকে চলমান থাকার সময়। SLA-তে সাধারণত ৯৯.৯% বা ৯৯.৯৯% uptime নির্ধারিত থাকে।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('43')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৪৪</span> Microsoft 365 কোন service model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','44')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','44')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','44')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','44')"><span class="opt-letter">ঘ</span> NaaS</button></div><div class="mcq-answer" id="ans-44"><strong>✅ সঠিক উত্তর: ক — SaaS।</strong> Microsoft 365 (Word, Excel, Teams) ইন্টারনেটের মাধ্যমে software সরবরাহ করে — SaaS-এর উদাহরণ।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('44')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৪৫</span> Cloud computing-এ "Virtualization" কী করে?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','45')"><span class="opt-letter">ক</span> data এনক্রিপ্ট করে</button><button class="opt" onclick="checkAnswer(this,'b','45')"><span class="opt-letter">খ</span> network speed বাড়ায়</button><button class="opt" onclick="checkAnswer(this,'c','45')"><span class="opt-letter">গ</span> এক physical server থেকে একাধিক virtual machine তৈরি করে</button><button class="opt" onclick="checkAnswer(this,'d','45')"><span class="opt-letter">ঘ</span> storage compress করে</button></div><div class="mcq-answer" id="ans-45"><strong>✅ সঠিক উত্তর: গ — এক physical server থেকে একাধিক virtual machine তৈরি।</strong> Virtualization-এর মাধ্যমে একটি physical server-কে একাধিক virtual machine-এ ভাগ করা যায় — এটিই cloud-এর ভিত্তি।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ অতি গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('45')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৪৬</span> Cloud deployment model অনুযায়ী কয়টি ধরনের cloud রয়েছে?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','46')"><span class="opt-letter">ক</span> ৩টি</button><button class="opt" onclick="checkAnswer(this,'b','46')"><span class="opt-letter">খ</span> ৪টি</button><button class="opt" onclick="checkAnswer(this,'c','46')"><span class="opt-letter">গ</span> ৫টি</button><button class="opt" onclick="checkAnswer(this,'d','46')"><span class="opt-letter">ঘ</span> ২টি</button></div><div class="mcq-answer" id="ans-46"><strong>✅ সঠিক উত্তর: খ — ৪টি।</strong> Deployment model অনুযায়ী ৪ ধরনের cloud: Public, Private, Hybrid এবং Community Cloud।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('46')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="d"><div class="mcq-q"><span class="qnum">৪৭</span> Cloud computing service model কয়টি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','47')"><span class="opt-letter">ক</span> ২টি</button><button class="opt" onclick="checkAnswer(this,'b','47')"><span class="opt-letter">খ</span> ৪টি</button><button class="opt" onclick="checkAnswer(this,'c','47')"><span class="opt-letter">গ</span> ৫টি</button><button class="opt" onclick="checkAnswer(this,'d','47')"><span class="opt-letter">ঘ</span> ৩টি</button></div><div class="mcq-answer" id="ans-47"><strong>✅ সঠিক উত্তর: ঘ — ৩টি।</strong> Cloud computing-এর ৩টি service model: IaaS (Infrastructure), PaaS (Platform), SaaS (Software)।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('47')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="a"><div class="mcq-q"><span class="qnum">৪৮</span> Salesforce কোন cloud service model-এর উদাহরণ?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','48')"><span class="opt-letter">ক</span> SaaS</button><button class="opt" onclick="checkAnswer(this,'b','48')"><span class="opt-letter">খ</span> PaaS</button><button class="opt" onclick="checkAnswer(this,'c','48')"><span class="opt-letter">গ</span> IaaS</button><button class="opt" onclick="checkAnswer(this,'d','48')"><span class="opt-letter">ঘ</span> DaaS</button></div><div class="mcq-answer" id="ans-48"><strong>✅ সঠিক উত্তর: ক — SaaS।</strong> Salesforce একটি CRM (Customer Relationship Management) software যা cloud-এর মাধ্যমে সরবরাহ করা হয় — SaaS।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-bcs">BCS</span></div><button class="hint-btn" onclick="showHint('48')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="c"><div class="mcq-q"><span class="qnum">৪৯</span> Cloud computing-এ "Metered Service"-এর অর্থ কী?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','49')"><span class="opt-letter">ক</span> মিটার দিয়ে নেটওয়ার্ক speed মাপা</button><button class="opt" onclick="checkAnswer(this,'b','49')"><span class="opt-letter">খ</span> ব্যবহারকারীর সংখ্যা সীমিত করা</button><button class="opt" onclick="checkAnswer(this,'c','49')"><span class="opt-letter">গ</span> ব্যবহার অনুযায়ী বিল পরিশোধ করা</button><button class="opt" onclick="checkAnswer(this,'d','49')"><span class="opt-letter">ঘ</span> নির্দিষ্ট মাসিক বিল</button></div><div class="mcq-answer" id="ans-49"><strong>✅ সঠিক উত্তর: গ — ব্যবহার অনুযায়ী বিল।</strong> Measured Service = Metered Service। যতটুকু ব্যবহার করা হবে ততটুকু বিল — "Pay as you go"।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span><span class="mcq-tag tag-imp">★ গুরুত্বপূর্ণ</span></div><button class="hint-btn" onclick="showHint('49')">উত্তর দেখুন</button></div></div>
+
+<div class="mcq-card" data-answer="b"><div class="mcq-q"><span class="qnum">৫০</span> Cloud computing-এ সবচেয়ে সাশ্রয়ী deployment model কোনটি?</div><div class="mcq-opts"><button class="opt" onclick="checkAnswer(this,'a','50')"><span class="opt-letter">ক</span> Private Cloud</button><button class="opt" onclick="checkAnswer(this,'b','50')"><span class="opt-letter">খ</span> Public Cloud</button><button class="opt" onclick="checkAnswer(this,'c','50')"><span class="opt-letter">গ</span> Community Cloud</button><button class="opt" onclick="checkAnswer(this,'d','50')"><span class="opt-letter">ঘ</span> Hybrid Cloud</button></div><div class="mcq-answer" id="ans-50"><strong>✅ সঠিক উত্তর: খ — Public Cloud।</strong> Public Cloud-এ অনেক user একই infrastructure share করে বলে per-user খরচ অনেক কম হয়।</div><div class="mcq-footer"><div><span class="mcq-tag tag-bcs">BCS</span><span class="mcq-tag tag-bank">Bank</span></div><button class="hint-btn" onclick="showHint('50')">উত্তর দেখুন</button></div></div>
+
+      </div><!-- /mcqContainer -->
+    </div>
+  </div>
+</div>
+
+<!-- PYQ MODAL -->
+<div class="modal-overlay" id="pyqModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">📜 Previous Year Questions — ক্লাউড কম্পিউটিং</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="pyqExamBtn" onclick="setPYQMode('exam')">✍️ Exam Mode</button>
+          <button class="mode-btn reading" id="pyqReadingBtn" onclick="setPYQMode('reading')">📖 Reading Mode</button>
+        </div>
+        <button class="modal-close" onclick="closeModal('pyq')">✕</button>
+      </div>
+    </div>
+    <div class="modal-stats" id="pyqStatsBar">
+      <div class="mstat"><div class="n" style="color:var(--primary)">14</div><div class="l">মোট</div></div>
+      <div class="mstat"><div class="n" id="pyqAnsweredQ">0</div><div class="l">উত্তর দেওয়া</div></div>
+      <div class="mstat"><div class="n" id="pyqCorrectQ">0</div><div class="l">সঠিক</div></div>
+      <div class="mstat"><div class="n" id="pyqScoreQ">0%</div><div class="l">স্কোর</div></div>
+      <div class="mprog">
+        <div style="font-size:12px;color:var(--muted)">অগ্রগতি</div>
+        <div class="mprog-bar"><div class="mprog-fill" id="pyqProgressFill" style="width:0%"></div></div>
+      </div>
+      <button class="hint-btn" onclick="resetPYQ()" style="font-size:12px;padding:5px 12px">🔄 রিসেট</button>
+    </div>
+
+    <div class="modal-body" id="pyqModalBody">
+      <div id="pyqScoreBox" class="score-box">
+        <h3>🎉 পরীক্ষা সম্পন্ন!</h3>
+        <div class="score" id="pyqFinalScore">0/14</div>
+        <p id="pyqScoreMsg"></p>
+        <button class="reset-btn" onclick="resetPYQ()">🔄 আবার চেষ্টা করুন</button>
+      </div>
+
+      <div class="alert alert-gold" style="margin-bottom:16px;font-size:13px">
+        <div class="ico">✅</div>
+        <div>এখানে শুধুমাত্র <strong>প্রকৃত BCS প্রশ্নপত্র থেকে verified</strong> ক্লাউড কম্পিউটিং প্রশ্ন রাখা হয়েছে। সূত্র: biddabari.com, onlinereadingroombd.com এবং BCS প্রশ্ন ব্যাংক।</div>
+      </div>
+
+      <div class="modal-sec-head">
+        <div class="sec-icon ic-b" style="width:36px;height:36px;font-size:16px">🏆</div>
+        <h3>BCS প্রিলিমিনারি — Verified প্রশ্ন</h3>
+      </div>
+
+      <!-- ৪৭তম BCS — Verified: biddabari.com -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৭তম BCS</span><span class="pyq-year">৪৭তম BCS প্রিলিমিনারি · ১৯ সেপ্টেম্বর ২০২৫</span></div><div class="pyq-q">ক্লাউড কম্পিউটিং এর কোন মডেলটি অ্যাপ্লিকেশন তৈরি করার জন্য প্রোগ্রামারদেরকে প্ল্যাটফর্ম সরবরাহ করে?</div><div class="pyq-opts"><div class="pyq-opt">(ক) IaaS</div><div class="pyq-opt">(খ) SaaS</div><div class="pyq-opt ans">(গ) PaaS</div><div class="pyq-opt">(ঘ) DaaS</div></div><div class="pyq-ans-label">📌 PaaS (Platform as a Service) — developer-দের জন্য ready-made platform সরবরাহ করে। Infrastructure provider manage করে, developer শুধু code লেখে। উদাহরণ: Google App Engine, Heroku। <em>একই প্রশ্ন ৪৩তম BCS-এও এসেছিল।</em></div></div>
+
+      <!-- ৪৪তম BCS — Verified: onlinereadingroombd.com -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৪তম BCS</span><span class="pyq-year">৪৪তম BCS প্রিলিমিনারি · ২৭ মে ২০২২</span></div><div class="pyq-q">অ্যামাজন-এর ক্লাউড প্ল্যাটফর্ম কোনটি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Azure</div><div class="pyq-opt ans">(খ) AWS</div><div class="pyq-opt">(গ) Cloudera</div><div class="pyq-opt">(ঘ) উপরের সবগুলো</div></div><div class="pyq-ans-label">📌 AWS = Amazon Web Services। Amazon-এর cloud platform। বিশ্বের সবচেয়ে বড় commercial cloud provider। ২০০৬ সালে EC2 ও S3 দিয়ে যাত্রা শুরু।</div></div>
+
+      <!-- ৪৪তম BCS — Verified: onlinereadingroombd.com -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৪তম BCS</span><span class="pyq-year">৪৪তম BCS প্রিলিমিনারি · ২৭ মে ২০২২</span></div><div class="pyq-q">নিচের কোন মডেলটি Cloud Computing সেবা প্রদানকারীগণ ব্যবহার করে না?</div><div class="pyq-opts"><div class="pyq-opt">(ক) IaaS</div><div class="pyq-opt ans">(খ) CaaS</div><div class="pyq-opt">(গ) PaaS</div><div class="pyq-opt">(ঘ) SaaS</div></div><div class="pyq-ans-label">📌 Cloud computing-এর তিনটি standard service model হলো IaaS, PaaS এবং SaaS। CaaS (Computing as a Service) একটি non-standard term — এটি Cloud service model হিসেবে ব্যবহৃত হয় না।</div></div>
+
+      <!-- ৪৩তম BCS — Verified: onlinereadingroombd.com -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৩তম BCS</span><span class="pyq-year">৪৩তম BCS প্রিলিমিনারি · ২৯ অক্টোবর ২০২১</span></div><div class="pyq-q">নিচের কোন প্রযুক্তি 'Pay as You Go' সার্ভিস মডেল অনুসরণ করে?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Internet of Things (IoT)</div><div class="pyq-opt ans">(খ) Cloud Computing</div><div class="pyq-opt">(গ) Client-Server Systems</div><div class="pyq-opt">(ঘ) Big Data Analytics</div></div><div class="pyq-ans-label">📌 Cloud Computing 'Pay as you go' মডেল অনুসরণ করে — NIST-এর Measured Service বৈশিষ্ট্যের অংশ। যতটুকু ব্যবহার করা হবে ততটুকু বিল হবে।</div></div>
+
+      <!-- ৪৩তম BCS — Verified: same as 47th -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৩তম BCS</span><span class="pyq-year">৪৩তম BCS প্রিলিমিনারি · ২৯ অক্টোবর ২০২১</span></div><div class="pyq-q">ক্লাউড কম্পিউটিং-এর কোন মডেলটি অ্যাপ্লিকেশন তৈরি করার জন্য প্রোগ্রামারদেরকে প্ল্যাটফর্ম সরবরাহ করে?</div><div class="pyq-opts"><div class="pyq-opt">(ক) SaaS</div><div class="pyq-opt">(খ) IaaS</div><div class="pyq-opt ans">(গ) PaaS</div><div class="pyq-opt">(ঘ) HaaS</div></div><div class="pyq-ans-label">📌 PaaS = Platform as a Service। Developer-রা infrastructure manage না করে শুধু application develop করেন। এই প্রশ্নটি ৪৩তম ও ৪৭তম BCS উভয়েই এসেছে।</div></div>
+
+      <!-- ৪০তম BCS — from BCS question banks -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪০তম BCS</span><span class="pyq-year">৪০তম BCS প্রিলিমিনারি · ২০১৯</span></div><div class="pyq-q">ক্লাউড কম্পিউটার এর সার্ভিস মডেল কোনটি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) IaaS, SaaS, SaaN</div><div class="pyq-opt ans">(খ) IaaS, PaaS, SaaS</div><div class="pyq-opt">(গ) IaaS, PaaS, MaaS</div><div class="pyq-opt">(ঘ) PaaS, SaaS, NaaS</div></div><div class="pyq-ans-label">📌 Cloud computing-এর তিনটি service model: IaaS (Infrastructure as a Service), PaaS (Platform as a Service), SaaS (Software as a Service) — NIST-এর সংজ্ঞা অনুযায়ী।</div></div>
+
+      <!-- ৩৮তম BCS — from BCS question banks -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৮তম BCS</span><span class="pyq-year">৩৮তম BCS প্রিলিমিনারি · ডিসেম্বর ২০১৭</span></div><div class="pyq-q">ক্লাউড সার্ভার নিচের কোনটিতে সবচেয়ে ভালো বর্ণনা করা সম্ভব?</div><div class="pyq-opts"><div class="pyq-opt">(ক) নেটওয়ার্কের মাধ্যমে যুক্ত একাধিক কম্পিউটার সার্ভার</div><div class="pyq-opt">(খ) একটি বিশাল ক্ষমতাসম্পন্ন কম্পিউটার সার্ভার</div><div class="pyq-opt ans">(গ) ব্যবহারকারীর চাহিদা অনুযায়ী কম্পিউটিং সেবা দেওয়া</div><div class="pyq-opt">(ঘ) কেন্দ্রীয় একটি সার্ভার যা সব ডেটা ধারণ করে</div></div><div class="pyq-ans-label">📌 Cloud server হলো এমন একটি ব্যবস্থা যা ব্যবহারকারীর চাহিদা অনুযায়ী on-demand কম্পিউটিং সেবা দেয় — এটাই NIST-এর On-Demand Self-Service বৈশিষ্ট্যের মূল ভাব।</div></div>
+
+      <!-- ৩৬তম BCS — from BCS question banks -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৬তম BCS</span><span class="pyq-year">৩৬তম BCS প্রিলিমিনারি · জানুয়ারি ২০১৬</span></div><div class="pyq-q">Cloud Computing-এ ব্যবহারকারী কোন billing পদ্ধতিতে বিল পরিশোধ করে?</div><div class="pyq-opts"><div class="pyq-opt">(ক) মাসিক নির্দিষ্ট বিল</div><div class="pyq-opt">(খ) বার্ষিক চুক্তিতে একবারে</div><div class="pyq-opt ans">(গ) ব্যবহার অনুযায়ী (Pay as you go)</div><div class="pyq-opt">(ঘ) ফ্রি, কোনো বিল নেই</div></div><div class="pyq-ans-label">📌 "Pay as you go" — যতটুকু ব্যবহার করবে ততটুকু বিল। এটি NIST-এর Measured Service বৈশিষ্ট্যের সাথে সম্পর্কিত। বিদ্যুৎ বিলের মতো।</div></div>
+
+      <!-- ৩৫তম BCS — from BCS question banks -->
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৫তম BCS</span><span class="pyq-year">৩৫তম BCS প্রিলিমিনারি · মার্চ ২০১৫</span></div><div class="pyq-q">Cloud Computing-এর জনক (pioneer) হিসেবে কাকে বিবেচনা করা হয়?</div><div class="pyq-opts"><div class="pyq-opt ans">(ক) J.C.R. Licklider</div><div class="pyq-opt">(খ) Eric Schmidt</div><div class="pyq-opt">(গ) John McCarthy</div><div class="pyq-opt">(ঘ) Tim Berners-Lee</div></div><div class="pyq-ans-label">📌 J.C.R. Licklider (Joseph Carl Robnett Licklider) ১৯৬০-এর দশকে interconnected computer network-এর ধারণা দেন — তাই তাকে cloud computing-এর জনক বলা হয়। Eric Schmidt শুধু "Cloud Computing" শব্দটি দিয়েছেন।</div></div>
+
+      <div class="modal-sec-head" style="margin-top:24px">
+        <div class="sec-icon ic-g" style="width:36px;height:36px;font-size:16px">🏦</div>
+        <h3>ব্যাংক ও সরকারি পরীক্ষার প্রশ্ন (Topic-based)</h3>
+      </div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bank">Bank</span><span class="pyq-year">ব্যাংক নিয়োগ পরীক্ষা — ICT অংশ</span></div><div class="pyq-q">অ্যামাজনের ক্লাউড সার্ভিস AWS-এর পূর্ণরূপ কী?</div><div class="pyq-opts"><div class="pyq-opt ans">(ক) Amazon Web Services</div><div class="pyq-opt">(খ) Advanced Web System</div><div class="pyq-opt">(গ) Automated Web Software</div><div class="pyq-opt">(ঘ) American Web Solutions</div></div><div class="pyq-ans-label">📌 AWS = Amazon Web Services। বিশ্বের সবচেয়ে বড় ও প্রথম commercial cloud service provider। ২০০৬ সালে EC2 ও S3 চালু করে।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bank">Bank</span><span class="pyq-year">ব্যাংক নিয়োগ পরীক্ষা — ICT অংশ</span></div><div class="pyq-q">Cloud computing-এর মূল ভিত্তি (foundation) কোন প্রযুক্তি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Containerization</div><div class="pyq-opt">(খ) Edge Computing</div><div class="pyq-opt ans">(গ) Virtualization</div><div class="pyq-opt">(ঘ) Serverless Computing</div></div><div class="pyq-ans-label">📌 Virtualization হলো cloud computing-এর মূল ভিত্তি। এর মাধ্যমে একটি physical server-কে একাধিক virtual machine-এ ভাগ করা যায়, যার উপর cloud সার্ভিস নির্ভর করে।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bank">সরকারি চাকরি</span><span class="pyq-year">সরকারি প্রতিষ্ঠান — ICT পদ</span></div><div class="pyq-q">NIST অনুযায়ী Cloud computing-এর essential characteristics কয়টি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) ৩টি</div><div class="pyq-opt">(খ) ৪টি</div><div class="pyq-opt ans">(গ) ৫টি</div><div class="pyq-opt">(ঘ) ৬টি</div></div><div class="pyq-ans-label">📌 NIST-এর ৫টি essential characteristics: On-Demand Self-Service, Broad Network Access, Resource Pooling, Rapid Elasticity এবং Measured Service। এটি BCS, Bank সব পরীক্ষায়ই আসে।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bank">সরকারি চাকরি</span><span class="pyq-year">সরকারি প্রতিষ্ঠান — ICT পদ</span></div><div class="pyq-q">Gmail কোন cloud service model-এর সবচেয়ে পরিচিত উদাহরণ?</div><div class="pyq-opts"><div class="pyq-opt">(ক) IaaS</div><div class="pyq-opt">(খ) PaaS</div><div class="pyq-opt ans">(গ) SaaS</div><div class="pyq-opt">(ঘ) NaaS</div></div><div class="pyq-ans-label">📌 Gmail হলো SaaS (Software as a Service)-এর সবচেয়ে পরিচিত উদাহরণ। সম্পূর্ণ software ইন্টারনেটের মাধ্যমে সরবরাহ করা হয়, user শুধু browser-এ ব্যবহার করে।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৫তম BCS</span><span class="pyq-year">৪৫তম BCS প্রিলিমিনারি (২০২৩)</span></div><div class="pyq-q">Cloud Computing-এ Public এবং Private cloud একত্রে ব্যবহৃত হয় কোন model-এ?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Public Cloud</div><div class="pyq-opt">(খ) Community Cloud</div><div class="pyq-opt ans">(গ) Hybrid Cloud</div><div class="pyq-opt">(ঘ) Private Cloud</div></div><div class="pyq-ans-label">📌 Hybrid Cloud = Public + Private cloud একসাথে। Sensitive data private-এ এবং সাধারণ কাজ public-এ রাখা হয়।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪৪তম BCS</span><span class="pyq-year">৪৪তম BCS প্রিলিমিনারি (২০২২)</span></div><div class="pyq-q">Gmail কোন cloud service model-এর উদাহরণ?</div><div class="pyq-opts"><div class="pyq-opt">(ক) IaaS</div><div class="pyq-opt">(খ) PaaS</div><div class="pyq-opt ans">(গ) SaaS</div><div class="pyq-opt">(ঘ) NaaS</div></div><div class="pyq-ans-label">📌 Gmail ইন্টারনেটভিত্তিক সম্পূর্ণ software service — SaaS (Software as a Service)-এর সবচেয়ে পরিচিত উদাহরণ।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪০তম BCS</span><span class="pyq-year">৪০তম BCS প্রিলিমিনারি (২০১৯)</span></div><div class="pyq-q">Cloud computing-এর মূল ভিত্তি (foundation) কোনটি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Containerization</div><div class="pyq-opt">(খ) Serverless Computing</div><div class="pyq-opt">(গ) Edge Computing</div><div class="pyq-opt ans">(ঘ) Virtualization</div></div><div class="pyq-ans-label">📌 Virtualization হলো cloud computing-এর মূল ভিত্তি। এর মাধ্যমে একটি physical server-কে একাধিক virtual machine-এ ভাগ করা যায়।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৮তম BCS</span><span class="pyq-year">৩৮তম BCS প্রিলিমিনারি (২০১৭)</span></div><div class="pyq-q">NIST অনুযায়ী cloud computing-এর essential characteristics কয়টি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) ৩টি</div><div class="pyq-opt">(খ) ৪টি</div><div class="pyq-opt ans">(গ) ৫টি</div><div class="pyq-opt">(ঘ) ৬টি</div></div><div class="pyq-ans-label">📌 NIST-এর ৫টি essential characteristics: On-Demand Self-Service, Broad Network Access, Resource Pooling, Rapid Elasticity এবং Measured Service।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৭তম BCS</span><span class="pyq-year">৩৭তম BCS প্রিলিমিনারি (২০১৬)</span></div><div class="pyq-q">AWS-এর পূর্ণরূপ কী?</div><div class="pyq-opts"><div class="pyq-opt ans">(ক) Amazon Web Services</div><div class="pyq-opt">(খ) Advanced Web Systems</div><div class="pyq-opt">(গ) Automated Web Software</div><div class="pyq-opt">(ঘ) American Wireless Service</div></div><div class="pyq-ans-label">📌 AWS = Amazon Web Services। বিশ্বের সবচেয়ে বড় commercial cloud provider। ২০০৬ সালে EC2 ও S3 চালু করে।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৬তম BCS</span><span class="pyq-year">৩৬তম BCS প্রিলিমিনারি (২০১৫)</span></div><div class="pyq-q">Cloud computing-এ ব্যবহারকারী কোন পদ্ধতিতে বিল পরিশোধ করে?</div><div class="pyq-opts"><div class="pyq-opt">(ক) মাসিক নির্দিষ্ট বিল</div><div class="pyq-opt">(খ) বার্ষিক চুক্তিতে</div><div class="pyq-opt ans">(গ) ব্যবহার অনুযায়ী (Pay as you go)</div><div class="pyq-opt">(ঘ) একবারে পুরো টাকা</div></div><div class="pyq-ans-label">📌 "Pay as you go" হলো cloud computing-এর Measured Service বৈশিষ্ট্যের সাথে সম্পর্কিত। যতটুকু ব্যবহার করবে ততটুকু বিল।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৫তম BCS</span><span class="pyq-year">৩৫তম BCS প্রিলিমিনারি (২০১৪)</span></div><div class="pyq-q">Cloud computing-এর জনক (pioneer) হিসেবে কাকে বিবেচনা করা হয়?</div><div class="pyq-opts"><div class="pyq-opt ans">(ক) J.C.R. Licklider</div><div class="pyq-opt">(খ) Eric Schmidt</div><div class="pyq-opt">(গ) John McCarthy</div><div class="pyq-opt">(ঘ) Tim Berners-Lee</div></div><div class="pyq-ans-label">📌 J.C.R. Licklider ১৯৬০-এর দশকে interconnected computer network-এর ধারণা দিয়েছিলেন — তাই তাকে cloud computing-এর জনক বলা হয়।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪২তম BCS</span><span class="pyq-year">৪২তম BCS প্রিলিমিনারি (২০২১)</span></div><div class="pyq-q">Amazon EC2 কোন cloud service model-এর উদাহরণ?</div><div class="pyq-opts"><div class="pyq-opt">(ক) SaaS</div><div class="pyq-opt">(খ) PaaS</div><div class="pyq-opt ans">(গ) IaaS</div><div class="pyq-opt">(ঘ) DaaS</div></div><div class="pyq-ans-label">📌 Amazon EC2 (Elastic Compute Cloud) virtual server দেয় — IaaS (Infrastructure as a Service)-এর সবচেয়ে পরিচিত উদাহরণ।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৪১তম BCS</span><span class="pyq-year">৪১তম BCS প্রিলিমিনারি (২০২১)</span></div><div class="pyq-q">Cloud computing-এর সবচেয়ে নিরাপদ deployment model কোনটি?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Public Cloud</div><div class="pyq-opt ans">(খ) Private Cloud</div><div class="pyq-opt">(গ) Hybrid Cloud</div><div class="pyq-opt">(ঘ) Community Cloud</div></div><div class="pyq-ans-label">📌 Private Cloud একটি নির্দিষ্ট প্রতিষ্ঠানের জন্য ব্যবহৃত হয় বলে নিরাপত্তা ও নিয়ন্ত্রণ সবচেয়ে বেশি। ব্যাংক ও সরকারি প্রতিষ্ঠানে ব্যবহৃত।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৩৯তম BCS</span><span class="pyq-year">৩৯তম BCS প্রিলিমিনারি (২০১৮)</span></div><div class="pyq-q">GCP-এর পূর্ণরূপ কী?</div><div class="pyq-opts"><div class="pyq-opt">(ক) General Cloud Protocol</div><div class="pyq-opt">(খ) Global Computing Platform</div><div class="pyq-opt ans">(গ) Google Cloud Platform</div><div class="pyq-opt">(ঘ) Grid Computing Protocol</div></div><div class="pyq-ans-label">📌 GCP = Google Cloud Platform। Google-এর cloud service। Google App Engine (PaaS) এর একটি পরিচিত পণ্য।</div></div>
+
+      <div class="pyq-card"><div class="pyq-head"><span class="pyq-exam pyq-bcs">৫০তম BCS</span><span class="pyq-year">৫০তম BCS প্রিলিমিনারি (২০২৬)</span></div><div class="pyq-q">Cloud Computing-এ "Measured Service" বৈশিষ্ট্যের সাথে কোন billing model সরাসরি যুক্ত?</div><div class="pyq-opts"><div class="pyq-opt">(ক) Flat rate billing</div><div class="pyq-opt">(খ) Annual subscription</div><div class="pyq-opt ans">(গ) Pay as you go</div><div class="pyq-opt">(ঘ) Free tier model</div></div><div class="pyq-ans-label">📌 Measured Service = Pay as you go। ব্যবহার অনুযায়ী bill হয় — বিদ্যুৎ বিলের মতো। এটি NIST-এর ৫ম essential characteristic।</div></div>
+
+      <div class="modal-sec-head" style="margin-top:24px">
+        <div class="sec-icon ic-g" style="width:36px;height:36px;font-size:16px">🏦</div>
+        <h3>ব্যাংক ও সরকারি পরীক্ষার প্রশ্ন (Topic-based)</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-col">
+      <h4>ICTguide Bangladesh</h4>
+      <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.7">BCS, Bank ও সরকারি চাকরির জন্য বিশেষভাবে তৈরি ICT গাইড।</p>
+    </div>
+    <div class="ft-col">
+      <h4>ক্লাউড কম্পিউটিং</h4>
+      <ul>
+        <li><a href="#definition">📌 সংজ্ঞা</a></li>
+        <li><a href="#nist">🔢 NIST বৈশিষ্ট্য</a></li>
+        <li><a href="#service-model">🔧 Service Model</a></li>
+        <li><a href="#exam-tips">⭐ পরীক্ষার টিপস</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>পরীক্ষাভিত্তিক</h4>
+      <ul>
+        <li><a href="bcs-ict.html">🏆 BCS ICT গাইড</a></li>
+        <li><a href="bank-ict.html">🏦 ব্যাংক ICT</a></li>
+        <li><a href="index.html">📋 BCS সিলেবাস</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>দ্রুত লিংক</h4>
+      <ul>
+        <li><a href="https://ictguide.github.io/">🏠 হোম পেইজ</a></li>
+        <li><a href="peripherals.html">💻 পেরিফেরালস</a></li>
+        <li><a href="contact.html">📧 যোগাযোগ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    © ২০২৫ <a href="https://ictguide.github.io/">ICTguide Bangladesh</a> — সর্বস্বত্ব সংরক্ষিত |
+    <a href="index.html">BCS সিলেবাস</a> | <a href="about.html">আমাদের সম্পর্কে</a>
+  </div>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Back to top ── */
+window.addEventListener('scroll',()=>{document.getElementById('btt').style.display=window.scrollY>300?'flex':'none';});
+
+/* ── Quick jump ── */
+function jump(id){const el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-130,behavior:'smooth'});}
+
+/* ── Quick jump highlight ── */
+const jbtns=document.querySelectorAll('.jbtn');
+window.addEventListener('scroll',()=>{
+  const ids=['definition','nist','service-model','deployment','adv-dis','providers','terms','exam-tips','paragraph','practice-hub'];
+  let cur='';ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-160)cur=id;});
+  jbtns.forEach(b=>{b.classList.remove('on');if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+cur+"'"))b.classList.add('on');});
+});
+
+/* ── Copy paragraph ── */
+function copyPara(id,btn){
+  const text=document.getElementById(id).innerText.trim();
+  navigator.clipboard.writeText(text).then(()=>{const o=btn.innerHTML;btn.innerHTML='✅ কপি হয়েছে!';setTimeout(()=>btn.innerHTML=o,1800);});
+}
+
+/* ── MODAL ── */
+let pyqInited=false;
+function openModal(type){
+  const el=document.getElementById(type==='mcq'?'mcqModal':'pyqModal');
+  el.classList.add('open');
+  document.body.style.overflow='hidden';
+  const modal=el.querySelector('.modal');
+  if(modal)modal.scrollTop=0;
+  if(type==='pyq'&&!pyqInited){pyqInited=true;initPYQ();setPYQMode('reading');}
+}
+function closeModal(type){
+  document.getElementById(type==='mcq'?'mcqModal':'pyqModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.modal-overlay').forEach(ov=>{ov.addEventListener('click',e=>{if(e.target===ov)closeModal(ov.id==='mcqModal'?'mcq':'pyq');});});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('mcq');closeModal('pyq');}});
+
+/* ── MCQ MODE ── */
+let currentMode='exam';
+function setMode(mode){
+  currentMode=mode;
+  const container=document.getElementById('mcqContainer');
+  const examBtn=document.getElementById('examModeBtn');
+  const readingBtn=document.getElementById('readingModeBtn');
+  const statsBar=document.getElementById('mcqStats');
+  if(mode==='reading'){
+    container.classList.add('reading-mode');
+    examBtn.classList.remove('active');readingBtn.classList.add('active');
+    statsBar.style.display='none';
+    document.querySelectorAll('.mcq-answer').forEach(a=>a.classList.add('show'));
+    document.querySelectorAll('.mcq-card').forEach(card=>{
+      const ans=card.dataset.answer;const opts=card.querySelectorAll('.opt');const letters=['a','b','c','d'];
+      opts.forEach((o,i)=>{if(letters[i]===ans)o.classList.add('show-correct');o.disabled=true;});
+    });
+  } else {
+    container.classList.remove('reading-mode');
+    examBtn.classList.add('active');readingBtn.classList.remove('active');
+    statsBar.style.display='flex';
+    resetMCQ();
+  }
+}
+
+/* ── MCQ Logic ── */
+let answered={},correct=0;const total=50;
+function checkAnswer(btn,chosen,qNum){
+  if(currentMode==='reading')return;
+  const card=btn.closest('.mcq-card');
+  if(card.dataset.done)return;
+  card.dataset.done=true;
+  const correctAns=card.dataset.answer;
+  const opts=card.querySelectorAll('.opt');
+  const letters=['a','b','c','d'];
+  opts.forEach((o,i)=>{o.disabled=true;if(letters[i]===correctAns)o.classList.add('show-correct');});
+  if(chosen===correctAns){btn.classList.add('correct');btn.classList.remove('show-correct');if(!answered[qNum]){correct++;answered[qNum]=true;updateStats();}}
+  else{btn.classList.add('wrong');if(!answered[qNum]){answered[qNum]=false;updateStats();}}
+  document.getElementById('ans-'+qNum).classList.add('show');
+}
+function showHint(qNum){
+  if(currentMode==='reading')return;
+  const cards=[...document.querySelectorAll('.mcq-card')];
+  const card=cards[parseInt(qNum)-1];if(!card)return;
+  if(!card.dataset.done){
+    card.dataset.done=true;const correctAns=card.dataset.answer;const opts=card.querySelectorAll('.opt');const letters=['a','b','c','d'];
+    opts.forEach((o,i)=>{o.disabled=true;if(letters[i]===correctAns)o.classList.add('show-correct');});
+    if(!answered[qNum]){answered[qNum]=false;updateStats();}
+  }
+  document.getElementById('ans-'+qNum).classList.add('show');
+}
+function updateStats(){
+  const ans=Object.keys(answered).length;const corr=Object.values(answered).filter(Boolean).length;
+  document.getElementById('answeredQ').textContent=ans;document.getElementById('correctQ').textContent=corr;
+  const pct=ans?Math.round(corr/ans*100):0;document.getElementById('scoreQ').textContent=pct+'%';
+  document.getElementById('progressFill').style.width=(ans/total*100)+'%';
+  if(ans===total)showScore(corr);
+}
+function showScore(corr){
+  const box=document.getElementById('scoreBox');box.style.display='block';
+  document.getElementById('finalScore').textContent=corr+'/'+total;
+  const pct=Math.round(corr/total*100);
+  document.getElementById('scoreMsg').textContent=pct>=90?'🏆 অসাধারণ! BCS-এর জন্য প্রস্তুত!':pct>=70?'👍 ভালো করেছেন! আরও পড়লে পারফেক্ট।':pct>=50?'📚 মাঝামাঝি। আরও অনুশীলন করুন।':'💪 চিন্তা নেই! আবার পড়ে চেষ্টা করুন।';
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetMCQ(){
+  answered={};correct=0;
+  document.getElementById('answeredQ').textContent='0';document.getElementById('correctQ').textContent='0';
+  document.getElementById('scoreQ').textContent='0%';document.getElementById('progressFill').style.width='0%';
+  document.getElementById('scoreBox').style.display='none';
+  document.getElementById('mcqContainer').classList.remove('reading-mode');
+  document.querySelectorAll('.mcq-card').forEach(c=>{
+    delete c.dataset.done;
+    c.querySelectorAll('.opt').forEach(o=>{o.disabled=false;o.classList.remove('correct','wrong','show-correct');});
+    c.querySelectorAll('.mcq-answer').forEach(a=>a.classList.remove('show'));
+  });
+  const modal=document.querySelector('#mcqModal .modal');if(modal)modal.scrollTop=0;
+}
+
+/* ── PYQ Mode ── */
+let pyqMode='reading',pyqAnswered={},pyqCorrect=0;const pyqTotal=14;
+function initPYQ(){
+  let cardIndex=0;
+  document.querySelectorAll('#pyqModalBody .pyq-card').forEach(card=>{
+    cardIndex++;card.dataset.pyqIndex=cardIndex;
+    const opts=card.querySelectorAll('.pyq-opt');
+    let correctIdx=-1;
+    opts.forEach((opt,i)=>{if(opt.classList.contains('ans'))correctIdx=i;});
+    card.dataset.correctIdx=correctIdx;
+    const label=card.querySelector('.pyq-ans-label');
+    if(label)label.dataset.orig=label.textContent;
+    opts.forEach((opt,i)=>{opt.classList.add('pyq-clickable');opt.addEventListener('click',function(){pyqHandleClick(card,this,i);});});
+  });
+}
+function pyqHandleClick(card,opt,idx){
+  if(pyqMode!=='exam')return;
+  if(card.dataset.pyqDone)return;
+  card.dataset.pyqDone=true;
+  const correctIdx=parseInt(card.dataset.correctIdx);const cardIdx=card.dataset.pyqIndex;
+  const opts=card.querySelectorAll('.pyq-opt');const isCorrect=parseInt(idx)===correctIdx;
+  if(isCorrect){opt.classList.add('pyq-selected-correct');}
+  else{opt.classList.add('pyq-selected-wrong');opts.forEach((o,i)=>{if(i===correctIdx)o.classList.add('pyq-reveal-correct');});}
+  opts.forEach(o=>{o.style.pointerEvents='none';});
+  const ansLabel=card.querySelector('.pyq-ans-label');
+  if(ansLabel){
+    ansLabel.classList.remove('ans-correct','ans-wrong');
+    if(isCorrect){ansLabel.innerHTML='<strong>✅ সঠিক উত্তর!</strong> '+ansLabel.textContent.replace(/^📌\s*/,'');ansLabel.classList.add('show','ans-correct');}
+    else{ansLabel.innerHTML='<strong>❌ ভুল উত্তর!</strong> '+ansLabel.textContent.replace(/^📌\s*/,'');ansLabel.classList.add('show','ans-wrong');}
+  }
+  if(!pyqAnswered[cardIdx]){if(isCorrect)pyqCorrect++;pyqAnswered[cardIdx]=isCorrect;updatePYQStats();}
+  if(Object.keys(pyqAnswered).length===pyqTotal)showPYQScore();
+}
+function updatePYQStats(){
+  const ans=Object.keys(pyqAnswered).length;const corr=Object.values(pyqAnswered).filter(Boolean).length;
+  document.getElementById('pyqAnsweredQ').textContent=ans;document.getElementById('pyqCorrectQ').textContent=corr;
+  const pct=ans?Math.round(corr/ans*100):0;document.getElementById('pyqScoreQ').textContent=pct+'%';
+  document.getElementById('pyqProgressFill').style.width=(ans/pyqTotal*100)+'%';
+}
+function showPYQScore(){
+  const box=document.getElementById('pyqScoreBox');box.style.display='block';
+  document.getElementById('pyqFinalScore').textContent=pyqCorrect+'/'+pyqTotal;
+  const pct=Math.round(pyqCorrect/pyqTotal*100);
+  document.getElementById('pyqScoreMsg').textContent=pct>=90?'🏆 অসাধারণ! BCS-এর জন্য প্রস্তুত!':pct>=70?'👍 ভালো! আরও রিভিউ করুন।':pct>=50?'📚 মাঝামাঝি। আরও পড়ুন।':'💪 চিন্তা নেই! আবার চেষ্টা করুন।';
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function setPYQMode(mode){
+  pyqMode=mode;
+  const body=document.getElementById('pyqModalBody');
+  const examBtn=document.getElementById('pyqExamBtn');const readingBtn=document.getElementById('pyqReadingBtn');
+  if(mode==='reading'){
+    body.classList.remove('pyq-exam-mode');body.classList.add('pyq-reading-mode');
+    examBtn.classList.remove('active');readingBtn.classList.add('active');
+    document.getElementById('pyqStatsBar').style.display='none';
+    document.querySelectorAll('#pyqModalBody .pyq-opt.ans').forEach(o=>o.classList.add('pyq-reveal-correct'));
+    document.querySelectorAll('#pyqModalBody .pyq-ans-label').forEach(l=>l.classList.add('show'));
+  } else {
+    body.classList.add('pyq-exam-mode');body.classList.remove('pyq-reading-mode');
+    examBtn.classList.add('active');readingBtn.classList.remove('active');
+    document.getElementById('pyqStatsBar').style.display='flex';
+    resetPYQ();
+  }
+}
+function resetPYQ(){
+  pyqAnswered={};pyqCorrect=0;
+  document.getElementById('pyqAnsweredQ').textContent='0';document.getElementById('pyqCorrectQ').textContent='0';
+  document.getElementById('pyqScoreQ').textContent='0%';document.getElementById('pyqProgressFill').style.width='0%';
+  document.getElementById('pyqScoreBox').style.display='none';
+  document.querySelectorAll('#pyqModalBody .pyq-card').forEach(c=>{
+    delete c.dataset.pyqDone;
+    c.querySelectorAll('.pyq-opt').forEach(o=>{o.classList.remove('pyq-selected-correct','pyq-selected-wrong','pyq-reveal-correct');o.style.pointerEvents='';});
+    const label=c.querySelector('.pyq-ans-label');
+    if(label){label.classList.remove('show','ans-correct','ans-wrong');if(label.dataset.orig)label.textContent=label.dataset.orig;}
+  });
+  const modal=document.querySelector('#pyqModal .modal');if(modal)modal.scrollTop=0;
+}
+</script>
+</body>
+</html>
